@@ -1,0 +1,631 @@
+                  Welcome to Q-Chem
+     A Quantum Leap Into The Future Of Chemistry
+
+
+ Q-Chem 4.2, Q-Chem, Inc., Pleasanton, CA (2014).
+
+ Y. Shao,  Z. Gan,  E. Epifanovsky,  A. T. B. Gilbert,  M. Wormit,  
+ J. Kussmann,  A. W. Lange,  A. Behn,  J. Deng,  X. Feng,  D. Ghosh,  
+ M. Goldey,  P. R. Horn,  L. D. Jacobson,  I. Kaliman,  R. Z. Khaliullin,  
+ T. Kus,  A. Landau,  J. Liu,  E. I. Proynov,  Y. M. Rhee,  R. M. Richard,  
+ M. A. Rohrdanz,  R. P. Steele,  E. J. Sundstrom,  H. L. Woodcock III,  
+ P. M. Zimmerman,  D. Zuev,  B. Albrecht,  E. Alguire,  B. Austin,  
+ G. J. O. Beran,  Y. A. Bernard,  E. Berquist,  K. Brandhorst,  
+ K. B. Bravaya,  S. T. Brown,  D. Casanova,  C.-M. Chang,  Y. Chen,  
+ S. H. Chien,  K. D. Closser,  D. L. Crittenden,  M. Diedenhofen,  
+ R. A. DiStasio Jr.,  H. Do,  A. D. Dutoi,  R. G. Edgar,  S. Fatehi,  
+ L. Fusti-Molnar,  A. Ghysels,  A. Golubeva-Zadorozhnaya,  J. Gomes,  
+ M. W. D. Hanson-Heine,  P. H. P. Harbach,  A. W. Hauser,  E. G. Hohenstein,  
+ Z. C. Holden,  T.-C. Jagau,  H. Ji,  B. Kaduk,  K. Khistyaev,  Jaehoon Kim,  
+ Jihan Kim,  R. A. King,  P. Klunzinger,  D. Kosenkov,  T. Kowalczyk,  
+ C. M. Krauter,  K. U. Lao,  A. Laurent,  K. V. Lawler,  S. V. Levchenko,  
+ C. Y. Lin,  F. Liu,  E. Livshits,  R. C. Lochan,  A. Luenser,  P. Manohar,  
+ S. F. Manzer,  S.-P. Mao,  N. Mardirossian,  A. V. Marenich,  S. A. Maurer,  
+ N. J. Mayhall,  C. M. Oana,  R. Olivares-Amaya,  D. P. O'Neill,  
+ J. A. Parkhill,  T. M. Perrine,  R. Peverati,  P. A. Pieniazek,  A. Prociuk,  
+ D. R. Rehn,  E. Rosta,  N. J. Russ,  N. Sergueev,  S. M. Sharada,  
+ S. Sharma,  D. W. Small,  A. Sodt,  T. Stein,  D. Stuck,  Y.-C. Su,  
+ A. J. W. Thom,  T. Tsuchimochi,  L. Vogt,  O. Vydrov,  T. Wang,  
+ M. A. Watson,  J. Wenzel,  A. White,  C. F. Williams,  V. Vanovschi,  
+ S. Yeganeh,  S. R. Yost,  Z.-Q. You,  I. Y. Zhang,  X. Zhang,  Y. Zhao,  
+ B. R. Brooks,  G. K. L. Chan,  D. M. Chipman,  C. J. Cramer,  
+ W. A. Goddard III,  M. S. Gordon,  W. J. Hehre,  A. Klamt,  
+ H. F. Schaefer III,  M. W. Schmidt,  C. D. Sherrill,  D. G. Truhlar,  
+ A. Warshel,  X. Xu,  A. Aspuru-Guzik,  R. Baer,  A. T. Bell,  N. A. Besley,  
+ J.-D. Chai,  A. Dreuw,  B. D. Dunietz,  T. R. Furlani,  S. R. Gwaltney,  
+ C.-P. Hsu,  Y. Jung,  J. Kong,  D. S. Lambrecht,  W. Liang,  C. Ochsenfeld,  
+ V. A. Rassolov,  L. V. Slipchenko,  J. E. Subotnik,  T. Van Voorhis,  
+ J. M. Herbert,  A. I. Krylov,  P. M. W. Gill,  M. Head-Gordon
+
+ Contributors to earlier versions of Q-Chem not listed above: 
+ R. D. Adamson,  J. Baker,  E. F. C. Byrd,  A. K. Chakraborty,  C.-L. Cheng,  
+ H. Dachsel,  R. J. Doerksen,  G. Hawkins,  A. Heyden,  S. Hirata,  
+ G. Kedziora,  F. J. Keil,  C. Kelley,  P. P. Korambath,  W. Kurlancheek,  
+ A. M. Lee,  M. S. Lee,  D. Liotard,  I. Lotan,  P. E. Maslen,  N. Nair,  
+ D. Neuhauser,  R. Olson,  B. Peters,  J. Ritchie,  N. E. Schultz,  
+ N. Shenvi,  A. C. Simmonett,  K. S. Thanthiriwatte,  Q. Wu,  W. Zhang
+
+ Q-Chem 4.2.0 for Intel X86 EM64T Linux
+
+ Parts of Q-Chem use Armadillo 4.100.2 (Dirt Cruiser).
+ http://arma.sourceforge.net/
+
+ Q-Chem begins on Fri Jul 18 14:13:05 2014  
+
+Host: 
+0
+
+     Scratch files written to /tmp/ben/qchem/qchem16353//
+ Jul1514 |home|ben|opt|apps|qchem|bja_2|libmdc|qstr_info.C -1
+ Using version located at /home/ben/opt/apps/qchem/bja_2/bin/qchem
+
+
+Total Memory Limit in MB = 2000
+Mega-Array Size in MB = 62
+Finally everything over in PARseQInput
+
+--------------------------------------------------------------
+User input:
+--------------------------------------------------------------
+
+$molecule
+   0 1
+   O       -6.03444       -1.03532        0.05873
+   H       -5.37568       -0.34232       -0.19889
+   H       -5.75750       -1.84083       -0.44634
+  Ar       -2.50065       -1.95736        0.33490
+$end
+
+$rem
+BASIS           cc-pvdz
+EXCHANGE        PBE
+CORRELATION     PBE
+SCF_ALGORITHM   DIIS
+incfock         0
+PURCAR          111
+MAXSCF          300
+symmetry        false
+sym_ignore      true
+$end
+
+--------------------------------------------------------------
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      O      -6.0344400000    -1.0353200000     0.0587300000
+    2      H      -5.3756800000    -0.3423200000    -0.1988900000
+    3      H      -5.7575000000    -1.8408300000    -0.4463400000
+    4      Ar     -2.5006500000    -1.9573600000     0.3349000000
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =    35.3874379092 hartrees
+ There are       14 alpha and       14 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/bja_2/forms1/BasisType.C, line 1231:
+
+ You are not using the predefined 5D/6D in this basis set.
+
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/bja_2/forms1/BasisType.C, line 1165:
+
+ SAD: How to set up polarization functions for non-Pople basis?
+
+ Requested basis set is cc-pVDZ
+ There are 20 shells and 42 basis functions
+
+Total QAlloc Memory Limit   2000 MB
+Mega-Array Size        61 MB
+MEM_STATIC part        62 MB
+
+finished with qalloc call
+
+                       Distance Matrix (Angstroms)
+             O (  1)   H (  2)   H (  3)
+   H (  2)  0.990243
+   H (  3)  0.990272  1.566062
+   Ar(  4)  3.662526  3.340521  3.351266
+ 
+ Job number = 2, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 2  <1-21|1-21>
+Symmetry turned off temporarily
+ Using the largest function pair in Schwarz integrals
+Total number of integrals generated =            9366
+Symmetry turned back on
+ A cutoff of  1.0D-08 yielded    180 shell pairs
+ There are       774 function pairs (       846 Cartesian)
+ Job number = 11, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+Total number of integrals generated =            3376
+ Smallest overlap matrix eigenvalue = 3.67E-02
+ Multipole matrices computed through 2nd order
+
+  Scale SEOQF with 1.000000e-02/1.000000e-01/1.000000e+00
+
+ Standard Electronic Orientation quadrupole field applied
+ Nucleus-field energy     =     0.0000000050 hartrees
+ Guess from superposition of atomic densities
+ Warning:  Energy on first SCF cycle will be non-variational
+scfman initvdwdat 
+ A restricted Kohn-Sham SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Exchange:  PBE      Correlation:  PBE
+ Using SG-1 standard quadrature grid
+ SCF converges when DIIS error is below 1.0E-05
+ Requested basis set is cc-pVDZ
+ There are 20 shells and 42 basis functions
+ Automatically selecting CFMM grain
+ Grain Lo Hi            0           0
+ Autograin says CFMM not worth it
+ Job number = 2, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 2  <1-21|1-21>
+Symmetry turned off temporarily
+Total number of integrals generated =            9366
+Symmetry turned back on
+ A cutoff of  1.0D-08 yielded    180 shell pairs
+ There are       774 function pairs (       846 Cartesian)
+ Job number = 20, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 20  <1-21|1-21>
+Storing 507.47% of integrals
+Total number of integrals generated =          352984
+ J construction time:  CPU 0.36 s  wall 0.36 s
+Target Grid is being used
+ CPU 0.00 s  wall 0.00 s
+NTotSigB2 = 60989
+Total Number of Grid Points = 11038
+ CPU 0.14 s  wall 0.14 s
+
+ Total DFTman time = 0.14 CPUs 0.14 Wall
+Fock build time:  0.50 s (CPU) 0.50 s (wall)
+DIIS Errors:  Max 8.60E-01 RMS 6.96E-02
+
+Current DIIS subspace size = 1
+REM_GRID_RESTART_DIIS = 0
+
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -603.6316796109      6.96E-02  00000
+ Job number = 20, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 20  <1-21|1-21>
+Storing 507.47% of integrals
+Reusing in-core integrals buffer for job 20
+ J construction time:  CPU 0.10 s  wall 0.10 s
+Target Grid is being used
+ CPU 0.00 s  wall 0.00 s
+NTotSigB2 = 60989
+Total Number of Grid Points = 11038
+ CPU 0.17 s  wall 0.17 s
+
+ Total DFTman time = 0.17 CPUs 0.17 Wall
+Fock build time:  0.26 s (CPU) 0.26 s (wall)
+DIIS Errors:  Max 2.59E-01 RMS 2.11E-02
+
+Current DIIS subspace size = 2
+REM_GRID_RESTART_DIIS = 0
+
+    2    -603.5802954349      2.11E-02  00000
+ Job number = 20, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 20  <1-21|1-21>
+Storing 507.47% of integrals
+Reusing in-core integrals buffer for job 20
+ J construction time:  CPU 0.09 s  wall 0.10 s
+Target Grid is being used
+ CPU 0.00 s  wall 0.00 s
+NTotSigB2 = 60989
+Total Number of Grid Points = 11038
+ CPU 0.17 s  wall 0.17 s
+
+ Total DFTman time = 0.17 CPUs 0.17 Wall
+Fock build time:  0.27 s (CPU) 0.27 s (wall)
+DIIS Errors:  Max 3.94E-01 RMS 3.23E-02
+
+Current DIIS subspace size = 3
+REM_GRID_RESTART_DIIS = 0
+
+    3    -603.4790156445      3.23E-02  00000
+ Job number = 20, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 20  <1-21|1-21>
+Storing 507.47% of integrals
+Reusing in-core integrals buffer for job 20
+ J construction time:  CPU 0.10 s  wall 0.10 s
+Target Grid is being used
+ CPU 0.00 s  wall 0.00 s
+NTotSigB2 = 60989
+Total Number of Grid Points = 11038
+ CPU 0.17 s  wall 0.17 s
+
+ Total DFTman time = 0.17 CPUs 0.17 Wall
+Fock build time:  0.26 s (CPU) 0.26 s (wall)
+DIIS Errors:  Max 4.73E-03 RMS 6.40E-04
+
+Current DIIS subspace size = 4
+REM_GRID_RESTART_DIIS = 0
+
+    4    -603.6540382757      6.40E-04  00000
+ Job number = 20, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 20  <1-21|1-21>
+Storing 507.47% of integrals
+Reusing in-core integrals buffer for job 20
+ J construction time:  CPU 0.10 s  wall 0.10 s
+Target Grid is being used
+ CPU 0.00 s  wall 0.00 s
+NTotSigB2 = 60989
+Total Number of Grid Points = 11038
+ CPU 0.16 s  wall 0.16 s
+
+ Total DFTman time = 0.16 CPUs 0.16 Wall
+Fock build time:  0.25 s (CPU) 0.25 s (wall)
+DIIS Errors:  Max 1.79E-03 RMS 1.85E-04
+
+Current DIIS subspace size = 5
+REM_GRID_RESTART_DIIS = 0
+
+    5    -603.6541132601      1.85E-04  00000
+ Job number = 20, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 20  <1-21|1-21>
+Storing 507.47% of integrals
+Reusing in-core integrals buffer for job 20
+ J construction time:  CPU 0.10 s  wall 0.10 s
+Target Grid is being used
+ CPU 0.00 s  wall 0.00 s
+NTotSigB2 = 60989
+Total Number of Grid Points = 11038
+ CPU 0.15 s  wall 0.15 s
+
+ Total DFTman time = 0.15 CPUs 0.15 Wall
+Fock build time:  0.24 s (CPU) 0.24 s (wall)
+DIIS Errors:  Max 4.91E-04 RMS 4.67E-05
+
+Current DIIS subspace size = 6
+REM_GRID_RESTART_DIIS = 0
+
+    6    -603.6541190943      4.67E-05  00000
+ Job number = 20, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 20  <1-21|1-21>
+Storing 507.47% of integrals
+Reusing in-core integrals buffer for job 20
+ J construction time:  CPU 0.10 s  wall 0.10 s
+Target Grid is being used
+ CPU 0.00 s  wall 0.00 s
+NTotSigB2 = 60989
+Total Number of Grid Points = 11038
+ CPU 0.14 s  wall 0.14 s
+
+ Total DFTman time = 0.14 CPUs 0.14 Wall
+Fock build time:  0.24 s (CPU) 0.24 s (wall)
+DIIS Errors:  Max 8.19E-05 RMS 1.03E-05
+
+Current DIIS subspace size = 7
+REM_GRID_RESTART_DIIS = 0
+
+    7    -603.6541194460      1.03E-05  00000
+ Job number = 20, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 20  <1-21|1-21>
+Storing 507.47% of integrals
+Reusing in-core integrals buffer for job 20
+ J construction time:  CPU 0.10 s  wall 0.10 s
+Target Grid is being used
+ CPU 0.00 s  wall 0.00 s
+NTotSigB2 = 60989
+Total Number of Grid Points = 11038
+ CPU 0.13 s  wall 0.13 s
+
+ Total DFTman time = 0.13 CPUs 0.13 Wall
+Fock build time:  0.23 s (CPU) 0.23 s (wall)
+DIIS Errors:  Max 6.06E-06 RMS 6.97E-07
+
+Current DIIS subspace size = 8
+REM_GRID_RESTART_DIIS = 0
+
+    8    -603.6541196212      6.97E-07  00000 Convergence criterion met
+ ---------------------------------------
+ SCF time:  CPU 2.26 s  wall 2.26 s
+ SCF   energy in the final basis set = -603.6541196212
+ Total energy in the final basis set = -603.6541196212
+Symmetry turned off temporarily
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+******* -18.744 -10.833  -8.447  -8.447  -8.447  -0.890  -0.884
+ -0.447  -0.379  -0.377  -0.377  -0.302  -0.222
+ -- Virtual --
+  0.025   0.098   0.492   0.495   0.542   0.555   0.594   0.703
+  0.765   0.766   0.767   0.767   0.770   0.857   0.884   0.953
+  1.166   1.173   1.370   1.548   1.583   1.980   2.018   2.807
+  2.847   3.001   3.349   3.612
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 O                    -0.275998
+      2 H                     0.136320
+      3 H                     0.136337
+      4 Ar                    0.003341
+  ----------------------------------------
+  Sum of atomic charges =    -0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                 0.0000
+    Dipole Moment (Debye)
+         X       1.4977      Y      -0.1925      Z      -1.1448
+       Tot       1.8949
+    Quadrupole Moments (Debye-Ang)
+        XX     -35.2088     XY       0.0510     YY     -15.5541
+        XZ       6.4550     YZ       1.6563     ZZ     -17.9768
+    Octopole Moments (Debye-Ang^2)
+       XXX     352.6454    XXY      34.7300    XYY      54.4651
+       YYY      80.5002    XXZ     -39.8385    XYZ      -9.6169
+       YYZ      -6.6327    XZZ      67.6117    YZZ      29.0227
+       ZZZ     -11.6586
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX   -3004.9384   XXXY    -356.2630   XXYY    -288.9329
+      XYYY    -249.6140   YYYY    -307.4967   XXXZ     228.6037
+      XXYZ      62.4542   XYYZ      26.0792   YYYZ      27.2159
+      XXZZ    -310.9851   XYZZ     -95.6679   YYZZ     -57.1324
+      XZZZ      29.9719   YZZZ      22.5330   ZZZZ     -23.3470
+ -----------------------------------------------------------------
+ JobOver = TRUE
+Archival summary:
+1\1\odysseus\SP\ProcedureUnspecified\BasisUnspecified\r112\ben\FriJul1814:13:072014FriJul1814:13:072014\0\\#,ProcedureUnspecified,BasisUnspecified,\\0,1\O\H,1,0.990243\H,1,0.990272,2,104.508\Ar,2,3.34052,1,101.106,3,50.7765,0\\\@
+
+ Total job time:  2.33s(wall), 2.33s(cpu) 
+ Fri Jul 18 14:13:07 2014
+
+        *************************************************************
+        *                                                           *
+        *  Thank you very much for using Q-Chem.  Have a nice day.  *
+        *                                                           *
+        *************************************************************
+
+
+*** MISSION COMPLETED -- STARFLEET OUT ***
+
+ 
+User input: 2 of 2 
+ 
+                  Welcome to Q-Chem
+     A Quantum Leap Into The Future Of Chemistry
+
+
+ Q-Chem 4.2, Q-Chem, Inc., Pleasanton, CA (2014).
+
+ Y. Shao,  Z. Gan,  E. Epifanovsky,  A. T. B. Gilbert,  M. Wormit,  
+ J. Kussmann,  A. W. Lange,  A. Behn,  J. Deng,  X. Feng,  D. Ghosh,  
+ M. Goldey,  P. R. Horn,  L. D. Jacobson,  I. Kaliman,  R. Z. Khaliullin,  
+ T. Kus,  A. Landau,  J. Liu,  E. I. Proynov,  Y. M. Rhee,  R. M. Richard,  
+ M. A. Rohrdanz,  R. P. Steele,  E. J. Sundstrom,  H. L. Woodcock III,  
+ P. M. Zimmerman,  D. Zuev,  B. Albrecht,  E. Alguire,  B. Austin,  
+ G. J. O. Beran,  Y. A. Bernard,  E. Berquist,  K. Brandhorst,  
+ K. B. Bravaya,  S. T. Brown,  D. Casanova,  C.-M. Chang,  Y. Chen,  
+ S. H. Chien,  K. D. Closser,  D. L. Crittenden,  M. Diedenhofen,  
+ R. A. DiStasio Jr.,  H. Do,  A. D. Dutoi,  R. G. Edgar,  S. Fatehi,  
+ L. Fusti-Molnar,  A. Ghysels,  A. Golubeva-Zadorozhnaya,  J. Gomes,  
+ M. W. D. Hanson-Heine,  P. H. P. Harbach,  A. W. Hauser,  E. G. Hohenstein,  
+ Z. C. Holden,  T.-C. Jagau,  H. Ji,  B. Kaduk,  K. Khistyaev,  Jaehoon Kim,  
+ Jihan Kim,  R. A. King,  P. Klunzinger,  D. Kosenkov,  T. Kowalczyk,  
+ C. M. Krauter,  K. U. Lao,  A. Laurent,  K. V. Lawler,  S. V. Levchenko,  
+ C. Y. Lin,  F. Liu,  E. Livshits,  R. C. Lochan,  A. Luenser,  P. Manohar,  
+ S. F. Manzer,  S.-P. Mao,  N. Mardirossian,  A. V. Marenich,  S. A. Maurer,  
+ N. J. Mayhall,  C. M. Oana,  R. Olivares-Amaya,  D. P. O'Neill,  
+ J. A. Parkhill,  T. M. Perrine,  R. Peverati,  P. A. Pieniazek,  A. Prociuk,  
+ D. R. Rehn,  E. Rosta,  N. J. Russ,  N. Sergueev,  S. M. Sharada,  
+ S. Sharma,  D. W. Small,  A. Sodt,  T. Stein,  D. Stuck,  Y.-C. Su,  
+ A. J. W. Thom,  T. Tsuchimochi,  L. Vogt,  O. Vydrov,  T. Wang,  
+ M. A. Watson,  J. Wenzel,  A. White,  C. F. Williams,  V. Vanovschi,  
+ S. Yeganeh,  S. R. Yost,  Z.-Q. You,  I. Y. Zhang,  X. Zhang,  Y. Zhao,  
+ B. R. Brooks,  G. K. L. Chan,  D. M. Chipman,  C. J. Cramer,  
+ W. A. Goddard III,  M. S. Gordon,  W. J. Hehre,  A. Klamt,  
+ H. F. Schaefer III,  M. W. Schmidt,  C. D. Sherrill,  D. G. Truhlar,  
+ A. Warshel,  X. Xu,  A. Aspuru-Guzik,  R. Baer,  A. T. Bell,  N. A. Besley,  
+ J.-D. Chai,  A. Dreuw,  B. D. Dunietz,  T. R. Furlani,  S. R. Gwaltney,  
+ C.-P. Hsu,  Y. Jung,  J. Kong,  D. S. Lambrecht,  W. Liang,  C. Ochsenfeld,  
+ V. A. Rassolov,  L. V. Slipchenko,  J. E. Subotnik,  T. Van Voorhis,  
+ J. M. Herbert,  A. I. Krylov,  P. M. W. Gill,  M. Head-Gordon
+
+ Contributors to earlier versions of Q-Chem not listed above: 
+ R. D. Adamson,  J. Baker,  E. F. C. Byrd,  A. K. Chakraborty,  C.-L. Cheng,  
+ H. Dachsel,  R. J. Doerksen,  G. Hawkins,  A. Heyden,  S. Hirata,  
+ G. Kedziora,  F. J. Keil,  C. Kelley,  P. P. Korambath,  W. Kurlancheek,  
+ A. M. Lee,  M. S. Lee,  D. Liotard,  I. Lotan,  P. E. Maslen,  N. Nair,  
+ D. Neuhauser,  R. Olson,  B. Peters,  J. Ritchie,  N. E. Schultz,  
+ N. Shenvi,  A. C. Simmonett,  K. S. Thanthiriwatte,  Q. Wu,  W. Zhang
+
+ Q-Chem 4.2.0 for Intel X86 EM64T Linux
+
+ Parts of Q-Chem use Armadillo 4.100.2 (Dirt Cruiser).
+ http://arma.sourceforge.net/
+
+ Q-Chem begins on Fri Jul 18 14:13:07 2014  
+
+Host: 
+0
+
+     Scratch files written to /tmp/ben/qchem/qchem16353//
+ Jul1514 |home|ben|opt|apps|qchem|bja_2|libmdc|qstr_info.C -1
+ Using version located at /home/ben/opt/apps/qchem/bja_2/bin/qchem
+
+
+Total Memory Limit in MB = 2000
+Mega-Array Size in MB = 62
+Finally everything over in PARseQInput
+
+--------------------------------------------------------------
+User input:
+--------------------------------------------------------------
+
+$molecule
+   0 1
+   O       -6.03444       -1.03532        0.05873
+   H       -5.37568       -0.34232       -0.19889
+   H       -5.75750       -1.84083       -0.44634
+  Ar       -2.50065       -1.95736        0.33490
+$end
+
+$rem
+BASIS           cc-pvdz
+iguess          read
+skip_scfman     1
+mp2_restart_no_scf  true
+scf_guess       read
+CORRELATION     MP2
+SCF_ALGORITHM   DIIS
+incfock         0
+PURCAR          111
+MAXSCF          300
+symmetry        false
+sym_ignore      true
+$end
+--------------------------------------------------------------
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      O      -6.0344400000    -1.0353200000     0.0587300000
+    2      H      -5.3756800000    -0.3423200000    -0.1988900000
+    3      H      -5.7575000000    -1.8408300000    -0.4463400000
+    4      Ar     -2.5006500000    -1.9573600000     0.3349000000
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =    35.3874379092 hartrees
+ There are       14 alpha and       14 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/bja_2/forms1/BasisType.C, line 1231:
+
+ You are not using the predefined 5D/6D in this basis set.
+
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/bja_2/forms1/BasisType.C, line 1165:
+
+ SAD: How to set up polarization functions for non-Pople basis?
+
+ Requested basis set is cc-pVDZ
+ There are 20 shells and 42 basis functions
+
+Total QAlloc Memory Limit   2000 MB
+Mega-Array Size        61 MB
+MEM_STATIC part        62 MB
+
+finished with qalloc call
+
+                       Distance Matrix (Angstroms)
+             O (  1)   H (  2)   H (  3)
+   H (  2)  0.990243
+   H (  3)  0.990272  1.566062
+   Ar(  4)  3.662526  3.340521  3.351266
+ 
+ Job number = 2, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 2  <1-21|1-21>
+Symmetry turned off temporarily
+ Using the largest function pair in Schwarz integrals
+Total number of integrals generated =            9366
+Symmetry turned back on
+ A cutoff of  1.0D-08 yielded    180 shell pairs
+ There are       774 function pairs (       846 Cartesian)
+ Job number = 11, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+Total number of integrals generated =            3376
+ Smallest overlap matrix eigenvalue = 3.67E-02
+ Multipole matrices computed through 2nd order
+
+  Scale SEOQF with 1.000000e-02/1.000000e-01/1.000000e+00
+
+ Standard Electronic Orientation quadrupole field applied
+ Nucleus-field energy     =     0.0000000050 hartrees
+ Guess MOs from SCF MO coefficient file
+Reading MOs from coefficient file
+Reading MOs from coefficient file
+Symmetry turned off temporarily
+ 
+ Entering first-index batching code with I1Strt =    1 batch size =   14
+ Job number = 52, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 52  <1-21|1-21>
+Storing 507.47% of integrals
+Total number of integrals generated =          715716
+ Components of the MP2 correlation energy:
+        aaaa  correlation energy =        -0.0688851963 au
+        abab  correlation energy =        -0.3912783430 au
+        bbbb  correlation energy =        -0.0688851963 au
+        non-Brillouin singles    =        -0.0000000000 au
+
+ Total  MP2   correlation energy =        -0.5290487356 au
+        MP2         total energy =      -604.1831683569 au
+
+Symmetry turned back on
+cdman timing      0.794 seconds
+Symmetry turned off temporarily
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+******* -18.744 -10.833  -8.447  -8.447  -8.447  -0.890  -0.884
+ -0.447  -0.379  -0.377  -0.377  -0.302  -0.222
+ -- Virtual --
+  0.025   0.098   0.492   0.495   0.542   0.555   0.594   0.703
+  0.765   0.766   0.767   0.767   0.770   0.857   0.884   0.953
+  1.166   1.173   1.370   1.548   1.583   1.980   2.018   2.807
+  2.847   3.001   3.349   3.612
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 O                    -0.275998
+      2 H                     0.136320
+      3 H                     0.136337
+      4 Ar                    0.003341
+  ----------------------------------------
+  Sum of atomic charges =    -0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                 0.0000
+    Dipole Moment (Debye)
+         X       1.4977      Y      -0.1925      Z      -1.1448
+       Tot       1.8949
+    Quadrupole Moments (Debye-Ang)
+        XX     -35.2088     XY       0.0510     YY     -15.5541
+        XZ       6.4550     YZ       1.6563     ZZ     -17.9768
+    Octopole Moments (Debye-Ang^2)
+       XXX     352.6454    XXY      34.7300    XYY      54.4651
+       YYY      80.5002    XXZ     -39.8385    XYZ      -9.6169
+       YYZ      -6.6327    XZZ      67.6117    YZZ      29.0227
+       ZZZ     -11.6586
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX   -3004.9384   XXXY    -356.2630   XXYY    -288.9329
+      XYYY    -249.6140   YYYY    -307.4967   XXXZ     228.6037
+      XXYZ      62.4542   XYYZ      26.0792   YYYZ      27.2159
+      XXZZ    -310.9851   XYZZ     -95.6679   YYZZ     -57.1324
+      XZZZ      29.9719   YZZZ      22.5330   ZZZZ     -23.3470
+ -----------------------------------------------------------------
+ JobOver = TRUE
+Archival summary:
+1\1\odysseus\SP\MP2\BasisUnspecified\r112\ben\FriJul1814:13:082014FriJul1814:13:082014\0\\#,MP2,BasisUnspecified,\\0,1\O\H,1,0.990243\H,1,0.990272,2,104.508\Ar,2,3.34052,1,101.106,3,50.7765,0\\HF=-603.65412\MP2=-604.183168\\@
+
+ Total job time:  0.86s(wall), 0.86s(cpu) 
+ Fri Jul 18 14:13:08 2014
+
+        *************************************************************
+        *                                                           *
+        *  Thank you very much for using Q-Chem.  Have a nice day.  *
+        *                                                           *
+        *************************************************************
+
+
+*** MISSION COMPLETED -- STARFLEET OUT ***
+
