@@ -1,0 +1,70 @@
+#!/usr/bin/awk -f
+
+# Convert Tinker-style xyz to VMD
+# JMH (11/09/2006)
+
+BEGIN{
+NAtoms=0
+NLines=0
+}
+
+{
+   NLines++
+   if (NLines > 1){   
+     NAtoms++
+     x[NAtoms] = $3
+     y[NAtoms] = $4
+     z[NAtoms] = $5
+     AtSymb[NAtoms] = RealAtSym($2)
+   }
+}
+
+END{
+  printf("%10d\n\n",NAtoms)
+  for (i=1; i<=NAtoms; i++)
+    printf("%3s %14.8f %14.8f %14.8f\n",
+        AtSymb[i],x[i],y[i],z[i])
+}
+
+function RealAtSym(AtSym){
+# convert from MM atom types to actual atomic symbols
+  RealSym=AtSym 
+  if (AtSym == "CJ") RealSym="C"
+  else if (AtSym == "F-") RealSym="F"
+  else if (AtSym == "NA") RealSym="N"
+  else if (AtSym == "NB") RealSym="N"
+  else if (AtSym == "NC") RealSym="N"
+  else if (AtSym == "N2") RealSym="N" 
+  else if (AtSym == "N3") RealSym="N" 
+  else if (AtSym == "N*") RealSym="N" 
+  else if (AtSym == "CA") RealSym="C"
+  else if (AtSym == "CB") RealSym="C"
+  else if (AtSym == "CH") RealSym="C"
+  else if (AtSym == "CH2") RealSym="C"
+  else if (AtSym == "CH3") RealSym="C"
+  else if (AtSym == "CK") RealSym="C"
+  else if (AtSym == "CM") RealSym="C"
+  else if (AtSym == "CQ") RealSym="C"
+  else if (AtSym == "CT") RealSym="C"
+  else if (AtSym == "HA") RealSym="H"
+  else if (AtSym == "HC") RealSym="H"
+  else if (AtSym == "HT") RealSym="H"
+  else if (AtSym == "H1") RealSym="H"
+  else if (AtSym == "H2") RealSym="H"
+  else if (AtSym == "H5") RealSym="H"
+  else if (AtSym == "H4") RealSym="H"
+  else if (AtSym == "HW") RealSym="H"
+  else if (AtSym == "HO") RealSym="H"
+  else if (AtSym == "HP") RealSym="H"
+  else if (AtSym == "O-") RealSym="O"
+  else if (AtSym == "OC") RealSym="O"
+  else if (AtSym == "OS") RealSym="O"
+  else if (AtSym == "OT") RealSym="O"
+  else if (AtSym == "OH") RealSym="O"
+  else if (AtSym == "OW") RealSym="O"
+  else if (AtSym == "O2") RealSym="O"
+  else if (AtSym == "Na+") RealSym="Na"
+  else if (AtSym == "Ca+") RealSym="Ca"
+  else if (AtSym == "SL") RealSym="S"
+  return RealSym
+}

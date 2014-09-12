@@ -1,0 +1,148 @@
+#!/bin/bash
+
+#//  file: vennpaste
+#//
+#//  This script is an advanced paste that eliminates any differences between the two files
+#//  based on the furthest left column ($1) and then pastes the second column ($2)
+#//  of both files together along with the updated column one ($1) on the left. 
+#//
+#//
+#//
+#//  Programmer:  Ben Albrecht  albrecht.88@osu.edu
+#//
+#//  Revision history:
+#//      30-Jan-2013  original version
+#//
+#//  Notes:
+#//	Usage: vennpaste [FILE]...  
+#//	Currently 2 files only
+#//   
+#//
+#//   To Do:
+#//
+#//   1. Make more universal
+#//	i. More than 2 input files
+#//	ii. Specify which lines to compare (flags?)
+#//	iii. Allow printing of any amount/specific column rather than column 2 only
+#//*************************************************************************
+
+### OPTIONS ###
+OPT_FIN=0;
+while getopts "F" OPTION		# Possible Options -F
+do
+   case $OPTION in
+	F)  OPT_FIN=1;;
+	\?) echo "Available options: -F (For MSDnew.dat QchemSolv.dat)"
+		    exit 1;;			# error msg given
+   esac
+done
+
+### PRELIMINARY ###
+# Inputs
+if [ $OPT_FIN -eq 1 ]; then
+    realfile1=$2	#input 1
+    realfile2=$3	#input 2
+else
+    realfile1=$1	#input 1
+    realfile2=$2	#input 2
+fi
+
+# Generate and declare working files
+cat $realfile1 > "$realfile1.temp"
+cat $realfile2 > "$realfile2.temp"
+file1="$realfile1.temp"
+file2="$realfile2.temp"
+
+# Declare number of lines in each file
+line1=`wc -l $file1 | awk '{print $1}'`
+line2=`wc -l $file2 | awk '{print $1}'`
+
+#echo "line1=$line1"
+#echo "line2=$line2"
+
+# The greatest number of lines is used as the max number of lines
+if [ $line1 -gt $line2 ]; then
+    line=$line1
+else
+    line=$line2
+fi
+
+# Counters t= total iterations, j = successful matches
+t=1
+j=1
+
+### PROCESS ###
+# While our counter, $t is less than our greatest line number
+while [ $t -lt $line ]; do
+    # Declaring name1 and name2, strings to compare
+    # Default value of null in case we run out of lines
+    name1="null"
+    name2="null"
+    name1=`awk -v "n=$j" '(NR==n) {print $1}' $file1 `
+    name2=`awk -v "n=$j" '(NR==n) {print $1}' $file2 `
+
+    # If name1 is empty, break
+    if [ -z "$name1" -a "${name1+x}" = "x" ]; then
+ 	    break
+    fi
+    # If name2 is empty, break
+    if [ -z "$name2" -a "${name2+x}" = "x" ]; then
+ 	    break
+    fi
+
+    if [ $name1 == $name2 ]; then
+
+        # Declare their values (delta G in column 2)
+        value1=`awk -v "n=$j" '(NR==n) {print $2}' $file1 `
+        value2=`awk -v "n=$j" '(NR==n) {print $2}' $file2 `
+
+        # Output the desired format
+        if [ $OPT_FIN -eq 1 ]; then
+            # Assuming format: 
+            # FileHandleSolvent1 dG1 charge1 type1 solvent1 area1
+            # FileHandleSolvent2 dG2
+            # Important Note: -F calculates dG automatically
+            echo `awk -v "n=$j" '(NR==n) {print $0}' $file1` $value2 > .venntemp
+            # .venntemp format:
+            # filehandlesolvent dG charge type solvent area dG'
+            # $1                $2 $3     $4   $5      $6   $7
+
+            awk '{printf("%30s %20.10f %10.2f %20.10f %2.0f %3s %20s %6.3f\n", $1, ($2 - $7), $2, $7, $3, $4, $5, $6)}' .venntemp
+            # Outputted format
+            # filehandlesolvent |dG - dG'| dG dG' charge type solvent area
+            # $1                $2         $3 $4  $5     $6   $7      $8
+        else
+            # Assuming format: 
+            # FileHandleSolvent1 dG1
+            # FileHandleSolvent2 dG2
+            echo "$name1  $value1  $value2" > .venntemp
+            awk '{printf("%30s %20.10f %20.10f\n",$1,$2,$3)}' .venntemp
+        fi
+        
+        # Cleanup and iterate
+        rm -f .venntemp
+        j=`echo $j + 1 | bc`
+        t=`echo $j + 1 | bc`
+    else
+
+        # Find out if name1 exists in file2 at all
+        grepc=`grep -c $name1 $file2`
+        if [ $grepc -eq 1 ]; then
+            # If it exists, find the line number, and delete all lines previous
+            # because the files are assumed to be sorted already
+            grepn=`grep -n $name1 $file2 | awk 'BEGIN { FS = ":" } ; {print $1}'`
+            grepn=`echo $grepn - 1 | bc `
+            sed -i "$j, $grepn d" $file2
+        else
+            # If the file does not exist, delete all lines up to line number j
+            sed -i "$j d" $file1
+        fi
+
+        # Iterate
+        t=`echo $j + 1 | bc`
+    fi
+done # venn process
+
+## _REMOVAL ##
+rm -f $realfile1.temp
+rm -f $realfile2.temp

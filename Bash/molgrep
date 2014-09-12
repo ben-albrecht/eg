@@ -1,0 +1,58 @@
+#!/bin/bash
+#//  file: molgrep
+#//
+#//  This script is designed to take any set of data with the molecule IDs (SolventFilename) and 
+#//  essentially `grep` any molecule type e.g. aqeuous, ion, cation, etc.
+#//
+#//  Programmer:  Ben Albrecht  albrecht.88@osu.edu
+#//
+#//  Revision history:
+#//      14-Feb-2013  original version
+#//
+#//  Contents:
+#//    OPTIONCONTROL_
+#//    FUNCTIONS_
+#//    MAIN_
+#//    FILEREMOVAL_
+#//    
+#//  Notes:
+#//	This script relies on MSD library, which is placed in bin
+#//	Usage: molgrep <MoleculeType> <Filename>
+#// 	Example: `molgrep aq dGfinal.txt` would grep all lines with aqueous molecules
+#//   To Do:
+#//   1. get it working 
+
+#//*************************************************************************
+
+
+
+
+if [ -z "$1" -o -z "$2" ]; then
+    echo "Try molgrep <MoleculeType> <Filename.dat>"
+    exit 1
+fi
+
+moltype=$1
+file=$2
+output=`echo $file | sed ' s/dat/out/ ' `
+lines=`wc -l $file | awk '{print $1}'` 
+i=0
+row=$((lines))
+#get the $molfile type
+#molfile="libmsd/MSDaqions.txt"
+molfile=`ls $HOME/bin/libmsd/*MSD$moltype* `
+#echo "molfile $molfile"
+eval molID=( $(cat $file | awk '{ printf("\"%s \" ", $1) }') )
+#eval molLINE=( $(cat $file | awk '{ printf("\"%s %s\" ", $1, $2) }') )
+eval molLINE=( $(cat $file | awk '{ printf("\"%s\" ", $0) }') )
+while [ $i -lt $row ]; do
+ array[$i]=`grep -c ${molID[$i]} $molfile` 
+ #echo "array ${array[$i]}"
+ if [ ${array[$i]} -eq 1 ]; then
+   echo ${molLINE[$i]} 
+ fi 
+ #echo "$i: ${array[$i]}"
+ #echo "$i: ${molID[$i]}"
+ i=`echo "$i + 1" | bc`  
+done
+#awk -v a="$A[*]" '{ }'

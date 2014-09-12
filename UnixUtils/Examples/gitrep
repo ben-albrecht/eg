@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# \e vs. \x1B is OS-dependent UHGGHGHGH
+# Little bash script to git up all repositories in $HOME/repos
+
+source ~/repos/scripts/lib/bash/colors.sh
+
+cd $HOME/repos
+
+for repo in `find . -mindepth 1 -maxdepth 1 -type d`
+do
+    echo -e "${Purple} ${repo} ${NC}"
+    (cd "${repo}" && git checkout -q master && git up -q)
+done
+
+# .dotfiles
+repo=$HOME/.dotfiles
+echo -e "${Purple} ~/.dotfiles ${NC}"
+(cd "${repo}" && git checkout -q master && git up -q)

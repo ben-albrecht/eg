@@ -1,0 +1,9 @@
+for MSDabs.txt:
+$10 = type (abs)
+$9 = solvation energy
+$8 = solvent (check for water, for aq)
+$4 = charge
+#3 = File Handle
+#2 = Number 
+$1 = SoluteSolvent
+

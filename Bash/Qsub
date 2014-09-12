@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+if [  -d "MainFiles" ]; then   #verifies MainFiles exists as a directory
+   echo "cd Mainfiles/"
+   cd MainFiles/
+fi
+for file in *.pbs; do
+	qsub $file
+	echo "qsub $file"
+done

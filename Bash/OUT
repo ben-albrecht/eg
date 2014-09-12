@@ -1,0 +1,143 @@
+#!/bin/bash
+################## COMMENTS ##################
+#//  file: OUT
+#//	This file takes the outputs in MainFiles and parses them back into their individual files
+#//  
+#//
+#//  Programmer:  Ben Albrecht  albrecht.88@osu.edu
+#//
+#//  Revision history:
+#//	28-Mar-2013 	original version (fuck it's 3:00am)
+#//  Contents:
+#//    FUNCTIONS_
+#//    MAIN_
+#//    
+#//  Notes:
+#//	Usage: OUT
+#//	Must be in a directory with updated Truhlar Database directories:
+#//   	Gaq / Gnonaq / Grel
+#// 	Example: `OUT` would format all files
+#//
+#//   To Do:
+#//   √. get it working 
+#//   1. Currently only supports Gaq - fuck
+#//     1.1 Check grep -c G2072 *out to see if Gnonaq is necessary
+#//   2. Get Grel functioning
+#//*************************************************************************
+
+
+cut_func () {
+    START=$1
+    END=$2
+    JCUR=$3
+    QCUR=$4
+     
+    # The Big Awk Command: cut out from line $T to line $B and stream to .out file
+    awk -v"T=$START" -v"B=$END" '{if(NR>=T && NR< B){print $0}}' "../MainFiles/Q"$QCUR"_"$JCUR".out" > $out_file
+}
+
+
+G_func () {
+    # Line number of (B)eginning of output $p, end of output $q
+    B=` grep -n "User input: $p of" ../MainFiles/Q_$j.out | sed -n 's/^\([0-9]*\)[:].*/\1/p' ` 
+    # Number of total outputs in file
+    FINAL=`grep -n "User input: " ../MainFiles/Q_$j.out | awk 'BEGIN{FS =":"}{ print $1}' | tail -1`
+    
+    if [ $(expr $T "-" 1) -eq $FINAL ]; then		# not sure about the first condition
+        echo "$(expr $T "-" 1) = $FINAL"	
+        B=`wc -l ../MainFiles/Q_$j.out | awk '{ print $1 }'` 
+    fi
+
+    echo "cut_func $T $B $j"
+    cut_func $T $B $j 
+
+    # When the current output = the final output, set $B = end of file
+    
+    # echo "awk -v\"T=$T\" -v\"B=$B\" '{..i=$i.}' ../MainFiles/Q_$j.out > $out_file"
+
+    let "T=B+1"
+    let "i+=1"
+    let "q=i%100"
+    let "p=q+1"
+    
+    if [ $q -eq 1 ] ; then
+        let "j+=1"
+        T=0
+    fi
+}
+
+
+G58_func () {
+    B58=` grep -n "User input: $p58 of" ../MainFiles/Q58_$j58.out | sed -n 's/^\([0-9]*\)[:].*/\1/p' `
+    FINAL58=`grep -n "User input: " ../MainFiles/Q58_$j58.out | awk 'BEGIN{FS =":"}{ print $1}' | tail -1`
+
+    if [ $(expr $T58 "-" 1) -eq $FINAL58 ]; then		# not sure about the first condition
+        echo "$(expr $T58 "-" 1) = $FINAL58"	
+        B58=`wc -l ../MainFiles/Q58_$j58.out | awk '{ print $1 }'` 
+    fi
+
+    echo "cut_func $T58 $B58 $j58 58"
+    cut_func $T58 $B58 $j58 58
+
+    #  grep "comment" $out_file
+    let "T58=B58+1"
+    let "i58+=1"
+    let "q58=i58%5"
+    let "p58=q58+1"
+    
+    if [ $q58 -eq 1 ] ; then
+        let "j58+=1"
+        T58=0
+    fi
+}
+
+
+out_func () {
+    # $1 = Directory
+    # Creating MainFiles if it does not exist
+    if [ ! -d "MainFiles" ]; then	#verifies MainFiles exists as a directory
+        echo "MainFiles does not exist:"
+        exit 1
+    fi
+    echo "cd $1"
+    cd $1
+    
+    for file in *.g03 ; do  
+        file_name=`ls $file | sed ' s/g03//' `
+        directory=`grep -i "DIRECTORY:" $file | awk '{print $2}' `
+        solvent=`grep -i "SOLVENT:" $file | awk '{print $2}' `	#unused
+        inp_file=`ls $file | sed ' s/g03/in/' `
+        out_file=`ls $file|sed ' s/g03/out/ ' `	#unused
+        if [ $directory == "G58_aq_neu" ] ; then
+            G58_func 	# 5 per file, because G58 files are large solutes
+        else
+            G_func		# 100 per file because mostly small solutes
+        fi
+    done
+
+    echo "cd ../"
+    cd ../
+}
+
+
+############# MAIN_  #################   
+
+#Counters
+ #out_func ()
+  T=0
+  B=2 
+  i=1	#Input File G
+  j=1	#Input File Q
+  q=1	# q mod 100 = 1 -> new file Q
+  p=2   
+
+  T58=0
+  B58=2 
+  i58=1	#Input File G
+  j58=1	#Input File Q
+  q58=1	# q mod 5 = 1 -> new file Q
+  p58=2   
+
+    out_func Gaq
+    
+    # grep -c G2072 *out

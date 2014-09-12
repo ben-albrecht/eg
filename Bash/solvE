@@ -1,0 +1,193 @@
+#!/bin/bash
+#//  file: SolvE
+#//
+#//  This script is an attempt to unify all my versions of EnergyCalculator and Sort.sh  (deprecated)
+#//  into one script, which can be called from anywhere (as long as EneryComputations and the targets are present!)
+#//  The overall goal is to consolidate and compute solvation energies of outputted files
+#//  Programmer:  Ben Albrecht  albrecht.88@osu.edu
+#//
+#//  Revision history:
+#//      4-Mar-2013  original version
+#//
+#//  Contents:
+#//	FUNCTIONS_    
+#//	MAIN_
+#//    _
+#//    
+#//    
+#//    
+#//  Notes:
+#//     Usage: solvE [Directory*]
+#//     Must be one directory above updated Truhlar Database directories:
+#//     Gaq / Gnonaq / Grel
+#//     Example: `solvE 6B3LYP` would calculate Solvation Energies of all directories containing 6B3LYP with gas calcs from B3LYP. 
+#//     Caps options are unique situations
+#//   To Do:
+#//   √. get it working 
+#//   √. Update error messages and make more reliable/helpful 
+#//   √. Implement Sort.sh , and reorganize EnergyComputations
+#//   4. Get it working for relative energies (probably never going to happen)
+#//*************************************************************************
+       
+################ FUNCTIONS_  ################# 
+gas_func () 	
+{	
+	# Determines which gas-phase directory to use, must be a template.in present
+    B3LYP=`grep -ci B3LYP $folder/template.in`
+    HF=`grep -ci HF $folder/template.in`
+    PW=`grep -ci PW $folder/template.in`
+        
+	if [ $B3LYP -eq 1 ]; then
+		echo B3LYP
+                GAS="1B3LYP/ENERGY_1B3LYP.txt"
+		gasbasis=`grep -i BASIS 1B3LYP/template.in | awk '{print $2}'`
+        elif [ $PW -eq 1 ]; then
+		echo PW
+		GAS="1PW/ENERGY_1PW.txt"
+		gasbasis=`grep -i BASIS 1PW/template.in | awk '{print $2}'`
+	elif [ $HF -eq 1 ]; then
+		echo HF
+                GAS="1HF/ENERGY_1HF.txt"
+		gasbasis=`grep -i BASIS 1HF/template.in | awk '{print $2}'`
+	else
+		echo "Please enter the path (from Project1) to GAS energies"
+		read GAS
+        fi
+
+	pcmbasis=`grep -i BASIS $folder/template.in | awk '{print $2}'`
+
+	echo "Using gas-phase energies from $GAS"
+
+	if [ $pcmbasis != $gasbasis ]; then
+		echo "WARNING: BASIS SETS DO NOT MATCH:"
+		echo "gasbasis: $gasbasis"
+		echo "pcmbasis: $pcmbasis"
+		exit 1;
+	else
+		echo "Basis sets match:"
+		echo "gasbasis: $gasbasis"
+		echo "pcmbasis: $pcmbasis"
+	fi
+	
+}                                                       
+
+
+
+plot_func ()
+{
+    # Generates plot file for Solv E vs Solv E'
+    # Once data files are generated, this produces a plot file for them
+    Category=$1
+    col1="\$4"
+    col2="\$3"
+    arg=$1
+    DestinationPlt="$folder/analysis/solv_plots/$Category.plt"
+    echo "set title \"$Category Benchmarks\""                       >> $DestinationPlt 
+    echo "n1 = \""#0000CD"\"; n2 = \""#4671d5"\";"                  >> $DestinationPlt 
+    echo "i1 = \""#8B0000"\"; i2 = \""#CD5C5C"\";"                  >> $DestinationPlt  
+    echo "set auto x"                                               >> $DestinationPlt 
+    echo "set xlabel \"Q-Chem Calculation/kcal/mol\""               >> $DestinationPlt 
+    echo "set ylabel \"Truhlar Database/kcal/mol\""                 >> $DestinationPlt 
+    echo "set autoscale y"                                          >> $DestinationPlt 
+    echo "set key bottom right"                                     >> $DestinationPlt 
+    if [ $1 == "Results" ]; then
+        arg=""
+        echo "plot '../raw/Neutral.dat' using (\$4):(\$3) \\"         >> $DestinationPlt
+        echo "ti \"$folder Neutral\" lc rgb n1 pt 2,\\"               >> $DestinationPlt 
+        echo "'../raw/Ion.dat' using (\$4):(\$3) \\"                  >> $DestinationPlt
+        echo "ti \"$folder Ion\" lc rgb i1 pt 2"                      >> $DestinationPlt 
+        cat $folder/analysis/raw/Results.dat | sort.awk -v"opt=$arg" > $folder/analysis/raw/Numbers.dat
+    else
+        echo "plot '"../raw/$Category".dat' using ($col1):($col2) \\" >> $DestinationPlt 
+        echo "ti \"$folder $Category\" lc rgb n1 pt 2"                >> $DestinationPlt 
+        cat $folder/analysis/raw/Results.dat | sort.awk -v"opt=$arg" > $folder/analysis/raw/$Category.dat
+    fi
+
+}
+
+################ MAIN_  ################# 
+
+# Initial Checks
+correctpwd=`ls | grep -c "EnergyComputations"`
+if [ $correctpwd -eq 0 ]; then
+  echo "/EnergyComputations/ not present"
+  echo "See Shell Script for Help"
+  exit 1
+fi
+if [ -z  $1  ]; then
+  echo "Please specify a directory"
+  echo "See Shell Script for Help"
+  exit 1
+fi
+num=$1
+for check in $num* ; do
+    echo "$check"
+done
+echo "is this correct? ctrl-c to kill"
+read req
+	
+
+############################
+
+#declaring PCM, TRANSFER, and GAS energy files 	
+	
+for folder in $num* ; do
+
+
+    # Creating analysis directories
+    if [ -d $folder/analysis ]; then
+        rm -rf $folder/analysis
+    fi
+
+    mkdir $folder/analysis
+    mkdir $folder/analysis/raw
+    mkdir $folder/analysis/tables
+    mkdir $folder/analysis/mue_plots
+    mkdir $folder/analysis/solv_plots
+
+	PCM="$folder/ENERGY_$folder.txt"
+    if [ -e "$folder/ENERGY_$folder"\_"TRANSFER.txt" ]; then
+        TRANSFER="$folder/ENERGY_$folder"\_"TRANSFER.txt"
+	fi
+
+	gas_func
+	#echo "vennpasting $PCM and $GAS > EnergyComputations/QdG/QdG_$folder.txt ....."	
+	#vennpaste $PCM $GAS | awk '{printf("%30s %20.10f\n",$1, 627.50947*($3 - $2))}' > EnergyComputations/QdG/QdG_$folder.txt
+	echo "vennpasting $PCM and $GAS > $folder/analysis/raw/QChemSolv_$folder.dat"	
+	vennpaste $PCM $GAS | awk '{printf("%30s %20.10f\n",$1, 627.50947*($2 - $3))}' > $folder/analysis/raw/QChemSolv_$folder.dat
+
+	# Tack on the transfer energies
+    if [ -a "$folder/ENERGY_$folder"\_"TRANSFER.txt" ]; then
+	    cat $TRANSFER .temp > .temp1
+	    echo "Transfer Energies detected"
+	fi
+
+	# Declaring our dGs and MSD dGs energy files 	
+    QdG="$folder/analysis/raw/QChemSolv_$folder.dat"
+	cp EnergyComputations/2MSD/MSDnew.dat $folder/analysis/raw/MSDnew.dat
+    MdG="$folder/analysis/raw/MSDnew.dat"
+	#cp EnergyComputations/2MSD/MSDsort.txt $folder/analysis/raw/MSDsort.dat
+    #MdG="$folder/analysis/raw/MSDsort.dat"
+	echo "vennpasting $MdG and $QdG > $folder/analysis/raw/FinalSolv_$folder.dat"
+	vennpaste -F $MdG $QdG > $folder/analysis/raw/Results.dat
+    # awk '{printf("%30s %20.10f\n",$1,($3 - $2))}' $folder/analysis/raw/finalsort.dat  > $folder/analysis/raw/FinalSolv_$folder.dat
+
+	# Second column of 3Plot data, Experimental Energies and Combination of both
+#   awk '{print $2}' $file2 > EnergyComputations/3Plots/msd.temp
+#	paste EnergyComputations/3Plots/calc_energies.temp EnergyComputations/3Plots/msd.temp > EnergyComputations/3Plots/data_$folder.MSD.txt
+ 
+	echo "Solvation Energy Errors Computed for $PCM [Truhlar - Q-Chem]"
+	echo "Computing MUE data"
+
+	echo "Solvation Energies Computed for $PCM [GAS - PCM]"
+
+    plot_func Neutral
+    plot_func Ion
+    plot_func Anion
+    plot_func Cation
+    plot_func Results
+    #plot_func AqIon
+    #plot_func NonAqIon
+    #plot_func AqNeutral
+    #plot_func NonAqNeutral
+done

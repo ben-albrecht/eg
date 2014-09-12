@@ -1,0 +1,23 @@
+$rem
+EXCHANGE b3lyp
+BASIS 6-31+G*
+SVP on
+SVP_PATH 1
+MAX_SCF_CYCLES 100
+$end
+
+$svp
+RHOISO=0.001
+DIELST=78.360000
+NPTLEB=1202
+ITRNGR=2
+IROTGR=2
+IPNRF=1
+$end
+
+$molecule
+$end
+
+$comment
+$end
+@@@
