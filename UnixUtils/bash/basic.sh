@@ -3,11 +3,13 @@
 
 # Variable assignment
 
-this="this"
+this="whatever"
+that=10
 #  ^^^ Note the whitespace
 #      this = "this" will NOT work
 
 echo "$this is a variable"
+echo '$this is a variable'
 echo "${this}IS a variable too"
 
 

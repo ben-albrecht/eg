@@ -45,3 +45,4 @@ Regex               Matches                 Does not match
 [^ab]               c, d, z                 ab
 ^[1-9][0-9]*$       Any positive integer    Zero, negative or decimal numbers
 [0-9]*[,.]?[0-9]+   .1, 1, 1.2, 100,000     12.
+
