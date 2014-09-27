@@ -14,9 +14,12 @@ class PhysicalObject(pyglet.sprite.Sprite):
 
         self.velocity_x, self.velocity_y =0.0, 0.0
         self.dead = False
-        self.new_objects = []
         self.reacts_to_bullets = True
         self.is_bullet = False
+        self.name = "PhysicalObject"
+
+        self.new_objects = []
+        self.event_handlers = []
         
 
     def update(self, dt):
@@ -60,6 +63,8 @@ class PhysicalObject(pyglet.sprite.Sprite):
 
 
     def handle_collision_with(self, other_object):
-        self.dead = True
-        pass
+        if other_object.__class__ == self.__class__:
+            self.dead = False
+        else:
+            self.dead = True
 
