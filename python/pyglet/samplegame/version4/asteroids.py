@@ -35,7 +35,9 @@ game_objects = [player_ship] + asteroids
 # Question - What is an event handler?
 # Well, this is pushing player_ship into the event stack
 # game_window.push_handlers(player_ship)
-game_window.push_handlers(player_ship.key_handler)
+for obj in game_objects:
+    for handler in obj.event_handlers:
+        game_window.push_handlers(handler)
 
 
 @game_window.event
@@ -46,8 +48,14 @@ def on_draw():
     
         
 def update(dt):
+
+    to_add = []
+
     for obj in game_objects:
         obj.update(dt)
+        to_add.extend(obj.new_objects)
+        obj.new_objects = []
+
     for i in xrange(len(game_objects)):
         for j in xrange(i+1, len(game_objects)):
 
@@ -65,6 +73,8 @@ def update(dt):
 
         # Remove object from our object list
         game_objects.remove(to_remove)
+
+    game_objects.extend(to_add) 
 
 
 
