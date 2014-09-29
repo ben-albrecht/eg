@@ -9,9 +9,9 @@ class PhysicalObject(pyglet.sprite.Sprite):
         self.dimensions = [1920, 1080]
         self.name = "cell"
         self.min_y = self.image.height/2
-        self.max_y = self.dimensions[1]  - self.image.height/2
-        self.min_x = self.dimensions[0]/5 + self.image.width/2
-        self.max_x = self.dimensions[0] - self.image.width/2
+        self.max_y = self.dimensions[1]/2  - self.image.height/2
+        self.min_x = self.dimensions[0]/10 + self.image.width/2
+        self.max_x = self.dimensions[0]/2 - self.image.width/2
 
 
     def check_bounds(self):
