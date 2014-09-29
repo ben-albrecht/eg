@@ -3,14 +3,20 @@ from pyglet.window import key
 from game import resources, cell, util, rectangle
 
 # TODO: Auto-Detect Display pixels (not same as resolution)
-# macbookpro 13'' =1280x800
-win_width = 640
-win_height = 400
+# macbookpro 13'' =1280x800 (640, 400)
+
+dimensions = util.get_dimensions()
+win_width = dimensions[0]/2
+win_height = dimensions[1]/2
+game_width = win_width/5 + 1
+game_height = win_height
+
+print dimensions[0], dimensions[1]
+
+win = pyglet.window.Window(win_width , win_height)
+
 #display = pyglet.window.get_platform().get_default_display()
 #screens = pyglet.display.get_screens()
-win = pyglet.window.Window(win_width , win_height)
-#win = pyglet.window.Window(fullscreen = True)
-
 main_batch = pyglet.graphics.Batch()
 
 win_label = pyglet.text.Label(text = "Random Walk Version 1.0",
@@ -20,9 +26,13 @@ win_label = pyglet.text.Label(text = "Random Walk Version 1.0",
                                  batch = main_batch)
 cell_counter = 0
 cells = []
-while cell_counter < 5000:
-    cells.append(cell.Cell(x=random.randint(300, 500), y=random.randint(0, 400), batch=main_batch))
+num_cells = 100
+while cell_counter < num_cells:
+    cells.append(cell.Cell(x=random.randint(game_width, win_width), y=random.randint(0, win_height), batch=main_batch))
+    cells[cell_counter].name = "test"
+    # cells[cell_counter].dimensions = dimensions # Doesn't work
     cell_counter += 1
+
 
 #Cell_1 = cell.Cell(x=win_width/2, y=win_height/2, batch=main_batch)
 key_handler = key.KeyStateHandler()

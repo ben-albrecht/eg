@@ -5,28 +5,27 @@ class PhysicalObject(pyglet.sprite.Sprite):
 
     def __init__(self, name="physical object", *args, **kwargs):
         super(PhysicalObject, self).__init__(*args, **kwargs)
-        self.name = name
-
+        # Eventually I'll make a window class with shared memory for physical objects to access
+        self.dimensions = [1920, 1080]
+        self.name = "cell"
+        self.min_y = self.image.height/2
+        self.max_y = self.dimensions[1]  - self.image.height/2
+        self.min_x = self.dimensions[0]/5 + self.image.width/2
+        self.max_x = self.dimensions[0] - self.image.width/2
 
 
     def check_bounds(self):
         """
         Check boundaries of window
         """
-        win_width = 640
-        win_height = 400
-        min_x = 82 + -self.image.width/2
-        min_y = -self.image.height/2
-        max_x = win_width + self.image.width/2
-        max_y = win_height + self.image.width/2
-        if self.x < min_x:
-            self.x = min_x
-        elif self.x > max_x:
-            self.x = max_x
-        if self.y < min_y:
-            self.y = min_y
-        elif self.y > max_y:
-            self.y = max_y
+        if self.x < self.min_x:
+            self.x = self.min_x
+        elif self.x > self.max_x:
+            self.x = self.max_x
+        if self.y < self.min_y:
+            self.y = self.min_y
+        elif self.y > self.max_y:
+            self.y = self.max_y
 
 
     def update(self, dt):

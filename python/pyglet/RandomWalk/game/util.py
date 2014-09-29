@@ -1,4 +1,4 @@
-import pyglet, math
+import pyglet, math, Tkinter
 
 def distance(point_1=(0, 0), point_2=(0, 0)):
     """Returns the distance between two points"""
@@ -11,4 +11,17 @@ def center_image(image):
     """Sets an image to its center"""
     image.anchor_x = image.width / 2
     image.anchor_y = image.height / 2
+
+def get_dimensions():
+    # TODO: test on Mac & Windows
+    t = Tkinter.Tk()
+    t.attributes("-alpha", 00)
+    t.attributes('-fullscreen', True)
+    t.update()
+    dim = [t.winfo_width(), t.winfo_screenheight()]
+    t.destroy()
+    return dim
+
+
+
 
