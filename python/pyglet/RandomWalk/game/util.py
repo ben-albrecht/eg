@@ -1,4 +1,5 @@
-import pyglet, math, Tkinter
+import pyglet, math, Tkinter, sys
+
 
 def distance(point_1=(0, 0), point_2=(0, 0)):
     """Returns the distance between two points"""
@@ -14,12 +15,22 @@ def center_image(image):
 
 def get_dimensions():
     # TODO: test on Mac & Windows
-    t = Tkinter.Tk()
-    t.attributes("-alpha", 00)
-    t.attributes('-fullscreen', True)
-    t.update()
-    dim = [t.winfo_width(), t.winfo_screenheight()]
-    t.destroy()
+    if sys.platform == 'darwin':
+        # Mac
+        #print NSScreen.mainScreen().frame()
+        #dim  
+        #NSScreen.mainScreen().frame().width
+        #NSScreen.mainScreen().frame().height
+        # macbookpro 13'' =1280x800 (640, 400)
+        dim = [1280, 800]
+    else:
+        # Linux
+        t = Tkinter.Tk()
+        t.attributes("-alpha", 00)
+        t.attributes('-fullscreen', True)
+        t.update()
+        dim = [t.winfo_width(), t.winfo_screenheight()]
+        t.destroy()
     return dim
 
 

@@ -2,9 +2,7 @@ import pyglet, random, math
 from pyglet.window import key
 from game import resources, cell, util, rectangle
 
-# TODO: Auto-Detect Display pixels (not same as resolution)
-# macbookpro 13'' =1280x800 (640, 400)
-
+# TODO: Create Window object and encapsulate this shit!!
 dimensions = util.get_dimensions()
 win_width = dimensions[0]/2
 win_height = dimensions[1]/2
@@ -28,16 +26,19 @@ cell_counter = 0
 cells = []
 num_cells = 100
 while cell_counter < num_cells:
-    cells.append(cell.Cell(x=random.randint(game_width, win_width), y=random.randint(0, win_height), batch=main_batch))
-    cells[cell_counter].name = "test"
-    # cells[cell_counter].dimensions = dimensions # Doesn't work
+    cells.append(cell.Cell(scale=random.randint(5,20)*0.1,
+                           name="Cell_"+str(cell_counter),
+                           x=random.randint(game_width, win_width),
+                           y=random.randint(0, win_height),
+                           batch=main_batch))
     cell_counter += 1
+    
 
 
-#Cell_1 = cell.Cell(x=win_width/2, y=win_height/2, batch=main_batch)
 key_handler = key.KeyStateHandler()
 event_handler = key_handler
 win.push_handlers(event_handler)
+
 fullscreen = False
 pause = False
 
@@ -56,6 +57,8 @@ def on_mouse_press(x, y, button, modifiers):
     for obj in game_objects:
         if obj.hit_test(x, y):
             print obj.name
+            print obj.scale_inv
+            print obj.image.width
             clicked = True
             break
         

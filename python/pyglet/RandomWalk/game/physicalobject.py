@@ -7,7 +7,6 @@ class PhysicalObject(pyglet.sprite.Sprite):
         super(PhysicalObject, self).__init__(*args, **kwargs)
         # Eventually I'll make a window class with shared memory for physical objects to access
         self.dimensions = [1920, 1080]
-        self.name = "cell"
         self.min_y = self.image.height/2
         self.max_y = self.dimensions[1]/2  - self.image.height/2
         self.min_x = self.dimensions[0]/10 + self.image.width/2

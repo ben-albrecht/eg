@@ -4,33 +4,36 @@ from game import resources, physicalobject
 
 class Cell(physicalobject.PhysicalObject):
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, scale=1.0, name="Cell", *args, **kwargs):
         super(Cell, self).__init__(img=resources.cell_image, *args, **kwargs)
+        self.scale = scale
+        self.name = name
         self.step_size = 1
-        self.name = "Cell"
+        self.scale_inv = 1.0/self.scale
 
 
     def update(self, dt):
         axis = random.randint(0,1)
         direction = random.randint(0,1)
-        if axis == 0:
-            if direction == 0:
-                self.x += self.step_size
+        if random.random() < self.scale_inv:
+            if axis == 0:
+                if direction == 0:
+                    self.x += self.step_size
+                else:
+                    self.x += -self.step_size
             else:
-                self.x += -self.step_size
-        else:
-            if direction == 0:
-                self.y += self.step_size
-            else:
-                self.y += -self.step_size
+                if direction == 0:
+                    self.y += self.step_size
+                else:
+                    self.y += -self.step_size
         super(Cell, self).update(dt)
 
 
     def hit_test(self, x, y):
-        if x < self.x + self.image.width/2 and \
-            x > self.x - self.image.width/2 and \
-            y < self.y + self.image.height/2 and \
-            y > self.y - self.image.height/2:
+        if x < self.x + self.image.width*self.scale/2 and \
+            x > self.x - self.image.width*self.scale/2 and \
+            y < self.y + self.image.height*self.scale/2 and \
+            y > self.y - self.image.height*self.scale/2:
                 return True
         else:
             return False
