@@ -1,8 +1,19 @@
 import pyglet
 from game import window
+import cProfile
+import pstats
+
 
 win = window.Window()
 
-if __name__ == '__main__':
-    pyglet.clock.schedule_interval(win.update, 1/120.0)
+def main():
+    pyglet.clock.schedule_interval(win.update, 1/60.0)
     pyglet.app.run()
+
+
+if __name__ == '__main__':
+    cProfile.run('main()', 'restats')
+    p = pstats.Stats('restats')
+    #p.strip_dirs().sort_stats(-1).print_stats()
+    p.strip_dirs().sort_stats('cumulative').print_stats(40)
+

@@ -31,6 +31,7 @@ class Window(pyglet.window.Window):
         # Cosmetics
 
         self.Fullscreen = False
+        self.fps_display = pyglet.clock.ClockDisplay()
         #self.label = pyglet.text.Label(text = "Random Walk Version 1.0",
         #                         anchor_x = 'center',
         #                         x = self.Width / 2,
@@ -42,9 +43,9 @@ class Window(pyglet.window.Window):
 
     def on_draw(self):
             self.clear() #clears the screen
-            rect = rectangle.Rectangle(0, 0, self.Width/5, self.Height, self.batch)
             self.batch.draw()
-
+            rect = rectangle.Rectangle(0, 0, self.Width/5, self.Height, self.batch)
+            self.fps_display.draw()
 
     def on_mouse_press(self, x, y, button, modifiers):
         clicked = False
