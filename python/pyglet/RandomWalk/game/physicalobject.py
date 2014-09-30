@@ -3,14 +3,19 @@ from game import resources, util
 
 class PhysicalObject(pyglet.sprite.Sprite):
 
-    def __init__(self, name="physical object", *args, **kwargs):
+    def __init__(self, box=[1920, 1080], name="physical object", *args, **kwargs):
         super(PhysicalObject, self).__init__(*args, **kwargs)
         # Eventually I'll make a window class with shared memory for physical objects to access
-        self.dimensions = [1920, 1080]
-        self.min_y = self.image.height/2
-        self.max_y = self.dimensions[1]/2  - self.image.height/2
-        self.min_x = self.dimensions[0]/10 + self.image.width/2
-        self.max_x = self.dimensions[0]/2 - self.image.width/2
+        #self.dimensions = [1920, 1080]
+
+        self.min_x = box[0] + self.image.width/2
+        self.min_y = box[1] + self.image.height/2
+
+        self.max_x = box[2] - self.image.width/2
+        self.max_y = box[3] - self.image.height/2
+        self.dx = 0
+        self.dy = 0
+        self.scale = 1.0
 
 
     def check_bounds(self):
@@ -27,5 +32,20 @@ class PhysicalObject(pyglet.sprite.Sprite):
             self.y = self.max_y
 
 
+    def collides_with(self, other_object):
+        collision_distance = (self.image.width / 2)*self.scale + self.scale * other_object.image.width / 2
+        actual_distance = util.distance(self.position, other_object.position)
+        return (actual_distance <= collision_distance)
+
+
+    def handle_collision_with(self, other_object):
+        if other_object.__class__ == self.__class__:
+            # Take move back from this dt
+            self.set_position(self.x - self.dx, self.y - self.dy)
+        else:
+            pass
+
+
     def update(self, dt):
        self.check_bounds()
+
