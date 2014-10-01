@@ -23,8 +23,8 @@ class Window(pyglet.window.Window):
 
         self.batch = pyglet.graphics.Batch()
         self.pause = False
-        self.num_cells = 100
-        self.num_matter = 10
+        self.num_cells = 50
+        self.num_matter = 50
         self.game_box = [(self.Width/5)+1,
                          0,
                          self.Width,
@@ -66,7 +66,7 @@ class Window(pyglet.window.Window):
             if obj.hit_test(x, y):
                 print "name:", obj.name
                 print "size:", obj.scale
-                print "color:", obj.color
+                print "energy:", obj.energy
                 clicked = True
                 break
 
@@ -79,35 +79,9 @@ class Window(pyglet.window.Window):
         if self.pause == True:
             return
 
-        # Check for collisions TODO - Make this efficient!
-        for i in xrange(len(self.game_objects)):
-            for j in xrange(i+1, len(self.game_objects)):
-                obj_1 = self.game_objects[i]
-                obj_2 = self.game_objects[j]
-                #if not obj_1.dead and not obj_2.dead:
-                if obj_1.collides_with(obj_2):
-                    obj_1.handle_collision_with(obj_2)
-                    obj_2.handle_collision_with(obj_1)
-
-        # Start list of objects to add
-        to_add = []
-
-        # Update every object
-        for obj in self.game_objects:
-            obj.update(dt)
-            #to_add.extend(obj.new_objects)
-            #obj.new_objects = []
+        self.ObjectManager.update(dt)
 
 
-        # Remove any objects that died from game_objects and call obj.delete()
-        # If dying object is adding new objects, add them here as well
-        #for to_remove in [obj for obj in game_objects if obj.dead]:
-        #    to_add.extend(obj.new_objects)
-        #    to_remove.delete()
-        #    self.game_objects.remove(to_remove)
-
-        ## Add objects to be added
-        #self.game_objects.extend(to_add)
 
     def on_key_press(self, symbol, modifier):
         super(Window, self).on_key_press(symbol, modifier)

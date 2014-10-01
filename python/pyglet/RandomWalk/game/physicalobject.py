@@ -16,6 +16,7 @@ class PhysicalObject(pyglet.sprite.Sprite):
         self.dx = 0
         self.dy = 0
         self.scale = 1.0
+        self.dead = False
 
 
     def check_bounds(self):
@@ -38,14 +39,32 @@ class PhysicalObject(pyglet.sprite.Sprite):
         return (actual_distance <= collision_distance)
 
 
+    # Maybe handle collisions within each specific class?
     def handle_collision_with(self, other_object):
         if other_object.__class__ == self.__class__:
-            # Take move back from this dt
-            self.set_position(self.x - 3*self.dx, self.y - 3*self.dy)
+            # Bounce away
+            if self.x <= other_object.x:
+                dx = -1
+            else:
+                dx = 1
+            if self.y <= other_object.y:
+                dy = -1
+            else:
+                dy = 1
+            self.set_position(self.x + dx, self.y + dy)
+            other_object.set_position(other_object.x + dx, other_object.y + dy)
         else:
             pass
 
 
     def update(self, dt):
        self.check_bounds()
+
+    
+    def delete(self):
+        """ Delete object"""
+        #self.engine_sprite.delete() 
+        super(PhysicalObject, self).delete()
+
+
 

@@ -60,25 +60,36 @@ class ObjMgr():
     
         return self.game_objects
 
-        #matter_counter = 0 
-        #num_matter = 10
-        #while matter_counter < num_matter:
-        #    newmatter = matter.Matter(box=box,
-        #                        scale=random.randint(3,10)*0.1,
-        #                        name="Matter_"+str(matter_counter),
-        #                        x=random.randint(box[0], box[2]),
-        #                        y=random.randint(box[1], box[3]),
-        #                        batch=Batch)
-        #    collides = False
-        #    for i in xrange(len(cells)):
-        #        other_cell = cells[i]
-        #        if newmatter.collides_with(other_cell):
-        #            collides = True
-        #            break
-        #    if not collides:
-        #        cells.append(newmatter)
-        #        matter_counter += 1
     
-    
-    
+    def update(self, dt): 
+        # Efficiency: 
+        # (1) Only if an object is in self.has_moved[ ] will they check collision
+        # (2) Chop up game window into grid, and only check collisions with grid
         
+        for i in xrange(len(self.game_objects)):
+            for j in xrange(i+1, len(self.game_objects)):
+                obj_1 = self.game_objects[i]
+                obj_2 = self.game_objects[j]
+                if not obj_1.dead and not obj_2.dead:
+                    if obj_1.collides_with(obj_2):
+                        obj_1.handle_collision_with(obj_2)
+                        obj_2.handle_collision_with(obj_1)
+
+        # Start list of objects to add
+        #to_add = []
+
+        # Update every object
+        for obj in self.game_objects:
+            obj.update(dt)
+            #to_add.extend(obj.new_objects)
+            #obj.new_objects = []
+
+        # Remove any objects that died from game_objects and call obj.delete()
+        # If dying object is adding new objects, add them here as well
+        for to_remove in [obj for obj in self.game_objects if obj.dead]:
+        #    to_add.extend(obj.new_objects)
+             to_remove.delete()
+             self.game_objects.remove(to_remove)
+
+        ## Add objects to be added
+        #self.game_objects.extend(to_add)

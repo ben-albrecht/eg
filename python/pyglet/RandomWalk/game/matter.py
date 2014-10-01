@@ -3,7 +3,9 @@ from game import physicalobject, resources
 
 
 class Matter(physicalobject.PhysicalObject):
+
     def __init__(self, name="Matter", scale=1.0, *args, **kwargs):
+
         super(Matter, self).__init__(img=resources.cell_image, *args, **kwargs)
         self._set_color((25+random.randint(-25, 25), 155+random.randint(-50, 100), 25+random.randint(-25, 25)))
         self.scale = scale
@@ -48,4 +50,13 @@ class Matter(physicalobject.PhysicalObject):
         else:
             return False
 
+
+    def handle_collision_with(self, other_object):
+        super(Matter, self).handle_collision_with(other_object)
+        if "cell" in other_object.name:
+            if self.scale < 0.2:
+                self.dead = True
+                print self.name, " eaten by ", other_object.name
+            else:
+                self.scale += -0.1
 
