@@ -1,16 +1,15 @@
-import pyglet
-import random
-from game import resources, physicalobject
+import pyglet, random
+from game import physicalobject, resources
 
-class Cell(physicalobject.PhysicalObject):
 
-    def __init__(self, scale=1.0, name="Cell", *args, **kwargs):
-        super(Cell, self).__init__(img=resources.cell_image, *args, **kwargs)
+class Matter(physicalobject.PhysicalObject):
+    def __init__(self, name="Matter", scale=1.0, *args, **kwargs):
+        super(Matter, self).__init__(img=resources.cell_image, *args, **kwargs)
+        self._set_color((25+random.randint(-25, 25), 155+random.randint(-50, 100), 25+random.randint(-25, 25)))
         self.scale = scale
         self.name = name
         self.step_size = 1
         self.scale_inv = 1.0/self.scale
-        self._set_color((192+random.randint(-80,10), 192+random.randint(-40, 20), 192+random.randint(-10, 50)))
 
     def move(self):
         """ Random Walk code"""
@@ -35,7 +34,7 @@ class Cell(physicalobject.PhysicalObject):
         self.dx = movement[0]
         self.dy = movement[1]
         self.set_position(self.x + self.dx, self.y + self.dy)
-        super(Cell, self).update(dt)
+        super(Matter, self).update(dt)
 
 
 
@@ -48,4 +47,5 @@ class Cell(physicalobject.PhysicalObject):
                 return True
         else:
             return False
+
 

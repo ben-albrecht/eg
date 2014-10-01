@@ -1,14 +1,21 @@
 import pyglet, random, math
 from pyglet.window import key
-from game import resources, cell, util, rectangle, load
+from game import resources, cell, util, rectangle, objmgr
 
 class Window(pyglet.window.Window):
-    def __init__(self, *args, **kwargs):
+    """
+    The 'main' Class of the game for now.
+    This Class acts as the driver and calls
+    all the other classes in the game
+    """
 
+    def __init__(self, *args, **kwargs):
         # Core Functionality
         self.dimensions = util.get_dimensions()
         self.Width = self.dimensions[0]/2
         self.Height = self.dimensions[1]/2
+        self.Ratio = self.Width/float(self.Height)
+        print "Ratio", self.Ratio
         super(Window, self).__init__(self.Width,
                                      self.Height,
                                      caption='RandomWalk Version 1.0',
@@ -17,11 +24,17 @@ class Window(pyglet.window.Window):
         self.batch = pyglet.graphics.Batch()
         self.pause = False
         self.num_cells = 100
+        self.num_matter = 10
         self.game_box = [(self.Width/5)+1,
                          0,
                          self.Width,
                          self.Height]
-        self.game_objects = load.cells(self.game_box, self.num_cells, self.batch)
+        self.ObjectManager = objmgr.ObjMgr(self.game_box, self.batch)
+        self.game_objects = []
+        self.game_objects += self.ObjectManager.load(Type='cell', Num=self.num_cells)
+        self.game_objects += self.ObjectManager.load(Type='matter', Num=self.num_matter)
+        #self.game_objects = load.cells(self.game_box, self.num_cells, self.batch)
+
 
         # Pushing event handler to stack
         self.key_handler = key.KeyStateHandler()
@@ -61,19 +74,12 @@ class Window(pyglet.window.Window):
             print "Click"
 
     def update(self, dt):
-
-        print dt
         # TODO: Encapsulate keyboard handling into separate methods
-        if self.key_handler[key.SPACE]:
-            self.pause = not self.pause
 
         if self.pause == True:
             return
 
-        for obj in self.game_objects:
-            obj.update(dt)
-
-
+        # Check for collisions TODO - Make this efficient!
         for i in xrange(len(self.game_objects)):
             for j in xrange(i+1, len(self.game_objects)):
                 obj_1 = self.game_objects[i]
@@ -83,15 +89,60 @@ class Window(pyglet.window.Window):
                     obj_1.handle_collision_with(obj_2)
                     obj_2.handle_collision_with(obj_1)
 
-            if self.key_handler[key.P] and self.fullscreen == False:
-                self.fullscreen = True
-                self.set_fullscreen()
-                pyglet.gl.glScalef(2.0, 2.0, 2.0)
-                pyglet.gl.glTexParameteri(pyglet.gl.GL_TEXTURE_2D, pyglet.gl.GL_TEXTURE_MAG_FILTER, pyglet.gl.GL_NEAREST)
-                pyglet.gl.glTexParameteri(pyglet.gl.GL_TEXTURE_2D, pyglet.gl.GL_TEXTURE_MIN_FILTER, pyglet.gl.GL_NEAREST)
-            if self.key_handler[key.O] and self.fullscreen == True:
-                self.fullscreen = False
-                self.set_fullscreen(fullscreen=False)
-                pyglet.gl.glScalef(0.5, 0.5, 0.5)
-                pyglet.gl.glTexParameteri(pyglet.gl.GL_TEXTURE_2D, pyglet.gl.GL_TEXTURE_MAG_FILTER, pyglet.gl.GL_NEAREST)
-                pyglet.gl.glTexParameteri(pyglet.gl.GL_TEXTURE_2D, pyglet.gl.GL_TEXTURE_MIN_FILTER, pyglet.gl.GL_NEAREST)
+        # Start list of objects to add
+        to_add = []
+
+        # Update every object
+        for obj in self.game_objects:
+            obj.update(dt)
+            #to_add.extend(obj.new_objects)
+            #obj.new_objects = []
+
+
+        # Remove any objects that died from game_objects and call obj.delete()
+        # If dying object is adding new objects, add them here as well
+        #for to_remove in [obj for obj in game_objects if obj.dead]:
+        #    to_add.extend(obj.new_objects)
+        #    to_remove.delete()
+        #    self.game_objects.remove(to_remove)
+
+        ## Add objects to be added
+        #self.game_objects.extend(to_add)
+
+    def on_key_press(self, symbol, modifier):
+        super(Window, self).on_key_press(symbol, modifier)
+        if symbol == key.SPACE:
+            self.pause = not self.pause
+
+        if symbol == key.P and self.Fullscreen == False:
+            #self.Fullscreen = True
+            print "Full Screen Feature Broken!"
+            #self.rescale(2.0, 2.0)
+            #self.set_fullscreen()
+        if symbol == key.O and self.Fullscreen == True:
+            self.Fullscreen = False
+            #self.rescale(0.5, 0.5)
+            #self.set_fullscreen(fullscreen=False)
+
+
+    def on_resize(self, width, height):
+        super(Window, self).on_resize(width, height)
+
+        # Matain Ratio
+        self.width = self.Ratio*height
+
+        print "Old Window Width:", self.Width
+        print "Old Window Height", self.Height
+        print "New Window Width:", self.width
+        print "New Window Height", self.height
+
+        #self.rescale(float(self.width/self.Width), float(self.height/self.Height))
+
+        self.Width = self.width
+        self.Height = self.height
+
+
+    def rescale(self, width, height):
+        pyglet.gl.glScalef(width, height, 1.0)
+        pyglet.gl.glTexParameteri(pyglet.gl.GL_TEXTURE_2D, pyglet.gl.GL_TEXTURE_MAG_FILTER, pyglet.gl.GL_NEAREST)
+        pyglet.gl.glTexParameteri(pyglet.gl.GL_TEXTURE_2D, pyglet.gl.GL_TEXTURE_MIN_FILTER, pyglet.gl.GL_NEAREST)

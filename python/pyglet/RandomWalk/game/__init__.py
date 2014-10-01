@@ -1,1 +1,3 @@
-import resources, cell, util, physicalobject, window, load
+import resources, util
+import objmgr, window
+import physicalobject, cell, matter
