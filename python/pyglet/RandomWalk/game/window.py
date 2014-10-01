@@ -51,8 +51,9 @@ class Window(pyglet.window.Window):
         clicked = False
         for obj in self.game_objects:
             if obj.hit_test(x, y):
-                print obj.name
-                print obj.scale
+                print "name:", obj.name
+                print "size:", obj.scale
+                print "color:", obj.color
                 clicked = True
                 break
 
@@ -61,6 +62,7 @@ class Window(pyglet.window.Window):
 
     def update(self, dt):
 
+        print dt
         # TODO: Encapsulate keyboard handling into separate methods
         if self.key_handler[key.SPACE]:
             self.pause = not self.pause

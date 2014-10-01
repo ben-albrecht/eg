@@ -41,7 +41,7 @@ class PhysicalObject(pyglet.sprite.Sprite):
     def handle_collision_with(self, other_object):
         if other_object.__class__ == self.__class__:
             # Take move back from this dt
-            self.set_position(self.x - self.dx, self.y - self.dy)
+            self.set_position(self.x - 3*self.dx, self.y - 3*self.dy)
         else:
             pass
 

@@ -15,5 +15,5 @@ if __name__ == '__main__':
     cProfile.run('main()', 'restats')
     p = pstats.Stats('restats')
     #p.strip_dirs().sort_stats(-1).print_stats()
-    p.strip_dirs().sort_stats('cumulative').print_stats(40)
+    p.strip_dirs().sort_stats('cumulative').print_stats(20)
 

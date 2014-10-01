@@ -10,11 +10,11 @@ def cells(box, num_cells, Batch):
     # TODO: There is definitely a more efficient way to doing this
     while cell_counter < num_cells:
         newcell = cell.Cell(box=box,
-                               scale=random.randint(5,20)*0.1,
-                               name="Cell_"+str(cell_counter),
-                               x=random.randint(box[0], box[2]),
-                               y=random.randint(box[1], box[3]),
-                               batch=Batch)
+                            scale=random.randint(5,20)*0.1,
+                            name="Cell_"+str(cell_counter),
+                            x=random.randint(box[0], box[2]),
+                            y=random.randint(box[1], box[3]),
+                            batch=Batch)
         collides = False
         for i in xrange(len(cells)):
             other_cell = cells[i]
@@ -22,6 +22,7 @@ def cells(box, num_cells, Batch):
                 collides = True
                 break
         if not collides:
+            newcell._set_color((random.randint(0,255), random.randint(0,255), random.randint(0,255)))
             cells.append(newcell)
             cell_counter += 1
 
