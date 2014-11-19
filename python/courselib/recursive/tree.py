@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import turtle
 import random
@@ -16,8 +16,8 @@ def tree(branchLen, t, color):
 
     if branchLen > 5:
         # Slowly change initial color
-        a = t.pencolor()[0] + 600/branchLen
-        b = t.pencolor()[1] - 700/branchLen
+        a = t.pencolor()[0] #+ 600/branchLen
+        b = t.pencolor()[1] #- 700/branchLen
         c = t.pencolor()[2]
         newcolor = a,b,c
 
@@ -26,6 +26,7 @@ def tree(branchLen, t, color):
         Left = 2*Right
 
         # Random Branch Length
+        dLen = random.randint(15,15)
 
         try:
             t.pencolor(newcolor)
@@ -34,9 +35,9 @@ def tree(branchLen, t, color):
 
         t.forward(branchLen)
         t.right(Right)
-        tree(branchLen-15,t, newcolor)
+        tree(branchLen-dLen, t, newcolor)
         t.left(Left)
-        tree(branchLen-15,t, newcolor)
+        tree(branchLen-dLen, t, newcolor)
         t.right(Right)
 
         t.pencolor(color)
@@ -45,11 +46,23 @@ def tree(branchLen, t, color):
     else:
         print color
 
+
+def f(screen):
+    print "quit!"
+    screen.bye()
+    exit(1)
+
+
 def main():
 
     # Initialize turtle & screen
     t = turtle.Turtle()
     myWin = turtle.Screen()
+    #myWin.screensize(1000,1000)
+
+    # Want to make spacebar quit the program
+    #myWin.onkey(f, " ")
+    #myWin.listen()
 
     # Brush Speed
     t.speed(5)
@@ -61,10 +74,10 @@ def main():
     t.down()
 
     # Set colormode to (1-255) rgb (instead of 0-1)
-    turtle.colormode(255)
+    #turtle.colormode(255)
 
     # Intial Color (Bright Green)
-    original_color = (1, 200, 40)
+    original_color = (0.1, 1.0, 0.1)
     t.pencolor(original_color)
 
     # Start recursive function
