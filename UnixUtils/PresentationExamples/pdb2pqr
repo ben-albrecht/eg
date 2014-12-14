@@ -1,6 +1,0 @@
-#!/bin/bash
-
-
-
-python $HOME/apbs/pdb2pqr/pdb2pqr.py --ff=AMBER $1 $2
-

@@ -1,0 +1,78 @@
+#!/bin/sh
+
+
+################## OPTIONCONTROL_ ##################
+OPT_CLNUP=0
+while getopts "c" OPTION		# Possible Options -c
+do
+   case $OPTION in
+	c)  echo "formatting inputs of Gaq"
+            OPT_CLNUP=1;;	
+	\?) echo "Available options: -c (cleanup only)"
+		    exit 1;;			# error msg given
+   esac
+done
+################## FUNCTIONS_ ##################
+
+# Removing unwanted pbs error outputs
+rm -f *.o[0-9]*
+
+echo "OPT_CLNUP = $OPT_CLNUP"
+if [ $OPT_CLNUP -eq 1 ]; then
+    exit 1
+fi
+
+echo "--------------InFormat---------------"
+
+for Qmol in Q_*.in ; do
+    at=`grep @@@ $Qmol | wc -l`
+    at=`expr $at "+" 1`
+    re=`grep rem $Qmol | wc -l` 
+    if [ $at -eq $re ]; then
+        echo "$Qmol"
+    else
+        echo "@@@: $at"
+        echo "rem: $re" 
+        echo "$Qmol Failed"
+        echo " "
+    fi
+done
+
+for Q58mol in Q58_*.in ; do
+    at=`grep @@@ $Q58mol | wc -l`
+    at=`expr $at "+" 1` 
+    re=`grep rem $Q58mol | wc -l` 
+    if [ $at -eq $re ]; then
+        echo "$Q58mol"
+    else
+        echo "@@@: $at"
+        echo "rem: $re" 
+	    echo "$Q58mol Failed"
+    fi 
+done
+
+echo "----------------OutFormat------------------"
+
+for Q58mol in Q58_*.out ; do
+    ui=`grep "User input: " $Q58mol | wc -l`
+    ui=`expr $ui "+" 1` 
+    ty=`grep "Thank you " $Q58mol | wc -l` 
+    if [ $ui -eq $ty ]; then
+        echo "$Q58mol"
+    else
+        echo "$Q58mol : $ui - $ty = `expr $ui - $ty` Failed"
+        grep "fatal" $Q58mol 
+    fi 
+done
+
+for Qmol in Q_*.out ; do
+    ui=`grep "User input: " $Qmol | wc -l`
+    ui=`expr $ui "+" 1`
+    ty=`grep "Thank you " $Qmol | wc -l` 
+    if [ $ui -eq $ty ]; then
+        echo "$Qmol"
+    else
+        echo "$Qmol : $ui - $ty = `expr $ui - $ty` Failed"
+        grep "fatal" $Qmol 
+    fi
+done
