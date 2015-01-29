@@ -1,6 +1,5 @@
-# README #
-e.g.
-For Examples
+# Exempli Gratia #
+Code examples by me and for me.
 
 ### Summary ###
 
