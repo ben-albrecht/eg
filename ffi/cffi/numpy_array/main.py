@@ -12,7 +12,7 @@ def main():
 
     ffi = FFI()
     ffi.cdef("void copy(float *in, float *out, int len);")
-    C = ffi.dlopen("libcopy.so")
+    C = ffi.dlopen("./libcopy.so")
 
     # Create float32 numpy array
     a = 42 * np.ones(16, dtype=np.float32)
