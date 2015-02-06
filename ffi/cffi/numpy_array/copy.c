@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdio.h>
+#include "copy.h"
 
 void copy(float *in, float *out, int len) {
     int i;

@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-void foo(void)
+void foo()
 {
         puts("Hello, I'm a shared library");
 }
