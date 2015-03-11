@@ -1,0 +1,2 @@
+mpix
+qsub -I -q mpix -l nodes=1:ppn=16,walltime=1:00:00
