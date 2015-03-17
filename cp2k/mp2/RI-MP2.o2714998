@@ -1,0 +1,23 @@
+.bashrc: line 149: virtualenvwrapper.sh: No such file or directory
+=>> PBS: job killed: walltime 1819 exceeded limit 1800
+trying to remove /scratch/2714998.clusman0a.frank.sam.pitt.edu
++---------------------------------------------------------------------+
+|                        JOB INFORMATION                              |
++---------------------------------------------------------------------+
+|
+|  Date      : Tue Mar 10 15:07:32 EDT 2015
+|  Job ID    : 2714998.clusman0a.frank.sam.pitt.edu
+|  Username  : bja39
+|  Group     : dlambrecht
+|  Job Name  : RI-MP2
+|  Session   : 10111
+|  Limits    : neednodes=4:ppn=16,nodes=4:ppn=16,pmem=2000mb,walltime=00:30:00
+|  Resources : cput=31:47:48,energy_used=0,mem=57200160kb,vmem=101751580kb,walltime=00:30:20
+|  Disk      : 4.0K
+|  Queue     : idist_small
+|  Account   : cp2k2015
+|  Exit code : -11
+|  Local scr : /scratch/2714998.clusman0a.frank.sam.pitt.edu
+|  Node/cores: 264/16 265/16 266/16 267/16 
+|
+[---------------------------------------------------------------------]

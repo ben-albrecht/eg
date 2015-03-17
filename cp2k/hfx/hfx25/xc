@@ -1,0 +1,45 @@
+   ! specify the exchange and correlation treatment
+    &XC
+      ! use a PBE0 functional 
+      &XC_FUNCTIONAL
+       &PBE
+         ! 75% GGA exchange
+         SCALE_X 0.75
+         ! 100% GGA correlation
+         SCALE_C 1.0
+       &END PBE
+      &END XC_FUNCTIONAL
+      &HF
+        ! 25 % HFX exchange
+        FRACTION 0.25
+        &SCREENING
+          ! important parameter to get stable HFX calcs
+          EPS_SCHWARZ 1.0E-6
+          ! needs a good (GGA) initial guess 
+          SCREEN_ON_INITIAL_P TRUE
+        &END
+        &INTERACTION_POTENTIAL
+          ! for condensed phase systems
+          POTENTIAL_TYPE TRUNCATED
+          ! should be less than halve the cell
+          CUTOFF_RADIUS 6.0
+          ! data file needed with the truncated operator
+          T_C_G_DATA ./t_c_g.dat
+        &END
+        &MEMORY
+          ! In MB per MPI rank.. use as much as need to get in-core operation
+          MAX_MEMORY 4000
+          EPS_STORAGE_SCALING 0.1
+        &END
+      &END
+      ! adding Grimme's D3 correction (by default without C9 terms) 
+      &VDW_POTENTIAL
+         POTENTIAL_TYPE PAIR_POTENTIAL
+         &PAIR_POTENTIAL
+            PARAMETER_FILE_NAME dftd3.dat
+            TYPE DFTD3
+            REFERENCE_FUNCTIONAL PBE0
+            R_CUTOFF [angstrom] 16
+         &END
+      &END VDW_POTENTIAL
+    &END XC

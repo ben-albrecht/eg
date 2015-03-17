@@ -1,0 +1,48 @@
+
+ *** Local logger file of MPI task 20 in communicator 0 ***
+ *** PID      = 33113
+ *** Hostname = n264                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+ ===== Routine Calling Stack ===== 
+
+            3 hfx_create
+            2 quickstep_create_force_env
+            1 CP2K
+
+ **************************************************************************
+ *** 11:22:10 ERRORL2 in hfx_types:hfx_create processor 20  :: err=-300 ***
+ *** Truncated hfx calculation requested. The file containing the data  ***
+ *** could not be found at ./t_c_g.dat Please check T_C_G_DATA in the   ***
+ *** INTERCATION_POTENTIAL section                                      ***
+ **************************************************************************
+
+
+ ===== Routine Calling Stack ===== 
+
+            3 hfx_create
+            2 quickstep_create_force_env
+            1 CP2K
+
+ *** Local logger file of MPI task 20 in communicator 0 ***
+ *** PID      = 40441
+ *** Hostname = n248                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+ ===== Routine Calling Stack ===== 
+
+            3 hfx_create
+            2 quickstep_create_force_env
+            1 CP2K
+
+ **************************************************************************
+ *** 11:26:22 ERRORL2 in hfx_types:hfx_create processor 20  :: err=-300 ***
+ *** Truncated hfx calculation requested. The file containing the data  ***
+ *** could not be found at t_c_g.dat Please check T_C_G_DATA in the     ***
+ *** INTERCATION_POTENTIAL section                                      ***
+ **************************************************************************
+
+
+ ===== Routine Calling Stack ===== 
+
+            3 hfx_create
+            2 quickstep_create_force_env
+            1 CP2K

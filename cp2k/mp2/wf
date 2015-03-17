@@ -1,0 +1,23 @@
+      ! with WF correlation
+      &WF_CORRELATION
+        ! use the RI-GPW approach
+        METHOD  RI_RPA_GPW
+        &WFC_GPW
+        &END
+        &RI_RPA
+          ! number of quadrature points, essential for accurate energies.
+          ! small gap systems need more points
+          RPA_NUM_QUAD_POINTS  8
+          ! essentially always use minimax
+          MINIMAX
+          &HF
+            FRACTION 1.0000000
+            &SCREENING
+              EPS_SCHWARZ 1.0E-8
+              SCREEN_ON_INITIAL_P FALSE
+            &END SCREENING
+          &END HF
+        &END RI_RPA
+        MEMORY    1800
+        NUMBER_PROC  1
+      &END

@@ -1,0 +1,75 @@
+! Number of unit cell replications, increase this to create a large polymer.
+@SET NREPX 1
+@SET NREPY 1
+
+&GLOBAL
+  PROJECT 2d_polymer
+  RUN_TYPE ENERGY
+&END GLOBAL
+
+&FORCE_EVAL
+  &DFT
+    ! linear scaling SCF
+    &LS_SCF
+      ! TRS4, does not need an estimate for the chemical potential
+      PURIFICATION_METHOD TRS4
+      ! threshold used to determine sparsity and thus speed and accuracy
+      EPS_FILTER 1E-5  
+      ! convergence for the SCF
+      EPS_SCF    1E-5
+      ! chemical potential, an energy from within in the HOMO-LUMO gap
+      MU         -0.15 
+      S_PRECONDITIONER ATOMIC
+    &END
+
+    ! traditional SCF, diagonalization by default
+    &SCF
+    &END
+
+    &QS
+      LS_SCF  ! Turns on linear scaling DFT. Comment this line to run with standard SCF.
+
+      ! =============================================================================================
+      ! === Description of Hamiltonian (Density Functional Tight Binding + Smooth Particle Meshed Ewald) ===
+      METHOD DFTB
+      &DFTB
+        HB_SR_GAMMA 
+        SELF_CONSISTENT    T
+        DO_EWALD           T
+        DISPERSION         T
+        &PARAMETER
+          ! these parameters are in cp2k/data
+          PARAM_FILE_PATH  ./DFTB/scc
+          PARAM_FILE_NAME  scc_parameter
+          UFF_FORCE_FIELD  uff_table
+        &END PARAMETER
+      &END DFTB
+    &END QS
+
+    &POISSON
+      &EWALD
+       EWALD_TYPE SPME
+       ! scale the number of points with the system size, roughly 1pt/A.
+       GMAX 40*${NREPX} 40*${NREPY} 40
+       O_SPLINE 5
+      &END EWALD
+    &END POISSON
+   ! ==============================End of Hamiltonian Description ================================
+   ! =============================================================================================
+  &END DFT
+
+  
+  &SUBSYS
+    &CELL
+      ! a 2D system, z-direction is non-periodic
+      ABC 23.577999 40.8383 30
+      MULTIPLE_UNIT_CELL ${NREPX} ${NREPY} 1
+    &END CELL
+    &TOPOLOGY
+      MULTIPLE_UNIT_CELL ${NREPX} ${NREPY} 1
+    &END
+    &COORD
+@INCLUDE '2d_polymer.coord' 
+    &END COORD
+  &END SUBSYS
+&END FORCE_EVAL

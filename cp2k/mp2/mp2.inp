@@ -1,0 +1,140 @@
+&GLOBAL
+  PROJECT      benzene_dimer
+  RUN_TYPE     ENERGY
+&END GLOBAL
+
+&FORCE_EVAL
+  METHOD         Quickstep
+  &DFT
+    ! specification of basis and potential files (cp2k/data)
+    BASIS_SET_FILE_NAME    ./HFX_BASIS
+    POTENTIAL_FILE_NAME    ./HF_POTENTIALS
+    &MGRID
+      CUTOFF    400
+    &END MGRID
+
+    &QS
+      METHOD GPW
+      EPS_DEFAULT  1.0E-10
+      EPS_PGF_ORB  1.0E-8
+    &END QS
+
+    ! standard OT
+    &SCF
+      SCF_GUESS ATOMIC
+      EPS_SCF 1.0E-6
+      MAX_SCF 40
+      &OT
+        MINIMIZER       CG
+        PRECONDITIONER  FULL_SINGLE_INVERSE
+      &END
+      &OUTER_SCF
+        EPS_SCF 1.0E-6
+        MAX_SCF 10
+      &END
+    &END SCF
+
+    ! Non periodic calculation needs Poisson solver: use wavelet solver
+    &POISSON
+      PERIODIC NONE
+      PSOLVER  WAVELET
+    &END POISSON
+
+    &XC
+      ! no XC functional
+      &XC_FUNCTIONAL NONE
+      &END XC_FUNCTIONAL
+      ! and 100%HFX
+      &HF
+        FRACTION    1.0
+        &SCREENING
+          EPS_SCHWARZ          1.0E-9
+        &END SCREENING
+        &MEMORY
+          MAX_MEMORY  1800
+        &END
+      &END HF
+      ! with WF correlation
+      &WF_CORRELATION
+        ! use the RI-GPW approach
+        METHOD  RI_MP2_GPW
+        &WFC_GPW
+        &END
+        ! block sizes and memory affect parallel efficiency
+        &RI_MP2
+          BLOCK_SIZE       1
+        &END
+        MEMORY    1800
+        NUMBER_PROC  1
+      &END
+    &END XC
+  &END DFT
+
+  &SUBSYS
+    ! sufficiently large non-periodic unit cell
+    &CELL
+      ABC [angstrom]  15 15 15
+      PERIODIC NONE           ! Non periodic calculation.
+    &END CELL
+
+! specification of an external file with coordinates
+    &COORD
+  H         8.5709951714        6.1617188657        9.1769626364
+  C         8.0387778483        5.9757981379        8.2528397815
+  C         6.6427474511        5.9561428224        8.2430496957
+  H         6.0937543445        6.1249650636        9.1610309894
+  C         5.9546039990        5.7314555716        7.0475649921
+  H         4.8717398728        5.7196290593        7.0404902271
+  C         6.6635660065        5.5279574532        5.8611612413
+  H         6.1300650069        5.3536860275        4.9350551393
+  C         8.0615723757        5.5446390494        5.8709776417
+  H         8.6121087088        5.3836499080        4.9523278088
+  C         8.7479484762        5.7683467907        7.0666774749
+  H         9.8306982448        5.7893185194        7.0736980974
+  H         6.4284687494        8.8405192314        5.8228620343
+  H         8.9057373702        8.8752743844        5.8387264727
+  C         6.9607954533        9.0255100555        6.7471184900
+  C         8.3568440363        9.0439429763        6.7567676586
+  C         6.2520232187        9.2329626290        7.9335080936
+  C         9.0454365692        9.2673522387        7.9522880615
+  H         5.1692478273        9.2131682112        7.9263504668
+  H        10.1283042427        9.2780238064        7.9594286415
+  C         6.9387312641        9.4553058890        9.1292884396
+  C         8.3367433685        9.4704785560        9.1388664843
+  H         6.3883177411        9.6163935534       10.0479844468
+  H         8.8703567259        9.6435467092       10.0651664724
+    &END
+
+    ! keep atoms away from box borders,
+    ! a requirement for the wavelet Poisson solver
+    &TOPOLOGY
+      &CENTER_COORDINATES
+      &END
+    &END TOPOLOGY
+
+    ! MP2 needs correlation consistent basis set
+    ! RI-MP2 needs an auxiliary basis set
+    ! We employ HF pseudo potentials
+    &KIND H
+      BASIS_SET         cc-TZV2P-GTH
+      RI_AUX_BASIS_SET  TZ_fiodena_opt
+      POTENTIAL         GTH-HF-q1
+    &END KIND
+    &KIND C
+      BASIS_SET         cc-TZV2P-GTH
+      RI_AUX_BASIS_SET  TZ_fiodena_opt
+      POTENTIAL         GTH-HF-q4
+    &END KIND
+  &END SUBSYS
+&END FORCE_EVAL
+
+! how to propagate the system, selection via RUN_TYPE in the &GLOBAL section
+&MOTION
+ &GEO_OPT
+   OPTIMIZER BFGS ! Good choice for 'small' systems (use LBFGS for large systems)
+   MAX_ITER  100
+   MAX_DR    [bohr] 0.003 ! adjust target as needed
+   &BFGS
+   &END
+ &END
+&END

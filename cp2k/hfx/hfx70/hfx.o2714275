@@ -1,0 +1,22 @@
+.bashrc: line 149: virtualenvwrapper.sh: No such file or directory
+trying to remove /scratch/2714275.clusman0a.frank.sam.pitt.edu
++---------------------------------------------------------------------+
+|                        JOB INFORMATION                              |
++---------------------------------------------------------------------+
+|
+|  Date      : Tue Mar 10 12:09:29 EDT 2015
+|  Job ID    : 2714275.clusman0a.frank.sam.pitt.edu
+|  Username  : bja39
+|  Group     : dlambrecht
+|  Job Name  : hfx
+|  Session   : 13478
+|  Limits    : neednodes=4:ppn=16,nodes=4:ppn=16,pmem=2000mb,walltime=00:30:00
+|  Resources : cput=02:08:42,energy_used=0,mem=12149868kb,vmem=44566732kb,walltime=00:02:43
+|  Disk      : 4.0K
+|  Queue     : idist_small
+|  Account   : cp2k2015
+|  Exit code : 0
+|  Local scr : /scratch/2714275.clusman0a.frank.sam.pitt.edu
+|  Node/cores: 255/16 256/16 257/16 258/16 
+|
+[---------------------------------------------------------------------]

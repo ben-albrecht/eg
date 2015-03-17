@@ -1,0 +1,50 @@
+.bashrc: line 149: virtualenvwrapper.sh: No such file or directory
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+cp2k.popt          0000000004340791  Unknown               Unknown  Unknown
+cp2k.popt          000000000433EEE7  Unknown               Unknown  Unknown
+libmpi_usempif08.  00002AB803E7BE92  Unknown               Unknown  Unknown
+libmpi_usempif08.  00002AB803E7BCE6  Unknown               Unknown  Unknown
+libmpi_usempif08.  00002AB803E69EE6  Unknown               Unknown  Unknown
+libmpi_usempif08.  00002AB803E48793  Unknown               Unknown  Unknown
+libpthread.so.0    00002AB804E69710  Unknown               Unknown  Unknown
+libc.so.6          00002AB80515B497  Unknown               Unknown  Unknown
+libmpi_usempif08.  00002AB803E53F77  Unknown               Unknown  Unknown
+libmpi_usempif08.  00002AB803E77FDE  Unknown               Unknown  Unknown
+libmpi_usempif08.  00002AB803E76E5D  Unknown               Unknown  Unknown
+cp2k.popt          000000000372C757  Unknown               Unknown  Unknown
+cp2k.popt          000000000371D85E  Unknown               Unknown  Unknown
+cp2k.popt          000000000371CAF3  Unknown               Unknown  Unknown
+cp2k.popt          0000000001A1960E  Unknown               Unknown  Unknown
+cp2k.popt          0000000001EDC515  Unknown               Unknown  Unknown
+cp2k.popt          00000000010E99C2  Unknown               Unknown  Unknown
+cp2k.popt          0000000000BA3CFA  Unknown               Unknown  Unknown
+cp2k.popt          00000000004143C2  Unknown               Unknown  Unknown
+cp2k.popt          0000000000412D00  Unknown               Unknown  Unknown
+cp2k.popt          000000000040F095  Unknown               Unknown  Unknown
+cp2k.popt          000000000040E3DE  Unknown               Unknown  Unknown
+libc.so.6          00002AB805096D5D  Unknown               Unknown  Unknown
+cp2k.popt          000000000040E2E9  Unknown               Unknown  Unknown
+[n247:40113] 46 more processes have sent help message help-mpi-api.txt / mpi-abort
+[n247:40113] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+trying to remove /scratch/2714159.clusman0a.frank.sam.pitt.edu
++---------------------------------------------------------------------+
+|                        JOB INFORMATION                              |
++---------------------------------------------------------------------+
+|
+|  Date      : Tue Mar 10 11:26:22 EDT 2015
+|  Job ID    : 2714159.clusman0a.frank.sam.pitt.edu
+|  Username  : bja39
+|  Group     : dlambrecht
+|  Job Name  : PBE4Life
+|  Session   : 40043
+|  Limits    : neednodes=4:ppn=16,nodes=4:ppn=16,pmem=2000mb,walltime=00:30:00
+|  Resources : cput=00:07:07,energy_used=0,mem=1453756kb,vmem=9834188kb,walltime=00:00:36
+|  Disk      : 4.0K
+|  Queue     : idist_small
+|  Account   : cp2k2015
+|  Exit code : 265
+|  Local scr : /scratch/2714159.clusman0a.frank.sam.pitt.edu
+|  Node/cores: 247/16 248/16 249/16 250/16 
+|
+[---------------------------------------------------------------------]

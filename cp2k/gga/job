@@ -1,0 +1,13 @@
+#PBS -N mode1
+#PBS -j oe
+#PBS -q dist_small
+#PBS -l nodes=4:ppn=16
+#PBS -l walltime=10:00
+#PBS -A cp2k2015
+
+cd $PBS_O_WORKDIR
+
+module purge
+module load cp2k/2.6
+
+prun cp2k.popt -i mode1.inp -o mode1.out
