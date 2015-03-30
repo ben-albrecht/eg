@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <string.h>
+
+
 int main()
 {
     // Part 0

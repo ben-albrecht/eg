@@ -1,0 +1,16 @@
+Mean_1930   42.928767
+Mean_2001   43.071233
+StdDev_1930 34.690733
+StdDev_2001 34.684889
+MinTemp_1930 -15
+MinTemp_2001 -15
+MaxTemp_1930 100
+MaxTemp_2001 100
+MinTemp_1930_Date 6/4
+MinTemp_2001_Date 6/2
+MaxTemp_1930_Date 1/15
+MaxTemp_2001_Date 1/13
+MaxTempDiff 113
+MinTempDiff 0
+MinTempDiff_Date 6/25
+MaxTempDiff_Date 6/13
