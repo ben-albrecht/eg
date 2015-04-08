@@ -1,4 +1,7 @@
-.PHONY: hw11 hw12 hw13 hw14
+.PHONY: hw11 hw12 hw13 hw14 hw15
+
+hw15:
+	g++ -x c hw15.c -o HW15
 
 hw14:
 	g++ -x c hw14.c -o HW14

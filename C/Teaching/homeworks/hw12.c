@@ -29,7 +29,7 @@ double voltage_converged(double t, double epsilon) {
 
     double sum = 0;
     int i = 1;
-    while (true) {
+    for(;;) {
         if ( fabs(next_term(t, i)) <= epsilon ) break;
         sum += next_term(t, i);
         i += 1;
@@ -59,7 +59,7 @@ int main(void) {
 
     // Part 1
     printf("\nPart 1: V(t, n)\n\n");
-    while (true) {
+    for(;;) {
         printf("Enter time, t:\n");
         scanf("%lf", &t);
 
@@ -78,7 +78,7 @@ int main(void) {
 
     // Part 2
     printf("\nPart 2: Veps(t, epsilon)\n\n");
-    while (true) {
+    for(;;) {
         printf("Enter time, t:\n");
         scanf("%lf", &t);
 
@@ -95,7 +95,7 @@ int main(void) {
 
     // Part 3
     printf("\nPart 3: Vdiff(t1, t2, n)\n\n");
-    while (true) {
+    for(;;) {
         printf("Enter time, t1:\n");
         scanf("%lf", &t1);
 
