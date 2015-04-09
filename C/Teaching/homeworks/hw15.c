@@ -55,6 +55,7 @@ int main ()
         FILE *balancefile = fopen("balance.dat", "r");
         fscanf(balancefile, "%d", &accounts[0]);
         fscanf(balancefile, "%d", &accounts[1]);
+        fclose(balancefile);
     }
 
     char loop = 'Y';
@@ -89,6 +90,10 @@ int main ()
     }
     printf("Thank you, have nice day\n");
 
+    FILE *balancefile = fopen("balance.dat", "w");
+    fprintf(balancefile, "%d\n", accounts[0]);
+    fprintf(balancefile, "%d\n", accounts[1]);
+    fclose(balancefile);
     //TODO Write new accounts[] to balance.dat
     return 0;
 }
@@ -140,14 +145,28 @@ int accountmenu(){
 
 
 int withdraw(int account) {
-    // TODO: withdraw money from account
-
+    // Withdraw money from account
+    int amount;
+    for(;;) {
+        printf("You have $%d, how much would you like to withdraw?\n", account);
+        scanf("%d", &amount);
+        if (amount > account) {
+            printf("You do not have $%d, and cannot overdraft as a non-premium user\n", amount);
+        }
+        else break;
+    }
+    account += -amount;
+    printf("You have withdrawn $%d and now have $%d remaining in this account\n", amount, account);
     return account;
 }
 
 int deposit(int account) {
-    // TODO: deposit money into account
-
+    // Deposit money into account
+    int amount;
+    printf("You have $%d in account, how much would you like to deposit?\n", account);
+    scanf("%d", &amount);
+    account += amount;
+    printf("You have deposityed $%d and now have $%d in this account\n", amount, account);
     return account;
 }
 
