@@ -1,7 +1,7 @@
 #include <stdlib.h> // malloc(), free()
 #include <stdio.h> // printf()
 
-// These would typically go in hw16.h:
+// hw16.h:
 
 // Structs
 struct matrix {
@@ -12,12 +12,29 @@ struct matrix {
     double **values;
 };
 
+/*
+// Recall the alternative Struct syntax:
+
+    typedef matrix {
+        // Struct for matrix information
+        int N;
+        int M;
+        double **values;
+    } matrix;
+
+// where we could instead initialize the struct with:
+
+    matrix A;
+
+*/
+
 // Functions
 struct matrix new_matrix(int N, int M);
 struct matrix read_matrix(FILE* matrixfile);
 struct matrix add(struct matrix A, struct matrix B);
 void print(struct matrix A, char* msg);
 
+// hw16.c:
 
 int main() {
 
@@ -40,27 +57,9 @@ int main() {
     //   User-interface to ask what they want to do
     //   Create (A-F).dat containing all the test matrices
 
-
     return 0;
 
 }
-
-
-/*
-// Recall the alternative form:
-
-    typedef matrix {
-        // Struct for matrix information
-        int N;
-        int M;
-        double **values;
-    } matrix;
-
-// where we could instead initialize the struct with:
-
-    matrix A;
-
-*/
 
 struct matrix new_matrix(int N, int M)
 {
@@ -71,10 +70,20 @@ struct matrix new_matrix(int N, int M)
     A.M = M;
 
     // Allocate N-rows of double pointers
+
+    // C++  Casting a void *:
+    //A.values = static_cast<double **>(malloc(N*sizeof(double *)));
+
+    // C Casting a void *:
     A.values = malloc(N*sizeof(double *));
 
     // Allocate M-columns of double points for each row
+
+    // C Casting a void *:
     for (int i = 0; i < N; i++) A.values[i] = malloc(M*sizeof(double *));
+
+    // C++  Casting a void *:
+    // for (int i = 0; i < N; i++) A.values[i] = static_cast<double *>(malloc(M*sizeof(double *)));
 
     return A;
 }
