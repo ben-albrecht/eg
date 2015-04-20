@@ -1,0 +1,17 @@
+$comment
+Calculating demonstrating omegaB97X-D with ideal basis set
+Also - Z-Matrix input
+$end
+
+$molecule
+0 1
+O1
+H1 O1 1.0
+H2 O1 1.0 H1 104.5
+$end
+
+$rem
+jobtype sp
+exchange omegab97x-d
+basis 6-311++G(3df,3pd)
+$end

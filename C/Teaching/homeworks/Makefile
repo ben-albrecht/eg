@@ -1,4 +1,7 @@
-.PHONY: hw11 hw12 hw13 hw14 hw15 hw16
+.PHONY: hw11 hw12 hw13 hw14 hw15 hw16 fun
+
+fun:
+	g++ -Wincompatible-pointer-types -x c fun.c -o FUN
 
 hw16:
 	g++ -x c hw16.c -o HW16
