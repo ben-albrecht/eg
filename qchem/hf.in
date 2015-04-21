@@ -1,0 +1,16 @@
+$comment
+Basic HF optimization on water
+$end
+
+$molecule
+0 1
+O1
+H1 O1 1.0
+H2 O1 1.0 H1 104.5
+$end
+
+$rem
+jobtype opt
+exchange hf
+basis 6-31G*
+$end

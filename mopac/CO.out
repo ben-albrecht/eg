@@ -1,0 +1,184 @@
+ *******************************************************************************
+ ** Site#: 22060        For non-commercial use only     Version 15.089M 64BITS**
+ *******************************************************************************
+ ** Cite this work as:                                                        **
+ **                                                                           **
+ ** (a) MOPAC2012, James J. P. Stewart, Stewart Computational Chemistry,      **
+ **  Version 15.089M web: HTTP://OpenMOPAC.net         Days remaining: 343    **
+ **                                                                           **
+ **                                 AND                                       **
+ **                                                                           **
+ ** (b) Maia, J.D.C., et al., J. Chem. Theory Comput. 2012, 8, 3072-3081.     **
+ **                DOI: 10.1021/ct3004645.                                    **
+ *******************************************************************************
+ **                                                                           **
+ **                                MOPAC2012                                  **
+ **                                                                           **
+ *******************************************************************************
+
+                            PM7 CALCULATION RESULTS
+
+
+ *******************************************************************************
+ *  CALCULATION DONE:                                Tue Apr 21 14:42:03 2015  *
+ *  PM7        - The PM7 Hamiltonian to be used
+ *  T=         - A TIME OF 172800.0 SECONDS REQUESTED
+ *  DUMP=N     - RESTART FILE WRITTEN EVERY  7200.000 SECONDS
+ *  AUX        - OUTPUT AUXILIARY INFORMATION
+ *******************************************************************************
+PM7 AUX
+ Carbon Monoxide
+ Geometry Optimization
+   ATOM   CHEMICAL          X               Y               Z
+  NUMBER   SYMBOL      (ANGSTROMS)     (ANGSTROMS)     (ANGSTROMS)
+ 
+     1       C         -5.32516000  *   2.87477000  *   0.00000000  *
+     2       O         -4.19910000  *   2.94301000  *   0.00000000  *
+ 
+
+
+          CARTESIAN COORDINATES 
+
+    NO.       ATOM         X         Y         Z
+
+     1         C       -5.3252    2.8748    0.0000
+     2         O       -4.1991    2.9430    0.0000
+
+     ===================== shared-memory parallel CPU Section ======================
+     **                                                                           **
+     **  MOPAC calculations will run in shared-memory parallel CPUs               **
+     **                                                                           **
+     **  Number of Threads =  2                                                   **
+     **                                                                           **
+     **                                                                           **
+     **  For information on this work, see:                                       **
+     **                                                                           **
+     **  Maia, J.D.C., et al., J. Chem. Theory Comput. 2012, 8, 3072-3081.        **
+     **        DOI: 10.1021/ct3004645.                                            **
+     **                                                                           **
+     ===================== shared-memory parallel CPU Section ======================
+      
+
+
+ General Reference for PM7:
+ "Optimization of Parameters for Semiempirical Methods VI: More Modifications to the 
+ NDDO Approximations and Re-optimization of Parameters", J. J. P. Stewart, J. Mol. Mod., 1:32, 19 (2013)
+ http://www.springerlink.com/openurl.asp?genre=article&id=doi:10.1007/s00894-012-1667-x
+
+           Empirical Formula: C O  =     2 atoms
+
+
+
+      MOLECULAR POINT GROUP   :   C*v 
+
+
+      RHF CALCULATION, NO. OF DOUBLY OCCUPIED LEVELS =    5
+
+      Geometry optimization using EF
+
+          DIAGONAL MATRIX USED AS START HESSIAN
+
+ CYCLE:     1 TIME:   0.000 TIME LEFT:  2.00D  GRAD.:    39.149 HEAT: -18.15674
+ CYCLE:     2 TIME:   0.000 TIME LEFT:  2.00D  GRAD.:     9.888 HEAT: -18.29762
+ CYCLE:     3 TIME:   0.000 TIME LEFT:  2.00D  GRAD.:     0.297 HEAT: -18.30781
+
+     GRADIENT =  0.29679  IS LESS THAN CUTOFF =  1.00000
+
+
+
+ -------------------------------------------------------------------------------
+PM7 AUX
+ Carbon Monoxide
+ Geometry Optimization
+
+
+     GEOMETRY OPTIMISED USING EIGENVECTOR FOLLOWING (EF).     
+     SCF FIELD WAS ACHIEVED                                   
+
+
+                              PM7 CALCULATION
+                                                       MOPAC2012 (Version: 15.089M)
+                                                       Tue Apr 21 14:42:03 2015
+                                                       No. of days left = 343
+
+
+
+
+          FINAL HEAT OF FORMATION =        -18.30781 KCAL/MOL =     -76.59987 KJ/MOL
+
+
+          TOTAL ENERGY            =       -417.40897 EV
+          ELECTRONIC ENERGY       =       -653.55146 EV  POINT GROUP:     C*v 
+          CORE-CORE REPULSION     =        236.14249 EV
+          COSMO AREA              =         57.74 SQUARE ANGSTROMS
+          COSMO VOLUME            =         40.57 CUBIC ANGSTROMS
+
+          GRADIENT NORM           =          0.29679
+          IONIZATION POTENTIAL    =         12.334548 EV
+          HOMO LUMO ENERGIES (EV) =        -12.335  1.594
+          NO. OF FILLED LEVELS    =          5
+          MOLECULAR WEIGHT        =         28.010
+
+          MOLECULAR DIMENSIONS (Angstroms)
+
+            Atom       Atom       Distance
+            O     2    C     1     1.13924
+            O     2    C     1     0.00000
+            C     1    O     2     0.00000
+
+
+          SCF CALCULATIONS        =          6
+ 
+          WALL-CLOCK TIME         =          0.004 SECONDS
+          COMPUTATION TIME        =          0.006 SECONDS
+
+
+
+
+   ATOM   CHEMICAL          X               Y               Z
+  NUMBER   SYMBOL      (ANGSTROMS)     (ANGSTROMS)     (ANGSTROMS)
+ 
+     1       C         -5.33069810  *   2.87431303  *  -0.00000000  *
+     2       O         -4.19356190  *   2.94346697  *  -0.00000000  *
+
+                             CARTESIAN COORDINATES
+
+   1    C       -5.330698105     2.874313026    -0.000000000
+   2    O       -4.193561895     2.943466974    -0.000000000
+
+
+           Empirical Formula: C O  =     2 atoms
+
+
+
+      MOLECULAR POINT GROUP   :   C*v 
+
+
+                  EIGENVALUES  
+ -32.82364 -19.75541 -15.15580 -15.15580 -12.33455   1.59443   1.59443   5.56242
+
+
+              NET ATOMIC CHARGES AND DIPOLE CONTRIBUTIONS
+
+  ATOM NO.   TYPE          CHARGE      No. of ELECS.   s-Pop       p-Pop       
+    1          C           0.435327        3.5647     1.78663     1.77805
+    2          O          -0.435327        6.4353     1.83386     4.60147
+ DIPOLE           X         Y         Z       TOTAL
+ POINT-CHG.    -2.378    -0.145     0.000     2.382
+ HYBRID         1.625     0.099    -0.000     1.628
+ SUM           -0.752    -0.046     0.000     0.754
+
+
+          ATOMIC ORBITAL ELECTRON POPULATIONS
+
+     Atom    s        px        py        pz   
+    1  C   1.78663   0.89193   0.44389   0.44223
+    2  O   1.83386   1.48619   1.55751   1.55777
+
+          JOB ENDED NORMALLY
+
+
+
+ TOTAL JOB TIME:             0.01 SECONDS
+
+ == MOPAC DONE ==

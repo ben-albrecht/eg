@@ -1,0 +1,1346 @@
+ampersand
+
+Turn next line into keywords
+
+
+plus
+
+Add another line of keywords
+
+
+zero_scf
+
+Read in data, then stop
+
+
+one_electron
+
+Print final one-electron matrix
+
+
+one_scf
+
+Do one scf and then stop
+
+
+ADD-H
+
+Add hydrogen atoms (intended for use with organic compounds)
+
+
+units_A0_or_Angstroms
+
+
+Input geometry is in atomic units
+
+
+aider
+
+Read in ab-initio derivatives
+
+
+aigin
+
+Geometry must be in gaussian format
+
+
+aigout
+
+In arc file, include ab-initio geometry
+
+
+allbonds
+
+Print final bond-order matrix, including bonds to hydrogen
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=18>
+allvec
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=18>
+Print all vectors (keywords vectors also needed)
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=18>
+<a href="alt_a
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=18>
+In PDB files with alternative atoms, select atoms A
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=18>
+<a href="alt_r
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=18>
+In PDB files with alternative residues, select residues A
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=18>
+<a href="units_A0_or_Angstroms
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=18>
+Input geometry is in Angstroms
+
+
+autosym
+
+Symmetry to be imposed automatically
+
+
+auxiliary
+
+Output auxiliary information for use by other programs
+
+
+am1
+
+Use the AM1 hamiltonian
+
+
+bar
+
+reduce bar length by a maximum of n.nn%
+
+
+bcc
+
+Solid is body-centered cubic (used by BZ)
+
+
+bfgs
+
+Optimize geometries using bfgs procedure
+
+
+bigcycles
+
+Do a maximum of n big steps
+
+
+biradical
+
+System has two unpaired electrons
+
+
+bonds
+
+Print final bond-order matrix
+
+
+<font color="#0000FF"><a href="BZ
+
+Generate a file for use by <a href="Program_BZ
+
+
+camp
+
+Use Camp-King converger in SCF
+
+
+cartab
+
+Print point-group character table
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=35>
+ci=n
+</FONT><A HREF="ci=nm
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=35>
+A multi-electron configuration interaction specified
+
+
+chains
+
+In a protein, explicitely define the letters of chains.
+
+
+    <a href="check
+
+Report possible faults in input geometry
+
+
+charge
+
+Charge on system = n (e.g. NH4 = +1)
+
+
+charges
+
+Print net charge on system, and all charges in the system
+
+
+charst
+
+Print details of working in CHARST
+
+
+cis
+
+C.I. uses 1 electron excitations only
+
+
+cisd
+
+C.I. uses 1 and electron excitations
+
+
+cisdt
+
+C.I. uses 1, 2 and 3 electron excitations
+
+
+compfg
+
+Print heat of formation calculated in COMPFG
+
+
+<FONT COLOR="#0000ff"><a href="coscch
+
+Add in COSMO charge corrections
+
+
+coswrt
+
+Write details of the solvent accessible surface to a file
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=18>
+cutofp
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=18>
+Madelung distance cutoff is n .nn Angstroms
+
+
+cutoff
+
+In MOZYME, the interatomic distance where the NDDO approximation stops
+
+
+cycles
+
+Do a maximum of n steps
+
+
+<TT><font color="#0000FF"><a href="CVB
+
+In MOZYME. add and remove specific bonds to allow a Lewis or PDB structure.
+
+
+damp
+
+n MOZYME. damp SCF oscillations using a factor of<i> n.nn</i>
+
+
+data
+
+Input data set is re-defined to<i> text</i>
+
+
+dcart
+
+Print part of working in DCART
+
+
+ddmax
+
+See EF code
+
+
+ddmin
+
+Minimum trust radius in a EF/TS calculation
+
+
+debug
+
+Debug option turned on
+
+
+debugpulay
+
+Print working in PULAY
+
+
+denout
+
+Density matrix output
+
+
+density
+
+Print final density matrix
+
+
+deri1
+
+Print part of working in DERI1
+
+
+deri2
+
+Print part of working in DERI2
+
+
+deritr
+
+Print part of working in DERIT
+
+
+deriv
+
+Print part of working in DERIV
+
+
+dernvo
+
+Print part of working in DERNVO
+
+
+dforce
+
+Force calculation specified, also print force matrix.
+
+
+dfp
+
+Use Davidson-Fletcher-Powell method to optimize geometries
+
+<!--
+<TD WIDTH="28%" VALIGN="MIDDLE" HEIGHT=19>
+dipole
+<TD WIDTH="72%" VALIGN="MIDDLE" HEIGHT=19>
+Fit the ESP to the calculated dipole
+
+<TD WIDTH="28%" VALIGN="MIDDLE" HEIGHT=19>
+dipx
+<TD WIDTH="72%" VALIGN="MIDDLE" HEIGHT=19>
+X component of dipole to be fitted
+
+<TD WIDTH="28%" VALIGN="MIDDLE" HEIGHT=19>
+dipy
+<TD WIDTH="72%" VALIGN="MIDDLE" HEIGHT=19>
+Y component of dipole to be fitted
+
+<TD WIDTH="28%" VALIGN="MIDDLE" HEIGHT=19>
+dipz
+<TD WIDTH="72%" VALIGN="MIDDLE" HEIGHT=19>
+Z component of dipole to be fitted
+
+-->
+
+disex
+
+Distance for interactions in fine grid in COSMO
+
+
+    <a href="disp
+
+Print the hydrogen bonding and dispersion contributions to the heat of formation
+
+
+dmax
+
+Maximum stepsize in eigenvector following
+
+
+doublet
+
+Doublet state required
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=35>
+drc0
+</FONT><A HREF="drc
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=35>
+Dynamic reaction coordinate calculation
+
+
+dump
+
+Write restart files every n seconds
+
+
+echo
+
+Data are echoed back before calculation starts
+
+
+ef
+
+Use ef routine for minimum search
+
+
+eigen
+
+Print canonical eigenvectors instead of LMOs in MOZYME calculations
+
+
+eigs
+
+Print all eigenvalues in ITER
+
+
+enpart
+
+Partition energy into components
+
+
+eps
+
+Dielectric constant in COSMO calculation
+
+
+esp
+
+Electrostatic potential calculation
+
+
+epsrst
+
+Restart of electrostatic potential
+
+
+esr
+
+Calculate RHF spin density
+
+
+excited
+
+Optimize first excited singlet state
+
+
+external
+
+Read parameters off disk
+
+
+field
+
+An external electric field is to be used
+
+
+fill
+
+In RHF open and closed shell, force M.O. n to be filled
+
+
+flepo
+
+Print details of geometry optimization
+
+
+fmat
+
+Print details of working in FMAT
+
+
+fock
+
+Print last Fock matrix
+
+
+freqcy
+
+Print symmetrized Hessian in a FORCE calculation
+
+
+force
+
+Calculate vibrational frequencies
+
+
+geo-ok
+
+Override some safety checks
+
+
+geo_ref
+
+Use native structure as reference
+
+
+gnorm
+
+Exit when gradient norm drops below n .n kcal/mol/Angstrom
+
+
+gradients
+
+Print all gradients
+
+
+graph
+
+Generate unformatted file for graphics
+
+
+
+graph
+
+Generate formatted file for graphics suitable for&nbsp; <a href="http://jmol.sourceforge.net/", target="_parent">Jmol</a>
+and <a href="http://mmb.pcb.ub.es/mopete.htm", target="_parent">
+MOPETE</a>.
+
+
+hcore
+
+Print all parameters used, the one-electron matrix, and two-electron integrals
+
+
+<font color="#0000FF"><TT><a href="hessian
+
+Print Hessian from geometry optimization
+
+
+hess
+
+Options for calculating Hessian matrices in EF
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=35>
+h-priority0
+</FONT><A HREF="h-priority
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=35>
+Heat of formation takes priority in DRC
+
+
+    <a href="html
+
+Write a web-page for displaying and editing a protein
+
+
+hyperfine
+
+Hyperfine coupling constants to be calculated
+
+
+int
+
+Make all coordinates internal coordinates
+
+
+invert
+
+Reverse all optimization flags
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=4>
+<font color="#0000FF"><TT><a href="Ionize
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=4>
+Used with ADD-H only, ionizes all ionizable residues in a protein.
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=35>
+irc0
+</FONT><A HREF="irc
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=35>
+Intrinsic reaction coordinate calculation
+
+
+isotope
+
+Force matrix written to disk (channel 9 )
+
+
+iter
+
+Print details of working in ITER
+
+
+itry
+
+Set limit of number of SCF iterations to n
+
+
+iupd
+
+Mode of Hessian update in eigenvector following
+
+
+kinetic
+
+Excess kinetic energy added to DRC calculation
+
+
+king
+
+Use Camp-King converger for SCF
+
+
+large
+
+Print expanded output
+
+
+lbfgs
+
+Use the low-memory version of the BFGS optimizer
+
+
+let
+
+Override certain safety checks
+
+
+lewis
+
+Print the <a href="Lewis_structures
+
+
+linmin
+
+Print details of line minimization
+
+
+localize
+
+Print localized orbitals.&nbsp; These are also called Natural Bond Orbitals
+or NBO
+
+
+    <a href="Locate-TS
+
+Given reactants and products, locate the transition state connecting them
+
+
+log
+
+Generate a log file
+
+
+meci
+
+Print details of MECI calculation
+
+
+mers
+
+Keyword for BZ
+
+
+<font color="#0000FF"><a href="metal
+
+Make specified atoms 100% ionic
+
+
+micros
+
+Use specific microstates in the C.I.
+
+
+mini
+
+Reduce the amount of geometry data printed
+
+
+minmep
+
+Minimize MEP minima in the plane defined
+
+
+mmok
+
+Use molecular mechanics correction to CONH bonds
+
+
+mndo
+
+Use the MNDO hamiltonian
+
+
+mndod_key
+
+Use the MNDO-d hamiltonian
+
+
+mode
+
+In EF, follow Hessian mode no. n
+
+
+
+<TT><a href="QMMM
+
+Incorporate environmental effects in the QM/MM approach
+
+
+moldat
+
+Print details of working in MOLDAT
+
+
+molsym
+
+Print details of working in MOLSYM
+
+
+mopac
+
+Use old MOPAC definition for 2nd and 3rd atoms
+
+
+mozyme
+
+Use the Localized Molecular Orbital method to speed up the SCF
+
+
+ms
+
+In MECI, magnetic component of spin
+
+
+mullik
+
+Print the Mulliken population analysis
+
+
+nxn
+
+In excited state COSMO calculations, set the value of N**2
+
+
+nllsq
+
+Minimize gradients using NLLSQ
+
+
+noanci
+
+Do not use analytical C.I. derivatives
+
+<tt><a href="nogpu
+
+Do not use GPU acceleration
+
+
+nolog
+
+Suppress log file trail, where possible
+
+
+nomm
+
+Do not use molecular mechanics correction to CONH bonds
+
+
+nonet
+
+NONET state required
+
+
+nonr
+
+Do not use Newton-Raphson method in EF
+
+
+
+<FONT COLOR="#0000ff"><a href="nooptx
+
+Do not optimize the coordinates of all atoms of type X
+
+
+
+noreor
+
+In symmetry work, use supplied orientation
+
+
+noreseq
+
+Suppress the default re-sequencing of atoms to the PDB sequence
+
+
+nosym
+
+Point-group symmetry set to C1
+
+
+nothiel
+
+Do not use Thiel's FSTMIN technique
+
+
+
+<a href="notxt
+
+Remove any text from atom symbols
+
+
+noxyz
+
+Do not print Cartesian coordinates
+
+
+nspa
+
+Sets number of geometric segments in COSMO
+
+
+nsurf
+
+Number of surfaces in an ESP calculation
+
+
+octet
+
+Octet state required
+
+
+oldcav
+
+In COSMO, use the old Solvent Accessible Surface calculation
+
+
+oldens
+
+Read initial density matrix off disk
+
+
+oldfpc
+
+Use the old fundamental physical constants
+
+
+oldgeo
+
+Previous geometry to be used
+
+
+omin
+
+In TS, minimum allowed overlap of eigenvectors
+
+
+open
+
+Open-shell UHF or RHF calculation requested
+
+
+<FONT COLOR="#0000ff"><a href="optx
+
+Optimize the coordinates of all atoms of type X
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=21>
+p=n
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=21>
+An applied pressure of <I>n.nn</I> Newtons/m<SUP>2 </SUP>to be used
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=20>
+pdb
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=20>
+Input geometry is in protein data bank format
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=20>
+pdb_text
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=20>
+User defined chemical symbols in protein data base
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=20>
+pdbout
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=20>
+Output geometry in pdb format
+
+
+peci
+
+C.I. involves paired excitations only
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=20>
+pi
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=20>
+Resolve density matrix into <span class="b">&sigma;, &pi;</span>, and<FONT FACE="Courier New"> </FONT><span class="b">&delta;</span><FONT FACE="Courier New"> </FONT>
+<FONT FACE="Times New Roman">components </FONT>
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=20>
+pka
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=20>
+<font face="Times New Roman">Print the pKa for ionizable hydrogen atoms attached
+to oxygen atoms</font>
+
+
+pl
+
+Monitor convergence of density matrix in ITER
+
+
+pm3
+
+Use the MNDO-PM3 Hamiltonian
+
+
+<FONT COLOR="#0000ff"><a href="pm6
+
+Use the PM6 Hamiltonian
+
+
+
+<FONT COLOR="#0000ff"><a href="pm6_d3
+
+Use the PM6 Hamiltonian with Grimme's corrections for dispersion
+
+
+
+<FONT COLOR="#0000ff"><a href="pm6_dh_plus
+
+Use the PM6 Hamiltonian with corrections for dispersion and hydrogen-bonding
+
+
+<FONT COLOR="#0000ff"><a href="pm6_dh2
+
+Use the PM6 Hamiltonian with corrections for dispersion and hydrogen-bonding
+
+
+<FONT COLOR="#0000ff"><a href="pm6_dh2x
+
+Use PM6 with corrections for dispersion and hydrogen and halogen bonding
+
+
+pmep
+
+Complete semiempirical MEP calculation
+
+
+<p dir="ltr"><FONT COLOR="#0000ff"><a href="pm7
+
+Use the PM7 Hamiltonian
+
+
+<FONT COLOR="#0000ff"><a href="pm7-ts
+
+Use the PM7-TS Hamiltonian (<i>only for barrier heights</i>)
+
+
+pmepr
+
+Complete semiempirical MEP in a plane to be defined
+
+
+point
+
+Number of points in reaction path
+
+
+point1
+
+Number of points in first direction in grid calculation
+
+
+point2
+
+Number of points in second direction in grid calculation
+
+
+polar
+
+Calculate first, second and third order polarizabilities
+
+
+poswrt
+
+In ESP, write out electrostatic potential to unit 21
+
+
+powsq
+
+Print details of working in POWSQ
+
+
+precise
+
+Criteria to be increased by 100 times
+
+
+<a href="P=n
+
+Apply pressure or tension to a solid or polymer
+
+
+prnt
+
+Print details of geometry optimization in EF
+
+
+    <a href="prtchar
+
+Print charges in ARC file
+
+
+prtint
+
+Print interatomic distances
+
+
+prtmep
+
+MEP contour data output to &lt;filename&gt;.mep
+
+
+<font color="#0000FF"><TT><a href="prtxyz
+
+Print Cartesian coordinates
+
+
+pulay
+
+Use Pulay's converger to obtain a SCF
+
+
+<TT><a href="QMMM
+
+Incorporate environmental effects in the QM/MM approach
+
+
+qpmep
+
+Charges derived from Wang-Ford type AM1 MEP
+
+
+quartet
+
+Quartet state required
+
+
+quintet
+
+Quintet state required
+
+
+<font color="#0000FF" face="Courier New"><TT><a href="rapid
+
+In MOZYME geometry optimizations, only use atoms being optimized in the SCF
+
+
+recalc
+
+In EF, recalculate Hessian every n steps
+
+
+re-local
+
+During and at end of MOZYME calculation, re-localize the LMOs
+
+
+relscf
+
+Default SCF criterion multiplied by n
+
+
+<TT><a href="reorthog
+
+In MOZYME, re-orthogonalize LMO's each 10 SCF calculations.
+
+
+reseq
+
+Re-arrange the atoms to match the PDB convention
+
+
+residues
+
+Label each atom in a polypeptide with the amino acid residue
+
+
+restart
+
+Calculation restarted
+
+
+rhf
+
+Use Restricted Hartree-Fock methods
+
+
+rm1_key
+
+Use the RM1 Hamiltonian
+
+
+rmax
+
+In TS, maximum allowed ratio for energy change
+
+
+rmin
+
+In TS, minimum allowed ratio for energy change
+
+
+root
+
+Root n to be optimized in a C.I. calculation
+
+
+rscal
+
+In EF, scale p-RFO to trust radius
+
+
+rsolv
+
+Effective radius of solvent in COSMO
+
+
+saddle
+
+Optimize transition state
+
+
+scale
+
+Scaling factor for van der waals distance in ESP
+
+
+scfcrt
+
+Default SCF criterion replaced by the value supplied
+
+
+scincr
+
+Increment between layers in ESP
+
+
+septet
+
+Septet state required
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=20>
+setpi
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=20>
+In MOZYME, some <span class="b">&pi;</span> bonds are explicitly set by the
+user
+
+<TD WIDTH="182" VALIGN="MIDDLE" HEIGHT=20>
+setup
+<TD WIDTH="716" VALIGN="MIDDLE" HEIGHT=20>
+Extra keywords to be read from setup file
+
+
+sextet
+
+Sextet state required
+
+
+shift
+
+a damping factor of n defined to start SCF
+
+
+shut
+
+Send a command to MOPAC to make a restart and density file, then stop.
+
+
+sigma
+
+Minimize gradients using SIGMA
+
+
+singlet
+
+Singlet state required
+
+
+site
+
+Define ionization state of residues in proteins
+
+
+slog
+
+In BFGS optimization, use fixed step of length n .nn
+
+
+slope
+
+Multiplier used to scale MNDO charges
+
+
+<font color="#0000FF"><a href="smooth
+
+In a GRID calculation, remove artifacts caused by the order in which points are
+calculated
+
+
+snap
+
+Increase precision of symmetry angles
+
+
+sparkle
+
+Use sparkles instead of atoms with basis sets
+
+
+spin
+
+Print final UHF spin matrix
+
+
+start_res
+</FONT>
+
+Define starting residue numbers in a protein, if different from the default
+
+
+
+static
+
+Calculate Polarizability using electric fields
+
+
+
+step
+
+Step size in path
+
+
+
+step1
+
+Step size n for first coordinate in grid calculation
+
+
+
+step2
+
+Step size n for second coordinate in grid calculation
+
+
+
+sto3g
+
+Deorthogonalize orbitals in STO-3G basis
+
+
+
+super
+
+Print superdelocalizabilities
+
+
+
+  <tt><a href="swap
+
+Allow atoms in <a href="geo_ref
+improve overlap
+
+
+
+sybyl
+
+Output a file for use by Tripos's SYBYL program
+
+
+
+symavg
+
+Average symmetry equivalent ESP charges
+
+
+
+symoir
+
+Print characters of eigenvectors and print number of I.R.s
+
+
+
+symtrz
+
+Print details of working in subroutine SYMTRZ.
+
+
+
+symmetry
+
+Impose symmetry conditions
+
+
+
+t=n
+A time of n seconds requested
+
+
+thermo00
+thermo0
+thermo1
+thermo
+Perform a thermodynamics calculation
+
+
+
+threads
+
+Set the number of threads to be used in parallelization to n
+
+
+
+times
+
+Print times of various stages
+
+
+t-priority0
+Time takes priority in DRC
+
+
+trans0
+The system is a transition state (used in thermodynamics calculation)
+
+
+
+triplet
+
+Triplet state required
+
+
+
+ts
+
+Using EF routine for TS search
+
+
+
+uhf
+
+Use the Unrestricted Hartree-Fock method
+
+
+
+vdw
+
+Van der waals radius for atoms in COSMO defined by user
+
+
+
+vdwm
+
+Van der waals radius for atoms in MOZYME defined by user
+
+
+
+vectors
+
+Print final eigenvectors
+
+
+
+velocity
+
+Supply the initial velocity vector in a DRC calculation
+
+
+
+williams
+
+Use Williams surface
+
+
+
+x-priority
+
+Geometry changes take priority in DRC
+
+
+
+xeno
+
+Allow non-standard residues in proteins to be labeled.
+
+
+
+xyz
+
+Do all geometric operations in Cartesian coordinates
+
+
+
+z=n
+
+Number of mers in a cluster
