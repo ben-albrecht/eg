@@ -2,7 +2,7 @@
      A Quantum Leap Into The Future Of Chemistry
 
 
- Q-Chem 4.3 (beta), Q-Chem, Inc., Pleasanton, CA (2015)
+ Q-Chem 4.2, Q-Chem, Inc., Pleasanton, CA (2014).
 
  Y. Shao,  Z. Gan,  E. Epifanovsky,  A. T. B. Gilbert,  M. Wormit,  
  J. Kussmann,  A. W. Lange,  A. Behn,  J. Deng,  X. Feng,  D. Ghosh,  
@@ -10,24 +10,22 @@
  T. Kus,  A. Landau,  J. Liu,  E. I. Proynov,  Y. M. Rhee,  R. M. Richard,  
  M. A. Rohrdanz,  R. P. Steele,  E. J. Sundstrom,  H. L. Woodcock III,  
  P. M. Zimmerman,  D. Zuev,  B. Albrecht,  E. Alguire,  B. Austin,  
- S. A. Baeppler,  G. J. O. Beran,  Y. A. Bernard,  E. Berquist,  
- K. Brandhorst,  K. B. Bravaya,  S. T. Brown,  D. Casanova,  C.-M. Chang,  
- Y. Chen,  S. H. Chien,  K. D. Closser,  D. L. Crittenden,  M. Diedenhofen,  
- R. A. DiStasio Jr.,  H. Do,  A. D. Dutoi,  R. G. Edgar,  P.-T. Fang,  
- S. Fatehi,  Q. Feng,  L. Fusti-Molnar,  A. Ghysels,  
- A. Golubeva-Zadorozhnaya,  J. Gomes,  A. Gunina,  M. W. D. Hanson-Heine,  
- P. H. P. Harbach,  A. W. Hauser,  E. G. Hohenstein,  Z. C. Holden,  K. Hui,  
- T.-C. Jagau,  H. Ji,  B. Kaduk,  K. Khistyaev,  Jaehoon Kim,  Jihan Kim,  
- R. A. King,  P. Klunzinger,  D. Kosenkov,  T. Kowalczyk,  C. M. Krauter,  
- K. U. Lao,  A. Laurent,  K. V. Lawler,  S. Lehtola,  S. V. Levchenko,  
- C. Y. Lin,  Y.-S. Lin,  F. Liu,  E. Livshits,  R. C. Lochan,  A. Luenser,  
- P. Manohar,  S. F. Manzer,  S.-P. Mao,  N. Mardirossian,  A. V. Marenich,  
- L. A. Martinez-Martinez,  S. A. Maurer,  N. J. Mayhall,  K. Nanda,  
- C. M. Oana,  R. Olivares-Amaya,  D. P. O'Neill,  J. A. Parkhill,  
- T. M. Perrine,  R. Peverati,  P. A. Pieniazek,  F. Plasser,  A. Prociuk,  
+ G. J. O. Beran,  Y. A. Bernard,  E. Berquist,  K. Brandhorst,  
+ K. B. Bravaya,  S. T. Brown,  D. Casanova,  C.-M. Chang,  Y. Chen,  
+ S. H. Chien,  K. D. Closser,  D. L. Crittenden,  M. Diedenhofen,  
+ R. A. DiStasio Jr.,  H. Do,  A. D. Dutoi,  R. G. Edgar,  S. Fatehi,  
+ L. Fusti-Molnar,  A. Ghysels,  A. Golubeva-Zadorozhnaya,  J. Gomes,  
+ M. W. D. Hanson-Heine,  P. H. P. Harbach,  A. W. Hauser,  E. G. Hohenstein,  
+ Z. C. Holden,  T.-C. Jagau,  H. Ji,  B. Kaduk,  K. Khistyaev,  Jaehoon Kim,  
+ Jihan Kim,  R. A. King,  P. Klunzinger,  D. Kosenkov,  T. Kowalczyk,  
+ C. M. Krauter,  K. U. Lao,  A. Laurent,  K. V. Lawler,  S. V. Levchenko,  
+ C. Y. Lin,  F. Liu,  E. Livshits,  R. C. Lochan,  A. Luenser,  P. Manohar,  
+ S. F. Manzer,  S.-P. Mao,  N. Mardirossian,  A. V. Marenich,  S. A. Maurer,  
+ N. J. Mayhall,  C. M. Oana,  R. Olivares-Amaya,  D. P. O'Neill,  
+ J. A. Parkhill,  T. M. Perrine,  R. Peverati,  P. A. Pieniazek,  A. Prociuk,  
  D. R. Rehn,  E. Rosta,  N. J. Russ,  N. Sergueev,  S. M. Sharada,  
- S. Sharma,  D. W. Small,  A. Sodt,  T. Stauch,  T. Stein,  D. Stuck,  
- Y.-C. Su,  A. J. W. Thom,  T. Tsuchimochi,  L. Vogt,  O. Vydrov,  T. Wang,  
+ S. Sharma,  D. W. Small,  A. Sodt,  T. Stein,  D. Stuck,  Y.-C. Su,  
+ A. J. W. Thom,  T. Tsuchimochi,  L. Vogt,  O. Vydrov,  T. Wang,  
  M. A. Watson,  J. Wenzel,  A. White,  C. F. Williams,  V. Vanovschi,  
  S. Yeganeh,  S. R. Yost,  Z.-Q. You,  I. Y. Zhang,  X. Zhang,  Y. Zhao,  
  B. R. Brooks,  G. K. L. Chan,  D. M. Chipman,  C. J. Cramer,  
@@ -47,31 +45,26 @@
  D. Neuhauser,  R. Olson,  B. Peters,  J. Ritchie,  N. E. Schultz,  
  N. Shenvi,  A. C. Simmonett,  K. S. Thanthiriwatte,  Q. Wu,  W. Zhang
 
- Please cite Q-Chem as follows:
- Y. Shao et al., Mol. Phys. 113, 184-215 (2014)
- DOI: 10.1080/00268976.2014.952696
+ Q-Chem 4.2.0 for Intel X86 EM64T Linux
 
- Q-Chem 4.3.0 for Mac (Intel) OS X
-
- Parts of Q-Chem use Armadillo 4.550.3 (Singapore Sling Deluxe).
+ Parts of Q-Chem use Armadillo 4.100.2 (Dirt Cruiser).
  http://arma.sourceforge.net/
 
- Q-Chem begins on Tue Apr 28 11:36:40 2015  
+ Q-Chem begins on Tue Apr 28 17:36:39 2015  
 
-cl-130-49-12-135.wireless.pitt.edu
-Host: 0
+Host: 
+0
 
-     Scratch files written to /Users/albrecht/scratch/qchem/plt-spin//
- Apr1115 |Users|albrecht|opt|build|qchem|4.3|trunk_RNUM -1
-Processing $rem in /Users/albrecht/.qchemrc.
-    geom_opt_tol_gradient       30      ! Override default 300
-    geom_opt_tol_displacement   120     ! Override default 1200
-    geom_opt_tol_energy         10      ! Override default 100
-    geom_opt_max_cycles         500     ! Override default 50
-    symmetry              false
-    sym_ignore            true
+     Scratch files written to /home/ben/scratch/qchem/plt-spin//
+ Feb615 |home|ben|opt|apps|qchem|qchem_embed|libmdc|qstr_info.C -1
+ Using version located at /home/ben/opt/apps/qchem/qchem_embed/bin/qchem
 
-Checking the input file for inconsistencies...	...done.
+
+Total Memory Limit in MB = 2000
+Mega-Array Size in MB = 62
+Checking the input file for consistency...	...done.
+Number of plots requested:  MO 0 Den 1 Trans 0 D/A 0
+Finally everything over in PARseQInput
 
 --------------------------------------------------------------
 User input:
@@ -109,8 +102,8 @@ $plots
     50 -10.0 10.0
     50 -10.0 10.0
     50 -10.0 10.0
-    0 2 0 0
-    0 1
+    0 1 0 0
+    0
 $end
 
 
@@ -119,20 +112,22 @@ $end
              Standard Nuclear Orientation (Angstroms)
     I     Atom           X                Y                Z
  ----------------------------------------------------------------
-    1      C       0.5257302888     0.1305985181     0.0100075403
-    2      O       1.6234821038     0.8582166421     0.2896131034
-    3      O       0.5715967501    -1.0214087362    -0.3893783015
-    4      C      -0.7155727511     0.8598973750     0.2268124796
-    5      Si     -2.3393648031     0.0227472458    -0.1601739944
-    6      H      -2.5124025840    -1.1865087651     0.6819568820
-    7      H      -2.3944211453    -0.3586757098    -1.5929845255
-    8      H      -3.4340276049     0.9833633295     0.1315672317
-    9      H      -0.6408677524     1.8719020689     0.6148270982
-   10      C       2.8640787035     0.1859487872     0.0826815751
-   11      H       3.6365413555     0.9355310263     0.2480977639
-   12      H       2.9201151248    -0.2125681654    -0.9323655631
-   13      H       2.9789329064    -0.6374860773     0.7923212322
+    1      C       0.5006234175    -0.0177146200     0.0139517911
+    2      O       1.6335038645     0.7096056924    -0.0019701597
+    3      O       0.4899529266    -1.2377984767     0.0178273824
+    4      C      -0.7045819868     0.7990843546     0.0197664081
+    5      Si     -2.3713325705    -0.0425103728    -0.0108979729
+    6      H      -2.5424824376    -0.8968116820     1.1900614696
+    7      H      -2.5077429292    -0.8722919074    -1.2333199576
+    8      H      -3.4190619687     1.0103036296    -0.0162493806
+    9      H      -0.5786116066     1.8778140994     0.0473939784
+   10      C       2.8403214887    -0.0501303969    -0.0173632084
+   11      H       3.6436607379     0.6753309469    -0.1368893013
+   12      H       2.8344219878    -0.7633611507    -0.8441301783
+   13      H       2.9626403578    -0.5977324683     0.9207172639
  ----------------------------------------------------------------
+ Molecular Point Group                 C1    NOp =  1
+ Largest Abelian Subgroup              C1    NOp =  1
  Nuclear Repulsion Energy =   283.7088712260 hartrees
  There are       28 alpha and       27 beta electrons
  Requested basis set is STO-3G
@@ -141,6 +136,8 @@ $end
 Total QAlloc Memory Limit   2000 MB
 Mega-Array Size        61 MB
 MEM_STATIC part        62 MB
+
+finished with qalloc call
 
                        Distance Matrix (Angstroms)
              C (  1)   O (  2)   O (  3)   C (  4)   Si(  5)   H (  6)
@@ -164,10 +161,19 @@ MEM_STATIC part        62 MB
    H ( 12)  5.357430  6.552659  4.406747  1.091914  1.795798
    H ( 13)  5.885606  6.647542  4.408116  1.093080  1.789696  1.777234
 
-
+ 
+ Job number = 2, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 2  <1-6|1-6>
+Symmetry turned off temporarily
+ Using the largest function pair in Schwarz integrals
+Total number of integrals generated =            8059
+Symmetry turned back on
+           0
  A cutoff of  1.0D-08 yielded    184 shell pairs
  There are       823 function pairs
-
+ Job number = 11, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-6|7-7>
+ 
  -------------------------------------------------------
  OpenMP Integral Computing Module                       
  Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
@@ -203,95 +209,278 @@ MEM_STATIC part        62 MB
  max number of PS2 of shell pair            153
  mem total for path MDJ                   14214
  -------------------------------------------------------
+         cpu   0.00 wall   0.00
  Smallest overlap matrix eigenvalue = 2.30E-01
+ Multipole matrices computed through 2nd order
 
   Scale SEOQF with 1.000000e-01/1.000000e-01/1.000000e+00
 
  Standard Electronic Orientation quadrupole field applied
- Nucleus-field energy     =     0.0000000013 hartrees
+ Nucleus-field energy     =     0.0000000046 hartrees
  Guess from superposition of atomic densities
  Warning:  Energy on first SCF cycle will be non-variational
+scfman initvdwdat 
  An unrestricted hybrid HF-DFT SCF calculation will be
  performed using Pulay DIIS extrapolation
  Exchange:     0.2000 Hartree-Fock + 0.0800 Slater + 0.7200 Becke88
  Correlation:  0.8100 LYP + 0.1900 VWN1RPA
  Using SG-1 standard quadrature grid
  SCF converges when DIIS error is below 1.0E-05
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Total number of integrals generated =          326424
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 1.07 s  wall 1.08 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 1.61 s  wall 1.62 s
 
- Total DFTman time = 1.07 CPUs 1.08 Wall
+ Total DFTman time = 1.61 CPUs 1.62 Wall
+Fock build time:  1.83 s (CPU) 1.83 s (wall)
+DIIS Errors:  Max 1.53E+00 RMS 1.52E-01
+
+Current DIIS subspace size = 1
+REM_GRID_RESTART_DIIS = 0
+
  ---------------------------------------
   Cycle       Energy         DIIS Error
  ---------------------------------------
-    1    -550.9737912886      1.52E-01
+    1    -550.9737747759      1.52E-01  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.60 s  wall 0.61 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.93 s  wall 0.93 s
 
- Total DFTman time = 0.60 CPUs 0.61 Wall
-    2    -551.3980731112      2.10E-02
+ Total DFTman time = 0.93 CPUs 0.93 Wall
+Fock build time:  0.97 s (CPU) 0.98 s (wall)
+DIIS Errors:  Max 2.93E-01 RMS 2.10E-02
+
+Current DIIS subspace size = 2
+REM_GRID_RESTART_DIIS = 0
+
+    2    -551.3979185193      2.10E-02  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.57 s  wall 0.57 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.92 s  wall 0.92 s
 
- Total DFTman time = 0.57 CPUs 0.57 Wall
-    3    -550.4467217933      6.00E-02
+ Total DFTman time = 0.92 CPUs 0.92 Wall
+Fock build time:  0.97 s (CPU) 0.97 s (wall)
+DIIS Errors:  Max 9.68E-01 RMS 6.00E-02
+
+Current DIIS subspace size = 3
+REM_GRID_RESTART_DIIS = 0
+
+    3    -550.4453275224      6.00E-02  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.56 s  wall 0.56 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.91 s  wall 0.91 s
 
- Total DFTman time = 0.56 CPUs 0.56 Wall
-    4    -551.4864916309      1.21E-02
+ Total DFTman time = 0.91 CPUs 0.91 Wall
+Fock build time:  0.96 s (CPU) 0.96 s (wall)
+DIIS Errors:  Max 9.61E-02 RMS 1.21E-02
+
+Current DIIS subspace size = 4
+REM_GRID_RESTART_DIIS = 0
+
+    4    -551.4864199714      1.21E-02  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.54 s  wall 0.54 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.89 s  wall 0.89 s
 
- Total DFTman time = 0.54 CPUs 0.54 Wall
-    5    -551.5341503298      1.60E-03
+ Total DFTman time = 0.89 CPUs 0.89 Wall
+Fock build time:  0.94 s (CPU) 0.94 s (wall)
+DIIS Errors:  Max 1.67E-02 RMS 1.60E-03
+
+Current DIIS subspace size = 5
+REM_GRID_RESTART_DIIS = 0
+
+    5    -551.5340293756      1.60E-03  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.52 s  wall 0.52 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.85 s  wall 0.85 s
 
- Total DFTman time = 0.52 CPUs 0.52 Wall
-    6    -551.5355678590      1.11E-03
+ Total DFTman time = 0.85 CPUs 0.85 Wall
+Fock build time:  0.89 s (CPU) 0.89 s (wall)
+DIIS Errors:  Max 1.05E-02 RMS 1.11E-03
+
+Current DIIS subspace size = 6
+REM_GRID_RESTART_DIIS = 0
+
+    6    -551.5354502038      1.11E-03  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.48 s  wall 0.49 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.81 s  wall 0.81 s
 
- Total DFTman time = 0.48 CPUs 0.49 Wall
-    7    -551.5360590463      3.90E-04
+ Total DFTman time = 0.81 CPUs 0.81 Wall
+Fock build time:  0.85 s (CPU) 0.85 s (wall)
+DIIS Errors:  Max 4.36E-03 RMS 3.90E-04
+
+Current DIIS subspace size = 7
+REM_GRID_RESTART_DIIS = 0
+
+    7    -551.5359414111      3.90E-04  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.45 s  wall 0.45 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.77 s  wall 0.77 s
 
- Total DFTman time = 0.45 CPUs 0.45 Wall
-    8    -551.5361614961      2.20E-04
+ Total DFTman time = 0.77 CPUs 0.77 Wall
+Fock build time:  0.82 s (CPU) 0.82 s (wall)
+DIIS Errors:  Max 2.52E-03 RMS 2.20E-04
+
+Current DIIS subspace size = 8
+REM_GRID_RESTART_DIIS = 0
+
+    8    -551.5360438330      2.20E-04  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.44 s  wall 0.44 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.76 s  wall 0.76 s
 
- Total DFTman time = 0.44 CPUs 0.44 Wall
-    9    -551.5362198696      1.13E-04
+ Total DFTman time = 0.76 CPUs 0.76 Wall
+Fock build time:  0.80 s (CPU) 0.81 s (wall)
+DIIS Errors:  Max 1.52E-03 RMS 1.13E-04
+
+Current DIIS subspace size = 9
+REM_GRID_RESTART_DIIS = 0
+
+    9    -551.5361022183      1.13E-04  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.41 s  wall 0.42 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.72 s  wall 0.72 s
 
- Total DFTman time = 0.41 CPUs 0.42 Wall
-   10    -551.5362379609      5.79E-05
+ Total DFTman time = 0.72 CPUs 0.72 Wall
+Fock build time:  0.77 s (CPU) 0.77 s (wall)
+DIIS Errors:  Max 7.73E-04 RMS 5.80E-05
+
+Current DIIS subspace size = 10
+REM_GRID_RESTART_DIIS = 0
+
+   10    -551.5361203556      5.80E-05  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.40 s  wall 0.40 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.69 s  wall 0.69 s
 
- Total DFTman time = 0.40 CPUs 0.40 Wall
-   11    -551.5362429765      2.40E-05
+ Total DFTman time = 0.69 CPUs 0.69 Wall
+Fock build time:  0.74 s (CPU) 0.74 s (wall)
+DIIS Errors:  Max 3.26E-04 RMS 2.39E-05
+
+Current DIIS subspace size = 11
+REM_GRID_RESTART_DIIS = 0
+
+   11    -551.5361253776      2.39E-05  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-08
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-6|1-6>
+Approximate symmetry reduction factor = 1.000000
+Storing 536.22% of integrals
+Reusing in-core integrals buffer for job 22
+Target Grid is being used
  CPU 0.00 s  wall 0.00 s
- CPU 0.37 s  wall 0.37 s
+NTotSigB2 = 195646
+Total Number of Grid Points = 35000
+ CPU 0.65 s  wall 0.66 s
 
- Total DFTman time = 0.37 CPUs 0.37 Wall
-   12    -551.5362441929      7.86E-06 Convergence criterion met
+ Total DFTman time = 0.65 CPUs 0.66 Wall
+Fock build time:  0.70 s (CPU) 0.70 s (wall)
+DIIS Errors:  Max 1.12E-04 RMS 8.32E-06
+
+Current DIIS subspace size = 12
+REM_GRID_RESTART_DIIS = 0
+
+   12    -551.5361266104      8.32E-06  00000 Convergence criterion met
  ---------------------------------------
  <S^2> = 0.7661
- SCF time:  CPU 6.84 s  wall 6.92 s
- SCF   energy in the final basis set = -551.5362441929
- Total energy in the final basis set = -551.5362441929
+ SCF time:  CPU 11.28 s  wall 11.29 s
+ SCF   energy in the final basis set = -551.5361266104
+ Total energy in the final basis set = -551.5361266104
+Symmetry turned off temporarily
  Analysis of SCF Wavefunction
-
+ 
  --------------------------------------------------------------
-
                     Orbital Energies (a.u.)
  --------------------------------------------------------------
-
+ 
  Alpha MOs
  -- Occupied --
 -65.380 -18.932 -18.853 -10.102 -10.070  -9.970  -5.101  -3.402
@@ -301,35 +490,35 @@ MEM_STATIC part        62 MB
  -- Virtual --
   0.155   0.268   0.299   0.316   0.344   0.355   0.414   0.439
   0.443   0.460   0.480   0.564   0.717
-
+ 
  Beta MOs
  -- Occupied --
--65.380 -18.932 -18.849 -10.104 -10.070  -9.957  -5.102  -3.403
+-65.381 -18.932 -18.849 -10.104 -10.070  -9.957  -5.102  -3.403
  -3.402  -3.402  -1.039  -0.941  -0.697  -0.629  -0.512  -0.470
- -0.433  -0.427  -0.394  -0.335  -0.330  -0.296  -0.290  -0.280
+ -0.433  -0.427  -0.394  -0.335  -0.330  -0.296  -0.290  -0.281
  -0.238  -0.166  -0.140
  -- Virtual --
-  0.002   0.186   0.278   0.303   0.318   0.349   0.366   0.414
+  0.002   0.186   0.278   0.304   0.318   0.349   0.366   0.414
   0.439   0.456   0.465   0.481   0.576   0.722
  --------------------------------------------------------------
-
+ 
           Ground-State Mulliken Net Atomic Charges
 
      Atom                 Charge (a.u.)    Spin (a.u.)
   --------------------------------------------------------
-      1 C                     0.208282      -0.136185
-      2 O                    -0.196808      -0.001895
-      3 O                    -0.242332       0.258593
-      4 C                    -0.231157       0.931057
-      5 Si                    0.593142      -0.061657
-      6 H                    -0.117698       0.026040
-      7 H                    -0.117998       0.025019
-      8 H                    -0.127887       0.000017
-      9 H                     0.077479      -0.039594
-     10 C                    -0.125913      -0.002022
-     11 H                     0.096223       0.000143
-     12 H                     0.093664       0.000106
-     13 H                     0.091003       0.000378
+      1 C                     0.208269      -0.136197
+      2 O                    -0.196807      -0.001847
+      3 O                    -0.242321       0.258571
+      4 C                    -0.231157       0.931065
+      5 Si                    0.593158      -0.061662
+      6 H                    -0.117710       0.026042
+      7 H                    -0.118004       0.025021
+      8 H                    -0.127884       0.000018
+      9 H                     0.077478      -0.039601
+     10 C                    -0.125911      -0.002038
+     11 H                     0.096218       0.000144
+     12 H                     0.093671       0.000106
+     13 H                     0.091001       0.000379
   --------------------------------------------------------
   Sum of atomic charges =     0.000000
   Sum of spin   charges =     1.000000
@@ -340,25 +529,40 @@ MEM_STATIC part        62 MB
     Charge (ESU x 10^10)
                  0.0000
     Dipole Moment (Debye)
-         X       0.2339      Y       0.7828      Z       0.2656
+         X       0.2716      Y       0.8148      Z      -0.0174
        Tot       0.8591
     Quadrupole Moments (Debye-Ang)
-        XX     -34.9472     XY      -0.2899     YY     -42.1217
-        XZ      -0.0196     YZ      -0.9715     ZZ     -39.7119
+        XX     -35.0053     XY      -0.6840     YY     -42.6175
+        XZ      -0.0576     YZ       0.0660     ZZ     -39.3715
     Octopole Moments (Debye-Ang^2)
-       XXX      25.4018    XXY      -7.5752    XYY       1.7092
-       YYY     -15.5838    XXZ       0.2032    XYZ      -1.3341
-       YYZ       1.8687    XZZ       4.5405    YZZ      -5.9868
-       ZZZ       2.6056
+       XXX      27.6312    XXY      -3.9050    XYY       2.7575
+       YYY       1.8930    XXZ      -0.1477    XYZ      -0.1164
+       YYZ      -0.1200    XZZ       6.0473    YZZ      -1.1732
+       ZZZ       0.2943
     Hexadecapole Moments (Debye-Ang^3)
-      XXXX    -941.7727   XXXY       6.6494   XXYY    -190.5292
-      XYYY     -10.9399   YYYY    -138.3987   XXXZ     -15.6041
-      XXYZ      -5.1489   XYYZ      -5.4858   YYYZ     -13.6654
-      XXZZ    -175.7262   XYZZ      -6.0255   YYZZ     -34.1538
-      XZZZ     -24.7848   YZZZ     -14.1493   ZZZZ     -67.7814
+      XXXX    -944.3548   XXXY      15.3906   XXYY    -192.5581
+      XYYY       2.7351   YYYY    -143.6649   XXXZ      -0.6446
+      XXYZ      -0.5282   XYYZ      -0.4700   YYYZ       0.2399
+      XXZZ    -174.8062   XYZZ      -3.2641   YYZZ     -32.7048
+      XZZZ       0.4503   YZZZ      -0.2131   ZZZZ     -55.4641
  -----------------------------------------------------------------
+Created directory /home/ben/scratch/qchem/plt-spin/plots
+Directory /home/ben/scratch/qchem/plt-spin/plotsalready exists
+Directory /home/ben/scratch/qchem/plt-spin/plotsalready exists
+Directory /home/ben/scratch/qchem/plt-spin/plotsalready exists
+ JobOver = TRUE
+Archival summary:
+1\1\vonNeumann\SP\ProcedureUnspecified\STO-3G\i1237(2)\ben\TueApr2817:37:032015TueApr2817:37:032015\0\\#,ProcedureUnspecified,STO-3G,\\0,2\Si\H,1,1.48372\H,1,1.48373,2,109.527\H,1,1.48532,2,109.249,3,-119.546,0\C,1,1.86743,2,110.436,3,121.719,0\H,5,1.08641,1,123.463,2,118.414,0\C,5,1.45592,1,119.074,2,-61.2462,0\O,7,1.22014,5,123.624,1,1.57454,0\O,7,1.34635,5,113.174,1,-178.157,0\C,9,1.42613,7,115.112,5,179.593,0\H,10,1.08901,9,105.696,7,-174.087,0\H,10,1.09191,9,110.584,7,-54.0494,0\H,10,1.09308,9,110.629,7,66.6306,0\\\@
 
- Q-Chem fatal error occurred in module /Users/albrecht/opt/build/qchem/4.3/trunk_release/libmdc/newfileman.C, line 136:
+ Total job time:  23.66s(wall), 23.65s(cpu) 
+ Tue Apr 28 17:37:03 2015
 
- Error positioning pointer in FILE 73/0 (-1755327064)
+        *************************************************************
+        *                                                           *
+        *  Thank you very much for using Q-Chem.  Have a nice day.  *
+        *                                                           *
+        *************************************************************
+
+
+*** MISSION COMPLETED -- STARFLEET OUT ***
 

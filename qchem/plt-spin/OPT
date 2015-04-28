@@ -1,9 +1,0 @@
-$opt
-IOPTC     -1
-TOLG          0.000030000000
-TOLD          0.000120000000
-TOLE          0.000000100000
-DMAX          0.300000000000
-MAXCYC   500
-IPRNT      2
-$end                                                                            
