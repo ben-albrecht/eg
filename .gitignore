@@ -3,3 +3,4 @@ restats
 
 # Q-Chem
 pathtable
+qchem/.*
