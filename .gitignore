@@ -3,5 +3,6 @@ restats
 
 # Q-Chem
 pathtable
+qchem/.*
 
 .DS_Store

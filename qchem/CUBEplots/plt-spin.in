@@ -17,9 +17,8 @@ $end
 
 $rem
     jobtype                     sp
-    exchange                    b3lyp
-    !exchange                   omegaB97X-D
-    basis                       STO-3G
+    exchange                    omegaB97X-D
+    basis                       6-311++G(3df,3pd)
     unrestricted                true
     scf_algorithm               diis
     make_cube_files             true
@@ -28,9 +27,9 @@ $end
 
 $plots
     Plot stuff
-    50 -10.0 10.0
-    50 -10.0 10.0
-    50 -10.0 10.0
+    100 -5.0 5.0
+    100 -5.0 5.0
+    100 -5.0 5.0
     0 1 0 0
     0
 $end
