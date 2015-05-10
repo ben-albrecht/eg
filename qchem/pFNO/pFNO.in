@@ -1,0 +1,29 @@
+$comment
+Test whether we can read guess after pFNO calc
+$end
+
+$molecule
+0 1
+O
+H 1 0.95
+H 1 0.95 2 104.5
+$end
+
+$rem
+exchange hf
+basis 6-31G
+occupations 2
+$end
+
+@@@
+
+$molecule
+read
+$end
+
+$rem
+scf_guess read
+exchange hf
+basis 6-31G
+!occupations 2
+$end
