@@ -1,0 +1,1359 @@
+                  Welcome to Q-Chem
+     A Quantum Leap Into The Future Of Chemistry
+
+
+ Q-Chem 4.3 (beta), Q-Chem, Inc., Pleasanton, CA (2015)
+
+ Y. Shao,  Z. Gan,  E. Epifanovsky,  A. T. B. Gilbert,  M. Wormit,  
+ J. Kussmann,  A. W. Lange,  A. Behn,  J. Deng,  X. Feng,  D. Ghosh,  
+ M. Goldey,  P. R. Horn,  L. D. Jacobson,  I. Kaliman,  R. Z. Khaliullin,  
+ T. Kus,  A. Landau,  J. Liu,  E. I. Proynov,  Y. M. Rhee,  R. M. Richard,  
+ M. A. Rohrdanz,  R. P. Steele,  E. J. Sundstrom,  H. L. Woodcock III,  
+ P. M. Zimmerman,  D. Zuev,  B. Albrecht,  E. Alguire,  B. Austin,  
+ S. A. Baeppler,  G. J. O. Beran,  Y. A. Bernard,  E. Berquist,  
+ K. Brandhorst,  K. B. Bravaya,  S. T. Brown,  D. Casanova,  C.-M. Chang,  
+ Y. Chen,  S. H. Chien,  K. D. Closser,  D. L. Crittenden,  M. Diedenhofen,  
+ R. A. DiStasio Jr.,  H. Do,  A. D. Dutoi,  R. G. Edgar,  P.-T. Fang,  
+ S. Fatehi,  Q. Feng,  L. Fusti-Molnar,  A. Ghysels,  
+ A. Golubeva-Zadorozhnaya,  J. Gomes,  A. Gunina,  M. W. D. Hanson-Heine,  
+ P. H. P. Harbach,  A. W. Hauser,  E. G. Hohenstein,  Z. C. Holden,  K. Hui,  
+ T.-C. Jagau,  H. Ji,  B. Kaduk,  K. Khistyaev,  Jaehoon Kim,  Jihan Kim,  
+ R. A. King,  P. Klunzinger,  D. Kosenkov,  T. Kowalczyk,  C. M. Krauter,  
+ K. U. Lao,  A. Laurent,  K. V. Lawler,  S. Lehtola,  S. V. Levchenko,  
+ C. Y. Lin,  Y.-S. Lin,  F. Liu,  E. Livshits,  R. C. Lochan,  A. Luenser,  
+ P. Manohar,  S. F. Manzer,  S.-P. Mao,  N. Mardirossian,  A. V. Marenich,  
+ L. A. Martinez-Martinez,  S. A. Maurer,  N. J. Mayhall,  K. Nanda,  
+ C. M. Oana,  R. Olivares-Amaya,  D. P. O'Neill,  J. A. Parkhill,  
+ T. M. Perrine,  R. Peverati,  P. A. Pieniazek,  F. Plasser,  A. Prociuk,  
+ D. R. Rehn,  E. Rosta,  N. J. Russ,  N. Sergueev,  S. M. Sharada,  
+ S. Sharma,  D. W. Small,  A. Sodt,  T. Stauch,  T. Stein,  D. Stuck,  
+ Y.-C. Su,  A. J. W. Thom,  T. Tsuchimochi,  L. Vogt,  O. Vydrov,  T. Wang,  
+ M. A. Watson,  J. Wenzel,  A. White,  C. F. Williams,  V. Vanovschi,  
+ S. Yeganeh,  S. R. Yost,  Z.-Q. You,  I. Y. Zhang,  X. Zhang,  Y. Zhao,  
+ B. R. Brooks,  G. K. L. Chan,  D. M. Chipman,  C. J. Cramer,  
+ W. A. Goddard III,  M. S. Gordon,  W. J. Hehre,  A. Klamt,  
+ H. F. Schaefer III,  M. W. Schmidt,  C. D. Sherrill,  D. G. Truhlar,  
+ A. Warshel,  X. Xu,  A. Aspuru-Guzik,  R. Baer,  A. T. Bell,  N. A. Besley,  
+ J.-D. Chai,  A. Dreuw,  B. D. Dunietz,  T. R. Furlani,  S. R. Gwaltney,  
+ C.-P. Hsu,  Y. Jung,  J. Kong,  D. S. Lambrecht,  W. Liang,  C. Ochsenfeld,  
+ V. A. Rassolov,  L. V. Slipchenko,  J. E. Subotnik,  T. Van Voorhis,  
+ J. M. Herbert,  A. I. Krylov,  P. M. W. Gill,  M. Head-Gordon
+
+ Contributors to earlier versions of Q-Chem not listed above: 
+ R. D. Adamson,  J. Baker,  E. F. C. Byrd,  A. K. Chakraborty,  C.-L. Cheng,  
+ H. Dachsel,  R. J. Doerksen,  G. Hawkins,  A. Heyden,  S. Hirata,  
+ G. Kedziora,  F. J. Keil,  C. Kelley,  P. P. Korambath,  W. Kurlancheek,  
+ A. M. Lee,  M. S. Lee,  D. Liotard,  I. Lotan,  P. E. Maslen,  N. Nair,  
+ D. Neuhauser,  R. Olson,  B. Peters,  J. Ritchie,  N. E. Schultz,  
+ N. Shenvi,  A. C. Simmonett,  K. S. Thanthiriwatte,  Q. Wu,  W. Zhang
+
+ Please cite Q-Chem as follows:
+ Y. Shao et al., Mol. Phys. 113, 184-215 (2014)
+ DOI: 10.1080/00268976.2014.952696
+
+ Q-Chem 4.3.0 for Mac (Intel) OS X
+
+ Parts of Q-Chem use Armadillo 4.550.3 (Singapore Sling Deluxe).
+ http://arma.sourceforge.net/
+
+ Q-Chem begins on Tue May 19 21:31:37 2015  
+
+berlioz.local
+Host: 0
+
+     Scratch files written to /Users/albrecht/scratch/qchem/qchem95358//
+ Apr2815 |Users|albrecht|opt|build|qchem|4.3|trunk_RNUM -1
+ Using version located at /Users/albrecht/opt/build/qchem/4.3/trunk_release/bin/qchem
+
+Processing $rem in /Users/albrecht/.qchemrc.
+    geom_opt_tol_gradient       30      ! Override default 300
+    geom_opt_tol_displacement   120     ! Override default 1200
+    geom_opt_tol_energy         10      ! Override default 100
+    geom_opt_max_cycles         500     ! Override default 50
+    symmetry              false
+    sym_ignore            true
+    cc_symmetry           false
+    scf_algorithm   diis ! Is default
+    maxscf          500  ! Override default
+    ccman2          true ! Override default
+
+Total Memory Limit in MB = 2000
+Mega-Array Size in MB = 62
+
+Checking the input file for inconsistencies...	...done.
+Finally everything over in PARseQInput
+
+--------------------------------------------------------------
+User input:
+--------------------------------------------------------------
+$comment
+Basic HF optimization on water
+$end
+
+$molecule
+0 1
+O1
+H1 O1 1.0
+H2 O1 1.0 H1 104.5
+$end
+
+$rem
+jobtype opt
+exchange hf
+basis 6-31G*
+$end
+--------------------------------------------------------------
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      O       0.0000000000     0.0000000000     0.0000000000
+    2      H       0.0000000000     0.0000000000     1.0000000000
+    3      H       0.9681476404     0.0000000000    -0.2503800041
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =     8.8014655667 hartrees
+ There are        5 alpha and        5 beta electrons
+ Requested basis set is 6-31G(d)
+ There are 8 shells and 19 basis functions
+
+Total QAlloc Memory Limit   2000 MB
+Mega-Array Size        61 MB
+MEM_STATIC part        62 MB
+
+finished with qalloc call
+ Job number = 2, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 2  <1-21|1-21>
+Symmetry turned off temporarily
+ Using the largest function pair in Schwarz integrals
+Total number of integrals generated =            3571
+Symmetry turned back on
+ A cutoff of  1.0D-11 yielded     36 shell pairs
+ There are       217 function pairs
+ Job number = 11, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+
+ -------------------------------------------------------
+ OpenMP Integral Computing Module                       
+ Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
+ -------------------------------------------------------
+ Integral Job Info:
+ Integral job number is                      11
+ Integral operator is                         1
+ short-range coefficients               -999999
+ long-range coefficients                -999999
+ Omega coefficients                           0
+ if combine SR and LR in K              -999999
+ Integral screening is                        0
+ Integral computing path is                   2
+ max size of driver memory is            800000
+ size of driver memory is                593474
+ size of scratch memory is              2260544
+ max col of scratch BK array               1296
+ max len of scratch array in speh3          155
+ max len of scratch index in speh4           18
+ max int batch size is                      520
+ min int batch size is                       52
+ fixed nKL is                                52
+ max L of basis functions is                  2
+ order of int derivative is                   0
+ number of shells is                          8
+ number of basis is                          19
+ number of cartesian basis is                19
+ number of contracted shell pairs            36
+ number of primitive shell pairs            201
+ maxK2 (contraction) of shell pair           36
+ max number of K2 of shell pair               1
+ max number of CS2 of shell pair              4
+ max number of PS2 of shell pair             36
+ mem total for path MDJ                    9264
+ -------------------------------------------------------
+ Smallest overlap matrix eigenvalue = 2.39E-02
+ Multipole matrices computed through 2nd order
+
+  Scale SEOQF with 1.000000e+00/1.000000e+00/1.000000e+00
+
+ Standard Electronic Orientation quadrupole field applied
+ Nucleus-field energy     =    -0.0000000008 hartrees
+ Guess from superposition of atomic densities
+ Warning:  Energy on first SCF cycle will be non-variational
+scfman initvdwdat 
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ SCF converges when DIIS error is below 1.0E-08
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Total number of integrals generated =           25330
+ MakeJK  time:  CPU       0.03 s  wall       0.03 s
+Fock build time:  0.03 s (CPU) 0.03 s (wall)
+DIIS Errors:  Max 9.15E-01 RMS 1.61E-01
+
+Current DIIS subspace size = 1
+REM_GRID_RESTART_DIIS = 0
+
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1     -75.8284425016      1.61E-01  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.46E-01 RMS 3.03E-02
+
+Current DIIS subspace size = 2
+REM_GRID_RESTART_DIIS = 0
+
+    2     -75.9695785023      3.03E-02  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.19E-01 RMS 1.62E-02
+
+Current DIIS subspace size = 3
+REM_GRID_RESTART_DIIS = 0
+
+    3     -75.9972918013      1.62E-02  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 9.44E-03 RMS 1.80E-03
+
+Current DIIS subspace size = 4
+REM_GRID_RESTART_DIIS = 0
+
+    4     -76.0052617645      1.80E-03  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 4.38E-03 RMS 4.87E-04
+
+Current DIIS subspace size = 5
+REM_GRID_RESTART_DIIS = 0
+
+    5     -76.0054587553      4.87E-04  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 7.95E-04 RMS 8.13E-05
+
+Current DIIS subspace size = 6
+REM_GRID_RESTART_DIIS = 0
+
+    6     -76.0054761223      8.13E-05  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 8.77E-05 RMS 9.59E-06
+
+Current DIIS subspace size = 7
+REM_GRID_RESTART_DIIS = 0
+
+    7     -76.0054767251      9.59E-06  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.01 s  wall       0.01 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 2.95E-06 RMS 7.86E-07
+
+Current DIIS subspace size = 8
+REM_GRID_RESTART_DIIS = 0
+
+    8     -76.0054767331      7.86E-07  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.01 s  wall       0.01 s
+Fock build time:  0.01 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 5.22E-07 RMS 1.33E-07
+
+Current DIIS subspace size = 9
+REM_GRID_RESTART_DIIS = 0
+
+    9     -76.0054767331      1.33E-07  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.01 s  wall       0.01 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.33E-07 RMS 3.00E-08
+
+Current DIIS subspace size = 10
+REM_GRID_RESTART_DIIS = 0
+
+   10     -76.0054767331      3.00E-08  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 2.81E-08 RMS 5.00E-09
+
+Current DIIS subspace size = 11
+REM_GRID_RESTART_DIIS = 0
+
+   11     -76.0054767331      5.00E-09  00000 Convergence criterion met
+ ---------------------------------------
+ SCF time:  CPU 0.20 s  wall 0.21 s
+ SCF   energy in the final basis set = -76.0054767331
+ Total energy in the final basis set = -76.0054767331
+Symmetry turned off temporarily
+ Analysis of SCF Wavefunction
+
+ --------------------------------------------------------------
+
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+
+ Alpha MOs
+ -- Occupied --
+-20.569  -1.321  -0.684  -0.563  -0.495
+ -- Virtual --
+  0.201   0.292   1.004   1.102   1.149   1.168   1.369   1.432
+  2.031   2.044   2.075   2.570   2.873   3.948
+ --------------------------------------------------------------
+
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 O                    -0.859578
+      2 H                     0.429789
+      3 H                     0.429789
+  ----------------------------------------
+  Sum of atomic charges =    -0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       1.7862      Y       0.0000      Z       1.3830
+       Tot       2.2590
+    Quadrupole Moments (Debye-Ang)
+        XX      -4.9162     XY      -0.0000     YY      -7.3143
+        XZ      -0.6729     YZ      -0.0000     ZZ      -4.5681
+    Octopole Moments (Debye-Ang^2)
+       XXX       0.5678    XXY       0.0000    XYY      -0.4256
+       YYY       0.0000    XXZ      -0.8043    XYZ      -0.0000
+       YYZ      -0.3296    XZZ      -0.3010    YZZ       0.0000
+       ZZZ       1.0108
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX      -5.0666   XXXY      -0.0000   XXYY      -2.0733
+      XYYY      -0.0000   YYYY      -5.3059   XXXZ      -0.3399
+      XXYZ      -0.0000   XYYZ       0.0661   YYYZ      -0.0000
+      XXZZ      -2.2656   XYZZ      -0.0000   YYZZ      -2.1075
+      XZZZ       0.1530   YZZZ      -0.0000   ZZZZ      -4.9699
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Job number = 111, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+Finding J and K together
+ ML is being used
+ Job number = 122, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+ MakeJK  time:  CPU       0.12 s  wall       0.12 s
+ Gradient of Coulomb and Exchange Energy
+            1           2           3
+    1   2.0684191   0.0872860  -2.1557050
+    2   0.0000000  -0.0000000   0.0000000
+    3   1.6015412  -2.2492021   0.6476609
+ Gradient of SCF Energy
+            1           2           3
+    1  -0.0470450  -0.0011217   0.0481667
+    2  -0.0000000   0.0000000  -0.0000000
+    3  -0.0364261   0.0500415  -0.0136154
+ Max gradient component =       5.004E-02
+ RMS gradient           =       3.082E-02
+ Gradient time:  CPU 0.29 s  wall 0.29 s
+ ------------------------------------------------------------------------------
+                     drvman        : Timing summary (seconds)
+ ------------------------------------------------------------------------------
+     job step          cpu (% of tot)      sys (% of tot)     wall (% of tot)
+ ------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+   Grand Totals     0.2924E+00          0.3000E-05          0.2932E+00
+ ------------------------------------------------------------------------------
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        3       9       3       0       0       0       0       0
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   1
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  O         0.0000000000    0.0000000000    0.0000000000
+      2  H         0.0000000000    0.0000000000    1.0000000000
+      3  H         0.9681476404    0.0000000000   -0.2503800041
+   Point Group: c1    Number of degrees of freedom:     3
+
+
+   Energy is    -76.005476733
+
+
+ Attempting to Generate Delocalized Internal Coordinates
+
+  3 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.160000    0.476883    0.476883
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.01030646
+ Step Taken.  Stepsize is  0.145793
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.056255      0.000030      NO
+         Displacement       0.110748      0.000120      NO
+         Energy change     *********      0.000000      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.132129
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      O       0.0150940325     0.0000000000     0.0116870486
+    2      H       0.0209790644     0.0000000000     0.9573145321
+    3      H       0.9320745435     0.0000000000    -0.2193815847
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =     9.3090799989 hartrees
+ There are        5 alpha and        5 beta electrons
+ JobOver = FALSE
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-10
+     (0,2,0)        2.00000E-10
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000007 hartrees
+ Requested basis set is 6-31G(d)
+ There are 8 shells and 19 basis functions
+ Job number = 2, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 2  <1-21|1-21>
+Symmetry turned off temporarily
+Total number of integrals generated =            3571
+Symmetry turned back on
+ A cutoff of  1.0D-11 yielded     36 shell pairs
+ There are       217 function pairs
+ Job number = 11, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+ Smallest overlap matrix eigenvalue = 2.19E-02
+ Multipole matrices computed through 2nd order
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Total number of integrals generated =           25330
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 6.74E-02 RMS 1.24E-02
+
+Current DIIS subspace size = 1
+REM_GRID_RESTART_DIIS = 0
+
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1     -76.0654405778      1.24E-02  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 5.83E-03 RMS 1.75E-03
+
+Current DIIS subspace size = 2
+REM_GRID_RESTART_DIIS = 0
+
+    2     -76.0104728357      1.75E-03  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.98E-03 RMS 3.76E-04
+
+Current DIIS subspace size = 3
+REM_GRID_RESTART_DIIS = 0
+
+    3     -76.0106343175      3.76E-04  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 9.95E-04 RMS 1.28E-04
+
+Current DIIS subspace size = 4
+REM_GRID_RESTART_DIIS = 0
+
+    4     -76.0106465312      1.28E-04  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.66E-04 RMS 2.91E-05
+
+Current DIIS subspace size = 5
+REM_GRID_RESTART_DIIS = 0
+
+    5     -76.0106484757      2.91E-05  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.20E-04 RMS 1.42E-05
+
+Current DIIS subspace size = 6
+REM_GRID_RESTART_DIIS = 0
+
+    6     -76.0106485508      1.42E-05  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.38E-05 RMS 2.23E-06
+
+Current DIIS subspace size = 7
+REM_GRID_RESTART_DIIS = 0
+
+    7     -76.0106485626      2.23E-06  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.67E-06 RMS 3.33E-07
+
+Current DIIS subspace size = 8
+REM_GRID_RESTART_DIIS = 0
+
+    8     -76.0106485631      3.33E-07  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 2.76E-07 RMS 4.48E-08
+
+Current DIIS subspace size = 9
+REM_GRID_RESTART_DIIS = 0
+
+    9     -76.0106485631      4.48E-08  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.01 s  wall       0.01 s
+Fock build time:  0.01 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 2.42E-08 RMS 4.14E-09
+
+Current DIIS subspace size = 10
+REM_GRID_RESTART_DIIS = 0
+
+   10     -76.0106485631      4.14E-09  00000 Convergence criterion met
+ ---------------------------------------
+ SCF time:  CPU 0.17 s  wall 0.18 s
+ SCF   energy in the final basis set = -76.0106485631
+ Total energy in the final basis set = -76.0106485631
+Symmetry turned off temporarily
+ Analysis of SCF Wavefunction
+
+ --------------------------------------------------------------
+
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+
+ Alpha MOs
+ -- Occupied --
+-20.559  -1.349  -0.712  -0.575  -0.499
+ -- Virtual --
+  0.213   0.307   1.024   1.135   1.168   1.187   1.384   1.437
+  2.015   2.032   2.065   2.637   2.967   3.975
+ --------------------------------------------------------------
+
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 O                    -0.865566
+      2 H                     0.432783
+      3 H                     0.432783
+  ----------------------------------------
+  Sum of atomic charges =     0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                 0.0000
+    Dipole Moment (Debye)
+         X       1.7611      Y       0.0000      Z       1.3636
+       Tot       2.2273
+    Quadrupole Moments (Debye-Ang)
+        XX      -4.9137     XY      -0.0000     YY      -7.2024
+        XZ      -0.5630     YZ       0.0000     ZZ      -4.6225
+    Octopole Moments (Debye-Ang^2)
+       XXX       0.2756    XXY      -0.0000    XYY      -0.4620
+       YYY      -0.0000    XXZ      -0.7355    XYZ       0.0000
+       YYZ      -0.3577    XZZ      -0.3241    YZZ      -0.0000
+       ZZZ       0.6979
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX      -4.8540   XXXY      -0.0000   XXYY      -1.9652
+      XYYY      -0.0000   YYYY      -5.1800   XXXZ      -0.3177
+      XXYZ      -0.0000   XYYZ       0.0338   YYYZ      -0.0000
+      XXZZ      -2.1140   XYZZ      -0.0000   YYZZ      -1.9827
+      XZZZ       0.1097   YZZZ      -0.0000   ZZZZ      -4.7464
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Job number = 111, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+Finding J and K together
+ ML is being used
+ Job number = 122, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+ MakeJK  time:  CPU       0.11 s  wall       0.12 s
+ Gradient of Coulomb and Exchange Energy
+            1           2           3
+    1   2.2628335   0.0539918  -2.3168253
+    2  -0.0000000   0.0000000  -0.0000000
+    3   1.7520729  -2.4070128   0.6549399
+ Gradient of SCF Energy
+            1           2           3
+    1  -0.0014461   0.0033361  -0.0018900
+    2  -0.0000000  -0.0000000   0.0000000
+    3  -0.0011197  -0.0028150   0.0039346
+ Max gradient component =       3.935E-03
+ RMS gradient           =       2.146E-03
+ Gradient time:  CPU 0.28 s  wall 0.29 s
+ ------------------------------------------------------------------------------
+                     drvman        : Timing summary (seconds)
+ ------------------------------------------------------------------------------
+     job step          cpu (% of tot)      sys (% of tot)     wall (% of tot)
+ ------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+   Grand Totals     0.2834E+00          0.2000E-05          0.2857E+00
+ ------------------------------------------------------------------------------
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        3       9       3       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   2
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  O         0.0150940325    0.0000000000    0.0116870486
+      2  H         0.0209790644    0.0000000000    0.9573145321
+      3  H         0.9320745435    0.0000000000   -0.2193815847
+   Point Group: c1    Number of degrees of freedom:     3
+
+
+   Energy is    -76.010648563
+
+ Hessian Updated using BFGS Update
+
+  2 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.160659    0.515779
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00022879
+ Step Taken.  Stepsize is  0.035248
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.007173      0.000030      NO
+         Displacement       0.031208      0.000120      NO
+         Energy change     -0.005172      0.000000      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.035927
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      O       0.0214050337     0.0000000000     0.0165735478
+    2      H       0.0107645668     0.0000000000     0.9639881035
+    3      H       0.9359780400     0.0000000000    -0.2309416553
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =     9.2863749177 hartrees
+ There are        5 alpha and        5 beta electrons
+ JobOver = FALSE
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-10
+     (0,2,0)        2.00000E-10
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000007 hartrees
+ Requested basis set is 6-31G(d)
+ There are 8 shells and 19 basis functions
+ Job number = 2, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 2  <1-21|1-21>
+Symmetry turned off temporarily
+Total number of integrals generated =            3571
+Symmetry turned back on
+ A cutoff of  1.0D-11 yielded     36 shell pairs
+ There are       217 function pairs
+ Job number = 11, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+ Smallest overlap matrix eigenvalue = 2.19E-02
+ Multipole matrices computed through 2nd order
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Total number of integrals generated =           25330
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 4.68E-03 RMS 1.09E-03
+
+Current DIIS subspace size = 1
+REM_GRID_RESTART_DIIS = 0
+
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1     -76.0091031266      1.09E-03  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.10E-03 RMS 2.18E-04
+
+Current DIIS subspace size = 2
+REM_GRID_RESTART_DIIS = 0
+
+    2     -76.0107410606      2.18E-04  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 5.49E-04 RMS 9.87E-05
+
+Current DIIS subspace size = 3
+REM_GRID_RESTART_DIIS = 0
+
+    3     -76.0107434224      9.87E-05  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.65E-04 RMS 3.31E-05
+
+Current DIIS subspace size = 4
+REM_GRID_RESTART_DIIS = 0
+
+    4     -76.0107438671      3.31E-05  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.01 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 2.81E-05 RMS 6.13E-06
+
+Current DIIS subspace size = 5
+REM_GRID_RESTART_DIIS = 0
+
+    5     -76.0107439663      6.13E-06  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 2.27E-06 RMS 5.60E-07
+
+Current DIIS subspace size = 6
+REM_GRID_RESTART_DIIS = 0
+
+    6     -76.0107439712      5.60E-07  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 5.63E-07 RMS 7.75E-08
+
+Current DIIS subspace size = 7
+REM_GRID_RESTART_DIIS = 0
+
+    7     -76.0107439712      7.75E-08  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 6.04E-08 RMS 9.68E-09
+
+Current DIIS subspace size = 8
+REM_GRID_RESTART_DIIS = 0
+
+    8     -76.0107439712      9.68E-09  00000 Convergence criterion met
+ ---------------------------------------
+ SCF time:  CPU 0.14 s  wall 0.15 s
+ SCF   energy in the final basis set = -76.0107439712
+ Total energy in the final basis set = -76.0107439712
+Symmetry turned off temporarily
+ Analysis of SCF Wavefunction
+
+ --------------------------------------------------------------
+
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+
+ Alpha MOs
+ -- Occupied --
+-20.558  -1.346  -0.715  -0.570  -0.498
+ -- Virtual --
+  0.213   0.307   1.033   1.133   1.168   1.177   1.385   1.430
+  2.021   2.030   2.068   2.636   2.966   3.978
+ --------------------------------------------------------------
+
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 O                    -0.869307
+      2 H                     0.434654
+      3 H                     0.434654
+  ----------------------------------------
+  Sum of atomic charges =     0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                 0.0000
+    Dipole Moment (Debye)
+         X       1.7347      Y       0.0000      Z       1.3432
+       Tot       2.1940
+    Quadrupole Moments (Debye-Ang)
+        XX      -4.9025     XY       0.0000     YY      -7.2060
+        XZ      -0.6274     YZ       0.0000     ZZ      -4.5779
+    Octopole Moments (Debye-Ang^2)
+       XXX       0.2005    XXY       0.0000    XYY      -0.5002
+       YYY       0.0000    XXZ      -0.7968    XYZ       0.0000
+       YYZ      -0.3873    XZZ      -0.3707    YZZ       0.0000
+       ZZZ       0.6650
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX      -4.8493   XXXY      -0.0000   XXYY      -1.9707
+      XYYY      -0.0000   YYYY      -5.1845   XXXZ      -0.3416
+      XXYZ       0.0000   XYYZ       0.0365   YYYZ       0.0000
+      XXZZ      -2.1120   XYZZ      -0.0000   YYZZ      -1.9896
+      XZZZ       0.0886   YZZZ       0.0000   ZZZZ      -4.7184
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Job number = 111, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+Finding J and K together
+ ML is being used
+ Job number = 122, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+ MakeJK  time:  CPU       0.12 s  wall       0.12 s
+ Gradient of Coulomb and Exchange Energy
+            1           2           3
+    1   2.1758996   0.1257021  -2.3016017
+    2  -0.0000000   0.0000000   0.0000000
+    3   1.6847615  -2.4098339   0.7250724
+ Gradient of SCF Energy
+            1           2           3
+    1   0.0003808  -0.0005476   0.0001668
+    2   0.0000000  -0.0000000   0.0000000
+    3   0.0002948   0.0003140  -0.0006088
+ Max gradient component =       6.088E-04
+ RMS gradient           =       3.381E-04
+ Gradient time:  CPU 0.29 s  wall 0.29 s
+ ------------------------------------------------------------------------------
+                     drvman        : Timing summary (seconds)
+ ------------------------------------------------------------------------------
+     job step          cpu (% of tot)      sys (% of tot)     wall (% of tot)
+ ------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+   Grand Totals     0.2903E+00          0.2000E-05          0.2917E+00
+ ------------------------------------------------------------------------------
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        3       9       3       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   3
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  O         0.0214050337    0.0000000000    0.0165735478
+      2  H         0.0107645668    0.0000000000    0.9639881035
+      3  H         0.9359780400    0.0000000000   -0.2309416553
+   Point Group: c1    Number of degrees of freedom:     3
+
+
+   Energy is    -76.010743971
+
+ Hessian Updated using BFGS Update
+
+  2 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.183264    0.524478
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00000501
+ Step Taken.  Stepsize is  0.004985
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.001055      0.000030      NO
+         Displacement       0.004248      0.000120      NO
+         Energy change     -0.000095      0.000000      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.004939
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      O       0.0204583326     0.0000000000     0.0158405335
+    2      H       0.0121745745     0.0000000000     0.9631449011
+    3      H       0.9355147333     0.0000000000    -0.2293654386
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =     9.2883467082 hartrees
+ There are        5 alpha and        5 beta electrons
+ JobOver = FALSE
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-10
+     (0,2,0)        2.00000E-10
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000007 hartrees
+ Requested basis set is 6-31G(d)
+ There are 8 shells and 19 basis functions
+ Job number = 2, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 2  <1-21|1-21>
+Symmetry turned off temporarily
+Total number of integrals generated =            3571
+Symmetry turned back on
+ A cutoff of  1.0D-11 yielded     36 shell pairs
+ There are       217 function pairs
+ Job number = 11, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+ Smallest overlap matrix eigenvalue = 2.19E-02
+ Multipole matrices computed through 2nd order
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Total number of integrals generated =           25330
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.03 s (wall)
+DIIS Errors:  Max 6.57E-04 RMS 1.46E-04
+
+Current DIIS subspace size = 1
+REM_GRID_RESTART_DIIS = 0
+
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1     -76.0108620194      1.46E-04  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 1.66E-04 RMS 3.22E-05
+
+Current DIIS subspace size = 2
+REM_GRID_RESTART_DIIS = 0
+
+    2     -76.0107464430      3.22E-05  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 8.17E-05 RMS 1.45E-05
+
+Current DIIS subspace size = 3
+REM_GRID_RESTART_DIIS = 0
+
+    3     -76.0107464951      1.45E-05  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 2.63E-05 RMS 4.89E-06
+
+Current DIIS subspace size = 4
+REM_GRID_RESTART_DIIS = 0
+
+    4     -76.0107465052      4.89E-06  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 3.89E-06 RMS 8.48E-07
+
+Current DIIS subspace size = 5
+REM_GRID_RESTART_DIIS = 0
+
+    5     -76.0107465075      8.48E-07  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.02 s  wall       0.02 s
+Fock build time:  0.02 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 3.53E-07 RMS 8.28E-08
+
+Current DIIS subspace size = 6
+REM_GRID_RESTART_DIIS = 0
+
+    6     -76.0107465076      8.28E-08  00000
+Finding J and K together
+ Job number = 22, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+Storing 7686.90% of integrals
+Reusing in-core integrals buffer for job 22
+ MakeJK  time:  CPU       0.01 s  wall       0.01 s
+Fock build time:  0.01 s (CPU) 0.02 s (wall)
+DIIS Errors:  Max 2.52E-08 RMS 6.56E-09
+
+Current DIIS subspace size = 7
+REM_GRID_RESTART_DIIS = 0
+
+    7     -76.0107465076      6.56E-09  00000 Convergence criterion met
+ ---------------------------------------
+ SCF time:  CPU 0.13 s  wall 0.13 s
+ SCF   energy in the final basis set = -76.0107465076
+ Total energy in the final basis set = -76.0107465076
+Symmetry turned off temporarily
+ Analysis of SCF Wavefunction
+
+ --------------------------------------------------------------
+
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+
+ Alpha MOs
+ -- Occupied --
+-20.558  -1.346  -0.714  -0.571  -0.498
+ -- Virtual --
+  0.213   0.307   1.032   1.133   1.168   1.178   1.385   1.431
+  2.021   2.031   2.067   2.636   2.966   3.978
+ --------------------------------------------------------------
+
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 O                    -0.868761
+      2 H                     0.434381
+      3 H                     0.434381
+  ----------------------------------------
+  Sum of atomic charges =    -0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       1.7386      Y      -0.0000      Z       1.3462
+       Tot       2.1989
+    Quadrupole Moments (Debye-Ang)
+        XX      -4.9041     XY       0.0000     YY      -7.2057
+        XZ      -0.6184     YZ      -0.0000     ZZ      -4.5842
+    Octopole Moments (Debye-Ang^2)
+       XXX       0.2121    XXY      -0.0000    XYY      -0.4946
+       YYY      -0.0000    XXZ      -0.7882    XYZ      -0.0000
+       YYZ      -0.3830    XZZ      -0.3639    YZZ      -0.0000
+       ZZZ       0.6706
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX      -4.8502   XXXY       0.0000   XXYY      -1.9702
+      XYYY       0.0000   YYYY      -5.1841   XXXZ      -0.3381
+      XXYZ      -0.0000   XYYZ       0.0362   YYYZ      -0.0000
+      XXZZ      -2.1127   XYZZ       0.0000   YYZZ      -1.9889
+      XZZZ       0.0919   YZZZ      -0.0000   ZZZZ      -4.7228
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Job number = 111, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 11  <1-21|22-22>
+Finding J and K together
+ ML is being used
+ Job number = 122, Threshold = 1.00E-11
+Integral type ranges set in mkLRange.C for JobNum: 22  <1-21|1-21>
+ MakeJK  time:  CPU       0.11 s  wall       0.11 s
+ Gradient of Coulomb and Exchange Energy
+            1           2           3
+    1   2.1879497   0.1155564  -2.3035061
+    2   0.0000000  -0.0000000  -0.0000000
+    3   1.6940916  -2.4091771   0.7150854
+ Gradient of SCF Energy
+            1           2           3
+    1  -0.0000178  -0.0000058   0.0000236
+    2  -0.0000000   0.0000000   0.0000000
+    3  -0.0000138   0.0000259  -0.0000121
+ Max gradient component =       2.592E-05
+ RMS gradient           =       1.460E-05
+ Gradient time:  CPU 0.28 s  wall 0.28 s
+ ------------------------------------------------------------------------------
+                     drvman        : Timing summary (seconds)
+ ------------------------------------------------------------------------------
+     job step          cpu (% of tot)      sys (% of tot)     wall (% of tot)
+ ------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+   Grand Totals     0.2764E+00          0.2000E-05          0.2776E+00
+ ------------------------------------------------------------------------------
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        3       9       3       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   4
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  O         0.0204583326    0.0000000000    0.0158405335
+      2  H         0.0121745745    0.0000000000    0.9631449011
+      3  H         0.9355147333    0.0000000000   -0.2293654386
+   Point Group: c1    Number of degrees of freedom:     3
+
+
+   Energy is    -76.010746508
+
+ Hessian Updated using BFGS Update
+
+  2 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.183740    0.516562
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =   0.00000000
+ Step Taken.  Stepsize is  0.000077
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.000030      0.000030     YES
+         Displacement       0.000069      0.000120     YES
+         Energy change     -0.000003      0.000000      NO
+
+
+                       Distance Matrix (Angstroms)
+             O (  1)   H (  2)
+   H (  2)  0.947341
+   H (  3)  0.947341  1.508190
+
+ Final energy is   -76.010746507588252     
+
+
+ ******************************
+ **  OPTIMIZATION CONVERGED  **
+ ******************************
+
+Z-matrix Print:
+$molecule
+0 1
+O 
+H  1 0.947341
+H  1 0.947341 2 105.502027
+$end
+
+Symmetry turned off temporarily
+ Analysis of SCF Wavefunction
+
+ --------------------------------------------------------------
+
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+
+ Alpha MOs
+ -- Occupied --
+-20.558  -1.346  -0.714  -0.571  -0.498
+ -- Virtual --
+  0.213   0.307   1.032   1.133   1.168   1.178   1.385   1.431
+  2.021   2.031   2.067   2.636   2.966   3.978
+ --------------------------------------------------------------
+
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 O                    -0.868761
+      2 H                     0.434381
+      3 H                     0.434381
+  ----------------------------------------
+  Sum of atomic charges =    -0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X       1.7386      Y      -0.0000      Z       1.3462
+       Tot       2.1989
+    Quadrupole Moments (Debye-Ang)
+        XX      -4.9041     XY       0.0000     YY      -7.2057
+        XZ      -0.6184     YZ      -0.0000     ZZ      -4.5842
+    Octopole Moments (Debye-Ang^2)
+       XXX       0.2121    XXY      -0.0000    XYY      -0.4946
+       YYY      -0.0000    XXZ      -0.7882    XYZ      -0.0000
+       YYZ      -0.3830    XZZ      -0.3639    YZZ      -0.0000
+       ZZZ       0.6706
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX      -4.8502   XXXY       0.0000   XXYY      -1.9702
+      XYYY       0.0000   YYYY      -5.1841   XXXZ      -0.3381
+      XXYZ      -0.0000   XYYZ       0.0362   YYYZ      -0.0000
+      XXZZ      -2.1127   XYZZ       0.0000   YYZZ      -1.9889
+      XZZZ       0.0919   YZZZ      -0.0000   ZZZZ      -4.7228
+ -----------------------------------------------------------------
+ JobOver = TRUE
+Archival summary:
+1\1\berlioz.local\OPT\HF\6-31G*\12\TueMay1921:31:392015TueMay1921:31:392015\0\\#,OPT,HF,6-31G*,\\0,1\O\H,1,0.947341\H,1,0.947341,2,105.502\\HF=-76.0107465\\@
+
+ Total job time:  2.13s(wall), 2.05s(cpu) 
+ Tue May 19 21:31:39 2015
+
+        *************************************************************
+        *                                                           *
+        *  Thank you very much for using Q-Chem.  Have a nice day.  *
+        *                                                           *
+        *************************************************************
+
+
+*** MISSION COMPLETED -- STARFLEET OUT ***
+
