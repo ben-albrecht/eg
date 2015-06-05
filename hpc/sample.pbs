@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#PBS -N /1
+#PBS -l nodes=1:ppn=4
+#PBS -l walltime=3:00:00
+#PBS -q mem48g
+#PBS -l qos=investor
+#PBS -j oe
+#PBS -m abe
+#PBS -M bja39@pitt.edu
+
+JOBNAME=1
+NODES=1
+PPN=4
+
+# Load Q-Chem Modules
+module purge
+module load intel/2013.0
+module load qchem/dlambrecht/4.2-trunk.20141216.omp.release
+
+cd ${PBS_O_WORKDIR}
+cp ${PBS_O_WORKDIR}/${JOBNAME}.in ${LOCAL}
+cd ${LOCAL}
+
+run_on_exit() {
+    set -v
+    rm $LOCAL/pathtable
+    cp -v -R $LOCAL/* $PBS_O_WORKDIR
+}
+
+trap run_on_exit EXIT
+
+
+`which qchem` -nt ${PPN} ${JOBNAME}.in ${PBS_O_WORKDIR}/${JOBNAME}.out ${JOBNAME}.1dc037de5ac74aaab5111606af467823
+
+rm ${PBS_O_WORKDIR}/.1.1dc037de5ac74aaab5111606af467823.pbs
