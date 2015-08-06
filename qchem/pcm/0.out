@@ -1,0 +1,4143 @@
+                  Welcome to Q-Chem
+     A Quantum Leap Into The Future Of Chemistry
+
+
+ Q-Chem 4.3 (beta), Q-Chem, Inc., Pleasanton, CA (2015)
+
+ Y. Shao,  Z. Gan,  E. Epifanovsky,  A. T. B. Gilbert,  M. Wormit,  
+ J. Kussmann,  A. W. Lange,  A. Behn,  J. Deng,  X. Feng,  D. Ghosh,  
+ M. Goldey,  P. R. Horn,  L. D. Jacobson,  I. Kaliman,  R. Z. Khaliullin,  
+ T. Kus,  A. Landau,  J. Liu,  E. I. Proynov,  Y. M. Rhee,  R. M. Richard,  
+ M. A. Rohrdanz,  R. P. Steele,  E. J. Sundstrom,  H. L. Woodcock III,  
+ P. M. Zimmerman,  D. Zuev,  B. Albrecht,  E. Alguire,  B. Austin,  
+ S. A. Baeppler,  G. J. O. Beran,  Y. A. Bernard,  E. Berquist,  
+ K. Brandhorst,  K. B. Bravaya,  S. T. Brown,  D. Casanova,  C.-M. Chang,  
+ Y. Chen,  S. H. Chien,  K. D. Closser,  D. L. Crittenden,  M. Diedenhofen,  
+ R. A. DiStasio Jr.,  H. Do,  A. D. Dutoi,  R. G. Edgar,  P.-T. Fang,  
+ S. Fatehi,  Q. Feng,  L. Fusti-Molnar,  A. Ghysels,  
+ A. Golubeva-Zadorozhnaya,  J. Gomes,  A. Gunina,  M. W. D. Hanson-Heine,  
+ P. H. P. Harbach,  A. W. Hauser,  E. G. Hohenstein,  Z. C. Holden,  K. Hui,  
+ T.-C. Jagau,  H. Ji,  B. Kaduk,  K. Khistyaev,  Jaehoon Kim,  Jihan Kim,  
+ R. A. King,  P. Klunzinger,  D. Kosenkov,  T. Kowalczyk,  C. M. Krauter,  
+ K. U. Lao,  A. Laurent,  K. V. Lawler,  S. Lehtola,  S. V. Levchenko,  
+ C. Y. Lin,  Y.-S. Lin,  F. Liu,  E. Livshits,  R. C. Lochan,  A. Luenser,  
+ P. Manohar,  S. F. Manzer,  S.-P. Mao,  N. Mardirossian,  A. V. Marenich,  
+ L. A. Martinez-Martinez,  S. A. Maurer,  N. J. Mayhall,  K. Nanda,  
+ C. M. Oana,  R. Olivares-Amaya,  D. P. O'Neill,  J. A. Parkhill,  
+ T. M. Perrine,  R. Peverati,  P. A. Pieniazek,  F. Plasser,  A. Prociuk,  
+ D. R. Rehn,  E. Rosta,  N. J. Russ,  N. Sergueev,  S. M. Sharada,  
+ S. Sharma,  D. W. Small,  A. Sodt,  T. Stauch,  T. Stein,  D. Stuck,  
+ Y.-C. Su,  A. J. W. Thom,  T. Tsuchimochi,  L. Vogt,  O. Vydrov,  T. Wang,  
+ M. A. Watson,  J. Wenzel,  A. White,  C. F. Williams,  V. Vanovschi,  
+ S. Yeganeh,  S. R. Yost,  Z.-Q. You,  I. Y. Zhang,  X. Zhang,  Y. Zhao,  
+ B. R. Brooks,  G. K. L. Chan,  D. M. Chipman,  C. J. Cramer,  
+ W. A. Goddard III,  M. S. Gordon,  W. J. Hehre,  A. Klamt,  
+ H. F. Schaefer III,  M. W. Schmidt,  C. D. Sherrill,  D. G. Truhlar,  
+ A. Warshel,  X. Xu,  A. Aspuru-Guzik,  R. Baer,  A. T. Bell,  N. A. Besley,  
+ J.-D. Chai,  A. Dreuw,  B. D. Dunietz,  T. R. Furlani,  S. R. Gwaltney,  
+ C.-P. Hsu,  Y. Jung,  J. Kong,  D. S. Lambrecht,  W. Liang,  C. Ochsenfeld,  
+ V. A. Rassolov,  L. V. Slipchenko,  J. E. Subotnik,  T. Van Voorhis,  
+ J. M. Herbert,  A. I. Krylov,  P. M. W. Gill,  M. Head-Gordon
+
+ Contributors to earlier versions of Q-Chem not listed above: 
+ R. D. Adamson,  J. Baker,  E. F. C. Byrd,  A. K. Chakraborty,  C.-L. Cheng,  
+ H. Dachsel,  R. J. Doerksen,  G. Hawkins,  A. Heyden,  S. Hirata,  
+ G. Kedziora,  F. J. Keil,  C. Kelley,  P. P. Korambath,  W. Kurlancheek,  
+ A. M. Lee,  M. S. Lee,  D. Liotard,  I. Lotan,  P. E. Maslen,  N. Nair,  
+ D. Neuhauser,  R. Olson,  B. Peters,  J. Ritchie,  N. E. Schultz,  
+ N. Shenvi,  A. C. Simmonett,  K. S. Thanthiriwatte,  Q. Wu,  W. Zhang
+
+ Please cite Q-Chem as follows:
+ Y. Shao et al., Mol. Phys. 113, 184-215 (2014)
+ DOI: 10.1080/00268976.2014.952696
+
+ Q-Chem 4.3.0 for Intel X86 EM64T Linux
+
+ Parts of Q-Chem use Armadillo 4.550.3 (Singapore Sling Deluxe).
+ http://arma.sourceforge.net/
+
+ Q-Chem begins on Thu Aug  6 11:56:34 2015  
+
+Host: 
+0
+
+     Scratch files written to /home/ben/scratch/qchem/qchem20646//
+ Mar2415 |home|ben|opt|apps|qchem|trunk_RNUM -1
+Symmetry turned off for PCM calculation
+
+Checking the input file for inconsistencies...	...done.
+
+--------------------------------------------------------------
+User input:
+--------------------------------------------------------------
+$comment
+Testing if dielectric=0 equates to vacuum calc
+$end
+
+$molecule
+  -1 1
+    B         -0.56570        1.96068        0.07064
+    O          0.25487        2.66727       -0.93869
+    O         -1.46324        2.92335        0.73907
+    O         -1.39180        0.93604       -0.59782
+    H         -0.88069        3.53511        1.25833
+    H          0.86420        3.26526       -0.43440
+    H         -0.76724        0.36997       -1.12006
+    O          0.30336        1.31482        1.08004
+    H          0.95234        0.75999        0.57591
+$end
+
+$rem
+jobtype          opt
+basis            6-31G*
+method           hf
+solvent_method   pcm
+$end
+
+$pcm
+theory cpcm
+method swig
+$end
+
+$solvent
+dielectric 0
+$end
+
+--------------------------------------------------------------
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5657000000     1.9606800000     0.0706400000
+    2      O       0.2548700000     2.6672700000    -0.9386900000
+    3      O      -1.4632400000     2.9233500000     0.7390700000
+    4      O      -1.3918000000     0.9360400000    -0.5978200000
+    5      H      -0.8806900000     3.5351100000     1.2583300000
+    6      H       0.8642000000     3.2652600000    -0.4344000000
+    7      H      -0.7672400000     0.3699700000    -1.1200600000
+    8      O       0.3033600000     1.3148200000     1.0800400000
+    9      H       0.9523400000     0.7599900000     0.5759100000
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   183.2810637680 hartrees
+ There are       21 alpha and       21 beta electrons
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+
+Total QAlloc Memory Limit   2000 MB
+Mega-Array Size        61 MB
+MEM_STATIC part        62 MB
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1290 surface tesserae and discard 1428 interior tesserae
+ Molecular Surface Area = 108.371 Angst**2
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ 
+ -------------------------------------------------------
+ OpenMP Integral Computing Module                       
+ Release: version 1.0, May 2013, Q-Chem Inc. Pittsburgh 
+ -------------------------------------------------------
+ Integral Job Info:
+ Integral job number is                      11
+ Integral operator is                         1
+ short-range coefficients               -999999
+ long-range coefficients                -999999
+ Omega coefficients                           0
+ if combine SR and LR in K              -999999
+ Integral screening is                        0
+ Integral computing path is                   2
+ max size of driver memory is            800000
+ size of driver memory is                593474
+ size of scratch memory is              2260544
+ max col of scratch BK array               1296
+ max len of scratch array in speh3          155
+ max len of scratch index in speh4           18
+ max int batch size is                      520
+ min int batch size is                       52
+ fixed nKL is                                52
+ max L of basis functions is                  2
+ order of int derivative is                   0
+ number of shells is                         28
+ number of basis is                          83
+ number of cartesian basis is                83
+ number of contracted shell pairs           400
+ number of primitive shell pairs           1790
+ maxK2 (contraction) of shell pair           36
+ max number of K2 of shell pair               1
+ max number of CS2 of shell pair             44
+ max number of PS2 of shell pair            222
+ mem total for path MDJ                   21832
+ -------------------------------------------------------
+ Smallest overlap matrix eigenvalue = 3.73E-03
+
+  Scale SEOQF with 1.000000e-01/1.000000e-01/1.000000e+00
+
+ Standard Electronic Orientation quadrupole field applied
+ Nucleus-field energy     =    -0.0000000140 hartrees
+ Guess from superposition of atomic densities
+ Warning:  Energy on first SCF cycle will be non-variational
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.8930365479      8.59E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.5638801439      1.45E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.6805974270      7.60E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7143474706      7.66E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7151820344      1.56E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7152206076      4.91E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7152240510      2.04E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7152245633      4.48E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7152245946      9.18E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7152245957      1.35E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7152245957      2.79E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7152245957      8.28E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12629697 hartree =     -79.25254795 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12629697 hartree =     -79.25254795 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.71522460 
+ Solute Internal Energy (H0)                 =    -326.58892762 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.71522460 hartree
+                                             = -205016.89775369 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.51 s  wall 3.77 s
+ SCF   energy in the final basis set = -326.7152245957
+ Total energy in the final basis set = -326.7152245957
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.490 -20.490 -20.488 -20.488  -7.591  -1.308  -1.243  -1.237
+ -1.236  -0.689  -0.628  -0.618  -0.558  -0.543  -0.538  -0.486
+ -0.463  -0.448  -0.422  -0.404  -0.397
+ -- Virtual --
+  0.234   0.285   0.321   0.330   0.509   0.516   0.554   0.611
+  0.771   0.793   0.812   0.841   1.026   1.101   1.107   1.144
+  1.159   1.179   1.204   1.291   1.307   1.372   1.397   1.423
+  1.447   1.484   1.543   1.583   1.620   1.650   1.696   1.861
+  1.865   1.956   1.971   2.024   2.050   2.107   2.111   2.166
+  2.173   2.219   2.234   2.261   2.611   2.638   2.671   2.698
+  2.735   2.785   2.844   2.970   3.026   3.106   3.120   3.208
+  3.215   4.054   4.158   4.321   4.331   4.516
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.916245
+      2 O                    -0.896355
+      3 O                    -0.888199
+      4 O                    -0.888250
+      5 H                     0.415015
+      6 H                     0.411408
+      7 H                     0.415024
+      8 O                    -0.896281
+      9 H                     0.411394
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.2598      Y      -9.2532      Z      -0.3450
+       Tot      11.7663
+    Quadrupole Moments (Debye-Ang)
+        XX     -41.6117     XY      13.8801     YY     -45.5225
+        XZ       0.3129     YZ       5.0166     ZZ     -37.4709
+    Octopole Moments (Debye-Ang^2)
+       XXX      74.4612    XXY     -81.6561    XYY      52.9859
+       YYY    -196.0692    XXZ      -3.0601    XYZ       2.1794
+       YYZ      19.3966    XZZ      15.9917    YZZ     -72.8695
+       ZZZ      -7.9641
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -231.1903   XXXY     146.3598   XXYY    -226.4886
+      XYYY     205.4393   YYYY    -826.5658   XXXZ       6.3144
+      XXYZ     -15.8140   XYYZ       8.1574   YYYZ      65.2549
+      XXZZ     -63.1900   XYZZ      31.1635   YYZZ    -183.7908
+      XZZZ       2.9672   YZZZ      -3.1773   ZZZZ    -149.8108
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -0.9212828  -6.1695964  11.8730896  11.2512688  -1.8582953  -2.7074134
+    2  -0.0336468  -5.2755963  -8.2067373   9.0473534  -2.7652346  -2.6021306
+    3   0.0025111  12.5001081  -5.0948343   5.0822640  -2.3112561  -1.5163883
+            7           8           9
+    1  -2.0503505  -6.5368977  -2.8805224
+    2   2.6156299   4.8109152   2.4094471
+    3   2.3226512 -12.5007852   1.5157294
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0003994  -0.0288322   0.0072045   0.0054088   0.0117627   0.0106624
+    2  -0.0000445  -0.0125521  -0.0246635   0.0250962   0.0106718   0.0105307
+    3   0.0000495   0.0088656  -0.0207771   0.0207969   0.0060607   0.0109389
+            7           8           9
+    1   0.0124837  -0.0296475   0.0113569
+    2  -0.0097661   0.0104659  -0.0097385
+    3  -0.0061014  -0.0089032  -0.0109299
+ Max gradient component =       2.965E-02
+ RMS gradient           =       1.438E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1       0.005095       0.000103       0.000085
+   2      -0.027497      -0.019144      -0.021607
+   3      -0.027174      -0.014973      -0.023254
+   4      -0.028210       0.012928       0.023324
+   5       0.026664       0.025916       0.021818
+   6       0.024871       0.025437       0.023499
+   7       0.028428      -0.023815      -0.021958
+   8      -0.028746       0.017217       0.021600
+   9       0.026568      -0.023669      -0.023506
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.74 s  wall 3.00 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   1
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5657000000    1.9606800000    0.0706400000
+      2  O         0.2548700000    2.6672700000   -0.9386900000
+      3  O        -1.4632400000    2.9233500000    0.7390700000
+      4  O        -1.3918000000    0.9360400000   -0.5978200000
+      5  H        -0.8806900000    3.5351100000    1.2583300000
+      6  H         0.8642000000    3.2652600000   -0.4344000000
+      7  H        -0.7672400000    0.3699700000   -1.1200600000
+      8  O         0.3033600000    1.3148200000    1.0800400000
+      9  H         0.9523400000    0.7599900000    0.5759100000
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.715224596
+
+
+ Attempting to Generate Delocalized Internal Coordinates
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.014281    0.014284    0.014826    0.014829    0.106104    0.108712
+     0.111406    0.160000    0.160000    0.160000    0.160000    0.202804
+     0.202998    0.345328    0.345352    0.350083    0.350105    0.491985
+     0.491985    0.492042    0.492066
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.01780533
+ Step Taken.  Stepsize is  0.212013
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.059879      0.000300      NO
+         Displacement       0.115108      0.001200      NO
+         Energy change     *********      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.379094
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5470785711     1.9615489360     0.0704497371
+    2      O       0.2815535775     2.6379087913    -0.9523423418
+    3      O      -1.4625370878     2.8781076139     0.7576120053
+    4      O      -1.3941880701     0.9812100959    -0.6163247465
+    5      H      -0.9349184759     3.4693763820     1.2758759815
+    6      H       0.8889291224     3.2070916206    -0.4999450719
+    7      H      -0.8257903562     0.4314050013    -1.1371143339
+    8      O       0.3276649509     1.3462616366     1.0934186703
+    9      H       0.9724649103     0.8195799224     0.6413900998
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.7264022765 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1279 surface tesserae and discard 1439 interior tesserae
+ Molecular Surface Area = 107.396 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000153 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.83E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.6831934331      4.44E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7209760097      1.51E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7240642259      5.93E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7245355931      2.45E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7246703866      7.55E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7246797059      1.82E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7246802122      4.90E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7246802438      1.71E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7246802478      5.29E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7246802483      1.07E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7246802484      1.78E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7246802484      3.89E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12513833 hartree =     -78.52548821 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12513833 hartree =     -78.52548821 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72468025 
+ Solute Internal Energy (H0)                 =    -326.59954192 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72468025 hartree
+                                             = -205022.83126530 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.54 s  wall 3.54 s
+ SCF   energy in the final basis set = -326.7246802484
+ Total energy in the final basis set = -326.7246802484
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.484 -20.484 -20.484 -20.484  -7.588  -1.318  -1.253  -1.251
+ -1.247  -0.705  -0.641  -0.633  -0.563  -0.546  -0.539  -0.486
+ -0.465  -0.448  -0.423  -0.407  -0.400
+ -- Virtual --
+  0.246   0.299   0.328   0.338   0.513   0.521   0.546   0.611
+  0.768   0.808   0.814   0.843   1.041   1.122   1.127   1.161
+  1.166   1.184   1.248   1.320   1.341   1.387   1.392   1.422
+  1.454   1.487   1.527   1.574   1.634   1.661   1.717   1.835
+  1.859   1.952   1.969   2.038   2.044   2.099   2.113   2.164
+  2.170   2.222   2.231   2.251   2.613   2.636   2.708   2.731
+  2.745   2.863   2.899   2.965   3.072   3.124   3.130   3.225
+  3.246   4.056   4.158   4.332   4.348   4.527
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.881840
+      2 O                    -0.897469
+      3 O                    -0.879751
+      4 O                    -0.879791
+      5 H                     0.419213
+      6 H                     0.417127
+      7 H                     0.419203
+      8 O                    -0.897392
+      9 H                     0.417021
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.1616      Y      -9.2573      Z      -0.3441
+       Tot      11.7091
+    Quadrupole Moments (Debye-Ang)
+        XX     -41.2345     XY      13.6916     YY     -45.3567
+        XZ       0.3185     YZ       4.6728     ZZ     -37.2798
+    Octopole Moments (Debye-Ang^2)
+       XXX      73.7617    XXY     -80.8113    XYY      50.9137
+       YYY    -195.2346    XXZ      -2.9756    XYZ       1.3823
+       YYZ      17.9922    XZZ      15.3154    YZZ     -72.5648
+       ZZZ      -7.9108
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -231.7809   XXXY     144.5333   XXYY    -220.7074
+      XYYY     194.6400   YYYY    -813.8038   XXXZ       6.2001
+      XXYZ     -14.9644   XYYZ       4.9530   YYYZ      59.6498
+      XXZZ     -63.2268   XYZZ      29.6342   YYZZ    -181.4175
+      XZZZ       2.8218   YZZZ      -2.8163   ZZZZ    -153.3284
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.3924720  -6.1662127  12.1938971  11.6029488  -1.7981438  -2.8781213
+    2  -0.0551372  -4.9553139  -7.7458249   8.6142673  -2.8713451  -2.6673483
+    3   0.0058181  12.6721809  -5.2634680   5.2485279  -2.4701313  -1.4314309
+            7           8           9
+    1  -1.9981366  -6.5096055  -3.0541540
+    2   2.7261047   4.4898133   2.4647842
+    3   2.4808919 -12.6719055   1.4295167
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0034910  -0.0003897   0.0338350   0.0335595  -0.0137679  -0.0169924
+    2  -0.0001203   0.0107014  -0.0025785   0.0050689  -0.0174844  -0.0160296
+    3   0.0000152   0.0294355   0.0036821  -0.0037363  -0.0186693  -0.0108621
+            7           8           9
+    1  -0.0149831   0.0003033  -0.0180736
+    2   0.0163807  -0.0108273   0.0148891
+    3   0.0187439  -0.0294783   0.0108693
+ Max gradient component =       3.383E-02
+ RMS gradient           =       1.648E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1       0.006920       0.000254      -0.000006
+   2       0.000490       0.001665      -0.002800
+   3      -0.003426       0.001604       0.001052
+   4      -0.003293      -0.001878      -0.001029
+   5       0.001160      -0.001140      -0.001497
+   6      -0.001737      -0.000303       0.001205
+   7       0.001086       0.001218       0.001485
+   8       0.000565      -0.001637       0.002777
+   9      -0.001764       0.000218      -0.001187
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.73 s  wall 1.73 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   2
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5470785711    1.9615489360    0.0704497371
+      2  O         0.2815535775    2.6379087913   -0.9523423418
+      3  O        -1.4625370878    2.8781076139    0.7576120053
+      4  O        -1.3941880701    0.9812100959   -0.6163247465
+      5  H        -0.9349184759    3.4693763820    1.2758759815
+      6  H         0.8889291224    3.2070916206   -0.4999450719
+      7  H        -0.8257903562    0.4314050013   -1.1371143339
+      8  O         0.3276649509    1.3462616366    1.0934186703
+      9  H         0.9724649103    0.8195799224    0.6413900998
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.724680248
+
+ Hessian Updated using BFGS Update
+
+ 19 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.014248    0.014283    0.014817    0.014828    0.106104    0.109878
+     0.111407    0.153672    0.160031    0.200069    0.203023    0.344945
+     0.345341    0.348508    0.350094    0.491985    0.492011    0.492056
+     0.530940
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00057336
+ Step Taken.  Stepsize is  0.109439
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.005541      0.000300      NO
+         Displacement       0.062361      0.001200      NO
+         Energy change     -0.009456      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.150154
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5551209228     1.9612907518     0.0704825706
+    2      O       0.2821699813     2.6263967706    -0.9502773804
+    3      O      -1.4660715189     2.8756394412     0.7611091896
+    4      O      -1.3977925408     0.9835384069    -0.6199232950
+    5      H      -0.9554909286     3.4640786251     1.2988739558
+    6      H       0.9179622502     3.1762720283    -0.5141116182
+    7      H      -0.8464757710     0.4353501312    -1.1600127578
+    8      O       0.3276896781     1.3579012072     1.0913650290
+    9      H       0.9992297723     0.8520226377     0.6555143065
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.8399100483 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1280 surface tesserae and discard 1438 interior tesserae
+ Molecular Surface Area = 107.546 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000155 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.85E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.6039701101      1.90E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7214376488      1.72E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7240307050      7.70E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7246330664      4.63E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7249709930      1.49E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7250147159      2.35E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7250158676      5.41E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7250159008      2.02E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7250159063      6.88E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7250159071      1.96E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7250159072      3.67E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7250159072      5.96E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12507550 hartree =     -78.48605865 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12507550 hartree =     -78.48605865 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72501591 
+ Solute Internal Energy (H0)                 =    -326.59994041 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72501591 hartree
+                                             = -205023.04189437 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.55 s  wall 3.56 s
+ SCF   energy in the final basis set = -326.7250159072
+ Total energy in the final basis set = -326.7250159072
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.483 -20.482 -20.482  -7.587  -1.317  -1.253  -1.251
+ -1.245  -0.707  -0.641  -0.634  -0.566  -0.544  -0.537  -0.483
+ -0.463  -0.448  -0.421  -0.406  -0.400
+ -- Virtual --
+  0.247   0.301   0.325   0.336   0.512   0.520   0.548   0.613
+  0.768   0.810   0.814   0.843   1.042   1.123   1.129   1.162
+  1.167   1.187   1.252   1.321   1.343   1.385   1.391   1.421
+  1.455   1.490   1.534   1.579   1.633   1.664   1.721   1.827
+  1.853   1.955   1.968   2.040   2.042   2.098   2.113   2.166
+  2.168   2.225   2.241   2.254   2.606   2.643   2.712   2.734
+  2.735   2.870   2.899   2.970   3.084   3.127   3.141   3.221
+  3.246   4.056   4.161   4.333   4.349   4.528
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.881983
+      2 O                    -0.898768
+      3 O                    -0.878961
+      4 O                    -0.878982
+      5 H                     0.420343
+      6 H                     0.416452
+      7 H                     0.420330
+      8 O                    -0.898748
+      9 H                     0.416350
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.1832      Y      -9.2576      Z      -0.3434
+       Tot      11.7226
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.9374     XY      13.7508     YY     -45.5401
+        XZ       0.3167     YZ       4.7134     ZZ     -37.0131
+    Octopole Moments (Debye-Ang^2)
+       XXX      74.4365    XXY     -80.1820    XYY      50.8068
+       YYY    -196.3552    XXZ      -2.9287    XYZ       1.0144
+       YYZ      18.1146    XZZ      15.1647    YZZ     -72.0367
+       ZZZ      -7.8525
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -233.2889   XXXY     145.7760   XXYY    -218.9228
+      XYYY     193.4922   YYYY    -817.3726   XXXZ       6.2487
+      XXYZ     -14.9324   XYYZ       3.4830   YYYZ      59.7147
+      XXZZ     -63.0175   XYZZ      29.2595   YYZZ    -179.4604
+      XZZZ       2.7848   YZZZ      -2.7664   ZZZZ    -153.0288
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.2166740  -6.1138512  12.0865226  11.4935072  -1.7012265  -3.0081029
+    2  -0.0477030  -4.9535954  -7.7685280   8.6287407  -2.8781868  -2.5922768
+    3   0.0027119  12.5721902  -5.2395505   5.2271778  -2.5634312  -1.3355228
+            7           8           9
+    1  -1.9025724  -6.4602262  -3.1773767
+    2   2.7398864   4.4891830   2.3824801
+    3   2.5733559 -12.5705102   1.3335790
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0087255   0.0006358   0.0362648   0.0359530  -0.0144691  -0.0171111
+    2  -0.0003078   0.0088113  -0.0030593   0.0057534  -0.0168010  -0.0153923
+    3   0.0000026   0.0321161   0.0046030  -0.0046666  -0.0187876  -0.0114515
+            7           8           9
+    1  -0.0156307   0.0012000  -0.0181172
+    2   0.0156447  -0.0088838   0.0142349
+    3   0.0188589  -0.0321227   0.0114478
+ Max gradient component =       3.626E-02
+ RMS gradient           =       1.722E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1       0.000486       0.000007       0.000012
+   2       0.000812      -0.000292       0.001120
+   3       0.000017       0.001137       0.001720
+   4       0.000119      -0.001126      -0.001735
+   5      -0.000279       0.000009      -0.000636
+   6      -0.000859       0.000100      -0.000185
+   7      -0.000254      -0.000036       0.000631
+   8       0.000803       0.000345      -0.001107
+   9      -0.000844      -0.000145       0.000179
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.79 s  wall 1.79 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   3
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5551209228    1.9612907518    0.0704825706
+      2  O         0.2821699813    2.6263967706   -0.9502773804
+      3  O        -1.4660715189    2.8756394412    0.7611091896
+      4  O        -1.3977925408    0.9835384069   -0.6199232950
+      5  H        -0.9554909286    3.4640786251    1.2988739558
+      6  H         0.9179622502    3.1762720283   -0.5141116182
+      7  H        -0.8464757710    0.4353501312   -1.1600127578
+      8  O         0.3276896781    1.3579012072    1.0913650290
+      9  H         0.9992297723    0.8520226377    0.6555143065
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725015907
+
+ Hessian Updated using BFGS Update
+
+ 20 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.009980    0.014283    0.014686    0.014828    0.106104    0.111405
+     0.117608    0.158400    0.160000    0.174206    0.197720    0.203083
+     0.341510    0.345341    0.350094    0.361989    0.491985    0.492054
+     0.492139    0.525028
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00017070
+ Step Taken.  Stepsize is  0.115848
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.002155      0.000300      NO
+         Displacement       0.083589      0.001200      NO
+         Energy change     -0.000336      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.125071
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5572102313     1.9612471768     0.0704041942
+    2      O       0.2799532704     2.6211316730    -0.9552247529
+    3      O      -1.4703873809     2.8713276044     0.7569014483
+    4      O      -1.4024223715     0.9875158647    -0.6157837176
+    5      H      -0.9685633195     3.4492163713     1.3147596440
+    6      H       0.9405122465     3.1489943087    -0.5275292756
+    7      H      -0.8606497165     0.4491379917    -1.1758094461
+    8      O       0.3250430470     1.3631420693     1.0962618986
+    9      H       1.0198244558     0.8807769400     0.6690400071
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.9167036976 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1275 surface tesserae and discard 1443 interior tesserae
+ Molecular Surface Area = 107.599 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000157 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.88E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.5998479300      1.90E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7216039339      1.71E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7241659921      7.66E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7247397198      4.71E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7250753806      1.66E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7251286583      2.55E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7251300241      5.01E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7251300541      2.07E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7251300595      8.41E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7251300607      2.30E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7251300608      3.95E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7251300608      6.81E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12511283 hartree =     -78.50948613 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12511283 hartree =     -78.50948613 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72513006 
+ Solute Internal Energy (H0)                 =    -326.60001723 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72513006 hartree
+                                             = -205023.11352687 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.49 s  wall 3.49 s
+ SCF   energy in the final basis set = -326.7251300608
+ Total energy in the final basis set = -326.7251300608
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.483 -20.482 -20.482  -7.586  -1.317  -1.253  -1.251
+ -1.244  -0.708  -0.641  -0.634  -0.567  -0.544  -0.534  -0.481
+ -0.462  -0.449  -0.421  -0.405  -0.400
+ -- Virtual --
+  0.248   0.303   0.322   0.335   0.512   0.521   0.548   0.610
+  0.767   0.815   0.815   0.843   1.043   1.123   1.129   1.162
+  1.167   1.189   1.255   1.321   1.343   1.384   1.390   1.418
+  1.455   1.493   1.535   1.580   1.631   1.662   1.724   1.820
+  1.852   1.955   1.968   2.040   2.049   2.097   2.114   2.167
+  2.170   2.227   2.241   2.253   2.599   2.643   2.718   2.732
+  2.736   2.879   2.900   2.972   3.086   3.127   3.143   3.218
+  3.249   4.056   4.162   4.331   4.348   4.531
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.880192
+      2 O                    -0.900437
+      3 O                    -0.876026
+      4 O                    -0.876058
+      5 H                     0.420037
+      6 H                     0.416397
+      7 H                     0.420031
+      8 O                    -0.900421
+      9 H                     0.416286
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.2575      Y      -9.2557      Z      -0.3429
+       Tot      11.7668
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.7378     XY      13.9168     YY     -45.8750
+        XZ       0.3204     YZ       4.7694     ZZ     -36.8236
+    Octopole Moments (Debye-Ang^2)
+       XXX      75.1146    XXY     -79.7583    XYY      51.0944
+       YYY    -198.3817    XXZ      -2.8937    XYZ       0.7522
+       YYZ      18.2939    XZZ      15.0046    YZZ     -71.6607
+       ZZZ      -7.8078
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -234.5483   XXXY     147.0506   XXYY    -217.8361
+      XYYY     193.8434   YYYY    -825.4179   XXXZ       6.2743
+      XXYZ     -14.6712   XYYZ       2.4342   YYYZ      60.2390
+      XXZZ     -62.7751   XYZZ      28.8972   YYZZ    -178.3551
+      XZZZ       2.7296   YZZZ      -2.1205   ZZZZ    -153.2006
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.3818944  -5.9951940  12.1018241  11.5057644  -1.6566777  -3.1059093
+    2  -0.0535549  -5.0119224  -7.8061176   8.6676833  -2.8333844  -2.4915257
+    3   0.0042204  12.5725862  -5.1245763   5.1121795  -2.6447917  -1.2874226
+            7           8           9
+    1  -1.8547217  -6.3450774  -3.2681139
+    2   2.6986924   4.5543740   2.2757553
+    3   2.6539834 -12.5707794   1.2846006
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0117475   0.0007411   0.0371165   0.0366572  -0.0142034  -0.0167721
+    2  -0.0004124   0.0078458  -0.0049216   0.0076600  -0.0161047  -0.0144555
+    3  -0.0000013   0.0315104   0.0044564  -0.0045115  -0.0190472  -0.0110891
+            7           8           9
+    1  -0.0153139   0.0012349  -0.0177129
+    2   0.0149758  -0.0079091   0.0133216
+    3   0.0191125  -0.0315137   0.0110837
+ Max gradient component =       3.712E-02
+ RMS gradient           =       1.718E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1      -0.000856      -0.000032       0.000001
+   2       0.000009      -0.000449       0.000628
+   3       0.000655      -0.001103       0.000261
+   4       0.000580       0.001137      -0.000270
+   5      -0.000233       0.000522      -0.000125
+   6       0.000000       0.000461      -0.000238
+   7      -0.000171      -0.000540       0.000124
+   8      -0.000020       0.000461      -0.000616
+   9       0.000036      -0.000458       0.000235
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.72 s  wall 1.72 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   4
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5572102313    1.9612471768    0.0704041942
+      2  O         0.2799532704    2.6211316730   -0.9552247529
+      3  O        -1.4703873809    2.8713276044    0.7569014483
+      4  O        -1.4024223715    0.9875158647   -0.6157837176
+      5  H        -0.9685633195    3.4492163713    1.3147596440
+      6  H         0.9405122465    3.1489943087   -0.5275292756
+      7  H        -0.8606497165    0.4491379917   -1.1758094461
+      8  O         0.3250430470    1.3631420693    1.0962618986
+      9  H         1.0198244558    0.8807769400    0.6690400071
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725130061
+
+ Hessian Updated using BFGS Update
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.004559    0.014283    0.014781    0.014828    0.106104    0.111405
+     0.137491    0.159998    0.160000    0.160765    0.185649    0.201723
+     0.203060    0.345340    0.349865    0.350096    0.390496    0.491985
+     0.492054    0.492288    0.539521
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00011038
+ Step Taken.  Stepsize is  0.144504
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.001177      0.000300      NO
+         Displacement       0.117155      0.001200      NO
+         Energy change     -0.000114      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.138261
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5620566857     1.9610589885     0.0703447113
+    2      O       0.2771182226     2.6131860087    -0.9597703809
+    3      O      -1.4754007018     2.8740414613     0.7514258959
+    4      O      -1.4072732386     0.9844489704    -0.6104183744
+    5      H      -0.9768740188     3.4311994732     1.3328631380
+    6      H       0.9612801782     3.1132048167    -0.5356527121
+    7      H      -0.8704618876     0.4664161917    -1.1939477488
+    8      O       0.3215488715     1.3708790003     1.1008113711
+    9      H       1.0382192602     0.9180550892     0.6773640999
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.9204722147 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1270 surface tesserae and discard 1448 interior tesserae
+ Molecular Surface Area = 107.612 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000159 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.90E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.5990682175      1.93E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7216951100      1.71E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7242524495      7.60E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7248420577      4.54E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7251677871      1.44E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7252090816      2.08E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7252099815      5.14E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7252100162      2.04E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7252100219      8.55E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7252100232      2.26E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7252100233      4.04E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7252100233      6.90E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12494399 hartree =     -78.40353502 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12494399 hartree =     -78.40353502 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72521002 
+ Solute Internal Energy (H0)                 =    -326.60026604 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72521002 hartree
+                                             = -205023.16370407 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.45 s  wall 3.46 s
+ SCF   energy in the final basis set = -326.7252100233
+ Total energy in the final basis set = -326.7252100233
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.482 -20.482 -20.482 -20.482  -7.586  -1.317  -1.253  -1.251
+ -1.243  -0.708  -0.640  -0.634  -0.568  -0.546  -0.533  -0.479
+ -0.462  -0.451  -0.421  -0.405  -0.401
+ -- Virtual --
+  0.249   0.305   0.321   0.335   0.510   0.520   0.548   0.608
+  0.765   0.815   0.816   0.844   1.046   1.124   1.129   1.161
+  1.166   1.191   1.257   1.321   1.342   1.384   1.389   1.415
+  1.456   1.495   1.536   1.579   1.620   1.655   1.727   1.814
+  1.850   1.957   1.969   2.040   2.054   2.097   2.113   2.169
+  2.169   2.229   2.242   2.253   2.593   2.641   2.724   2.731
+  2.734   2.886   2.902   2.970   3.083   3.127   3.141   3.213
+  3.251   4.056   4.162   4.327   4.346   4.531
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.882252
+      2 O                    -0.902216
+      3 O                    -0.875410
+      4 O                    -0.875457
+      5 H                     0.419993
+      6 H                     0.416580
+      7 H                     0.419999
+      8 O                    -0.902215
+      9 H                     0.416475
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.3438      Y      -9.2529      Z      -0.3426
+       Tot      11.8180
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.5657     XY      14.1132     YY     -46.4082
+        XZ       0.3266     YZ       4.8034     ZZ     -36.5973
+    Octopole Moments (Debye-Ang^2)
+       XXX      75.9071    XXY     -79.4007    XYY      51.6600
+       YYY    -201.5707    XXZ      -2.8703    XYZ       0.6376
+       YYZ      18.3800    XZZ      14.8347    YZZ     -71.2142
+       ZZZ      -7.7577
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -235.9544   XXXY     148.6110   XXYY    -217.5082
+      XYYY     195.5594   YYYY    -839.1448   XXXZ       6.3295
+      XXYZ     -14.6350   XYYZ       1.9757   YYYZ      60.0784
+      XXZZ     -62.5332   XYZZ      28.5428   YYZZ    -177.2803
+      XZZZ       2.6817   YZZZ      -1.7133   ZZZZ    -153.0204
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.4319950  -5.8879167  12.1035844  11.4975269  -1.6429767  -3.2048405
+    2  -0.0548075  -5.0729062  -7.9381178   8.7988400  -2.7472860  -2.3687565
+    3   0.0051135  12.5994948  -4.9546653   4.9427400  -2.7404883  -1.2683523
+            7           8           9
+    1  -1.8340059  -6.2399990  -3.3593775
+    2   2.6141587   4.6230188   2.1458564
+    3   2.7492934 -12.5976502   1.2645143
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0131507   0.0013044   0.0374470   0.0369114  -0.0142659  -0.0168855
+    2  -0.0004576   0.0071343  -0.0058771   0.0086303  -0.0154861  -0.0139153
+    3  -0.0000025   0.0311521   0.0054155  -0.0054652  -0.0197903  -0.0108835
+            7           8           9
+    1  -0.0153287   0.0017644  -0.0177964
+    2   0.0143570  -0.0071552   0.0127698
+    3   0.0198486  -0.0311580   0.0108834
+ Max gradient component =       3.745E-02
+ RMS gradient           =       1.723E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1      -0.001485      -0.000045      -0.000022
+   2      -0.000088      -0.000170       0.000346
+   3       0.000755      -0.001322      -0.000080
+   4       0.000660       0.001348       0.000084
+   5      -0.000215       0.000546      -0.000001
+   6       0.000300       0.000258      -0.000185
+   7      -0.000160      -0.000562      -0.000004
+   8      -0.000088       0.000194      -0.000340
+   9       0.000321      -0.000246       0.000204
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.71 s  wall 1.71 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   5
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5620566857    1.9610589885    0.0703447113
+      2  O         0.2771182226    2.6131860087   -0.9597703809
+      3  O        -1.4754007018    2.8740414613    0.7514258959
+      4  O        -1.4072732386    0.9844489704   -0.6104183744
+      5  H        -0.9768740188    3.4311994732    1.3328631380
+      6  H         0.9612801782    3.1132048167   -0.5356527121
+      7  H        -0.8704618876    0.4664161917   -1.1939477488
+      8  O         0.3215488715    1.3708790003    1.1008113711
+      9  H         1.0382192602    0.9180550892    0.6773640999
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725210023
+
+ Hessian Updated using BFGS Update
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.002692    0.014283    0.014828    0.015732    0.106110    0.111409
+     0.136416    0.160000    0.160012    0.160565    0.171657    0.200756
+     0.203695    0.345342    0.346967    0.350095    0.391825    0.491985
+     0.492054    0.492318    0.538276
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00007868
+ Step Taken.  Stepsize is  0.143645
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.001075      0.000300      NO
+         Displacement       0.130359      0.001200      NO
+         Energy change     -0.000080      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.124117
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5652940998     1.9608856945     0.0703777627
+    2      O       0.2750419675     2.6031514412    -0.9655425197
+    3      O      -1.4785292536     2.8809086259     0.7438437391
+    4      O      -1.4099606214     0.9775348325    -0.6030245437
+    5      H      -0.9811445688     3.4107479613     1.3511245871
+    6      H       0.9743839524     3.0833888149    -0.5435755333
+    7      H      -0.8763010033     0.4864275755    -1.2120751677
+    8      O       0.3185048407     1.3803327211     1.1066593674
+    9      H       1.0493987864     0.9491123331     0.6852323083
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.8997800544 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1267 surface tesserae and discard 1451 interior tesserae
+ Molecular Surface Area = 107.571 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000161 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.91E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.5987394840      1.92E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7218076382      1.69E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7243183159      7.55E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7249008923      4.51E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7252184110      1.46E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7252601786      2.01E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7252610178      4.99E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7252610520      1.91E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7252610570      7.96E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7252610581      2.14E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7252610582      3.82E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7252610582      6.86E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12466282 hartree =     -78.22710025 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12466282 hartree =     -78.22710025 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72526106 
+ Solute Internal Energy (H0)                 =    -326.60059824 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72526106 hartree
+                                             = -205023.19572897 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.47 s  wall 3.47 s
+ SCF   energy in the final basis set = -326.7252610582
+ Total energy in the final basis set = -326.7252610582
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.482 -20.482 -20.482  -7.587  -1.317  -1.253  -1.252
+ -1.243  -0.707  -0.641  -0.634  -0.569  -0.548  -0.531  -0.477
+ -0.463  -0.452  -0.420  -0.405  -0.402
+ -- Virtual --
+  0.249   0.307   0.320   0.334   0.510   0.519   0.547   0.607
+  0.764   0.815   0.815   0.844   1.049   1.124   1.128   1.161
+  1.165   1.193   1.258   1.322   1.342   1.385   1.389   1.413
+  1.457   1.497   1.535   1.578   1.604   1.648   1.730   1.812
+  1.846   1.960   1.969   2.040   2.057   2.097   2.112   2.168
+  2.172   2.230   2.242   2.252   2.593   2.636   2.725   2.728
+  2.739   2.892   2.902   2.969   3.078   3.126   3.137   3.208
+  3.253   4.057   4.162   4.321   4.344   4.530
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.885392
+      2 O                    -0.903382
+      3 O                    -0.876148
+      4 O                    -0.876185
+      5 H                     0.419915
+      6 H                     0.416965
+      7 H                     0.419922
+      8 O                    -0.903359
+      9 H                     0.416881
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.4074      Y      -9.2494      Z      -0.3417
+       Tot      11.8549
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.4490     XY      14.2644     YY     -46.9494
+        XZ       0.3317     YZ       4.7859     ZZ     -36.3598
+    Octopole Moments (Debye-Ang^2)
+       XXX      76.4338    XXY     -79.1712    XYY      52.2852
+       YYY    -204.7914    XXZ      -2.8532    XYZ       0.5815
+       YYZ      18.2600    XZZ      14.5940    YZZ     -70.7495
+       ZZZ      -7.7046
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -236.7625   XXXY     149.6935   XXYY    -217.6781
+      XYYY     197.9885   YYYY    -853.3874   XXXZ       6.3715
+      XXYZ     -14.6673   XYYZ       1.7684   YYYZ      58.9788
+      XXZZ     -62.1991   XYZZ      28.0652   YYZZ    -176.2973
+      XZZZ       2.6201   YZZZ      -1.3839   ZZZZ    -152.8082
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.4425470  -5.8174056  12.1023535  11.4834381  -1.6436151  -3.2703116
+    2  -0.0555872  -5.0794012  -8.1279653   8.9844011  -2.6310968  -2.2799070
+    3   0.0033808  12.6534060  -4.7361356   4.7280023  -2.8428250  -1.2603260
+            7           8           9
+    1  -1.8260763  -6.1654171  -3.4204189
+    2   2.4992704   4.6408493   2.0494367
+    3   2.8504099 -12.6531147   1.2572024
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0129056   0.0017158   0.0371317   0.0365616  -0.0142823  -0.0170964
+    2  -0.0004590   0.0069145  -0.0066522   0.0093786  -0.0147937  -0.0137740
+    3   0.0000023   0.0308259   0.0068387  -0.0068718  -0.0207695  -0.0106833
+            7           8           9
+    1  -0.0152972   0.0021855  -0.0180130
+    2   0.0136754  -0.0068826   0.0125930
+    3   0.0208148  -0.0308449   0.0106878
+ Max gradient component =       3.713E-02
+ RMS gradient           =       1.723E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1      -0.000862      -0.000029      -0.000027
+   2      -0.000059       0.000282      -0.000059
+   3       0.000189      -0.000801      -0.000128
+   4       0.000156       0.000788       0.000152
+   5      -0.000012       0.000297      -0.000066
+   6       0.000289      -0.000109      -0.000001
+   7       0.000019      -0.000291       0.000049
+   8      -0.000001      -0.000251       0.000061
+   9       0.000281       0.000115       0.000020
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.72 s  wall 1.72 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   6
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5652940998    1.9608856945    0.0703777627
+      2  O         0.2750419675    2.6031514412   -0.9655425197
+      3  O        -1.4785292536    2.8809086259    0.7438437391
+      4  O        -1.4099606214    0.9775348325   -0.6030245437
+      5  H        -0.9811445688    3.4107479613    1.3511245871
+      6  H         0.9743839524    3.0833888149   -0.5435755333
+      7  H        -0.8763010033    0.4864275755   -1.2120751677
+      8  O         0.3185048407    1.3803327211    1.1066593674
+      9  H         1.0493987864    0.9491123331    0.6852323083
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725261058
+
+ Hessian Updated using BFGS Update
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.002220    0.014283    0.014826    0.015513    0.106108    0.111409
+     0.135203    0.159745    0.160000    0.160437    0.161886    0.199390
+     0.205601    0.345326    0.347995    0.350100    0.380078    0.491985
+     0.492055    0.492268    0.533747
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00003607
+ Step Taken.  Stepsize is  0.086561
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.000758      0.000300      NO
+         Displacement       0.080863      0.001200      NO
+         Energy change     -0.000051      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.063256
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5649890894     1.9608701128     0.0703304792
+    2      O       0.2751725994     2.5950118638    -0.9704431449
+    3      O      -1.4775785927     2.8875667537     0.7377793603
+    4      O      -1.4088123826     0.9713261745    -0.5973439522
+    5      H      -0.9816812017     3.3976791172     1.3627967367
+    6      H       0.9748430499     3.0763500826    -0.5505396882
+    7      H      -0.8778979382     0.4988478196    -1.2231826034
+    8      O       0.3175221794     1.3879192177     1.1115506184
+    9      H       1.0495213760     0.9569188581     0.6920721942
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.8819061985 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1270 surface tesserae and discard 1448 interior tesserae
+ Molecular Surface Area = 107.538 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000162 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.92E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.5997549788      1.78E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7219347583      1.68E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7243356402      7.70E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7248627339      5.01E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7251931673      2.30E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7252872695      3.46E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7252896476      4.76E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7252896794      1.68E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7252896828      7.25E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7252896837      2.35E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7252896838      4.31E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7252896838      9.06E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12439861 hartree =     -78.06130808 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12439861 hartree =     -78.06130808 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72528968 
+ Solute Internal Energy (H0)                 =    -326.60089107 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72528968 hartree
+                                             = -205023.21369178 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.46 s  wall 3.46 s
+ SCF   energy in the final basis set = -326.7252896838
+ Total energy in the final basis set = -326.7252896838
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.483 -20.482 -20.482  -7.587  -1.317  -1.253  -1.252
+ -1.244  -0.706  -0.641  -0.634  -0.570  -0.548  -0.530  -0.477
+ -0.463  -0.453  -0.420  -0.405  -0.402
+ -- Virtual --
+  0.249   0.308   0.320   0.334   0.510   0.518   0.546   0.608
+  0.764   0.814   0.815   0.845   1.051   1.124   1.127   1.160
+  1.165   1.194   1.258   1.322   1.342   1.386   1.389   1.412
+  1.457   1.498   1.535   1.579   1.593   1.645   1.732   1.814
+  1.842   1.963   1.968   2.040   2.057   2.097   2.111   2.167
+  2.174   2.230   2.242   2.252   2.597   2.629   2.721   2.729
+  2.741   2.896   2.902   2.968   3.075   3.124   3.135   3.206
+  3.253   4.057   4.162   4.316   4.344   4.529
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.887302
+      2 O                    -0.903418
+      3 O                    -0.877387
+      4 O                    -0.877410
+      5 H                     0.419930
+      6 H                     0.417242
+      7 H                     0.419927
+      8 O                    -0.903352
+      9 H                     0.417167
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.4077      Y      -9.2485      Z      -0.3392
+       Tot      11.8543
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.4146     XY      14.2781     YY     -47.1978
+        XZ       0.3327     YZ       4.7315     ZZ     -36.2073
+    Octopole Moments (Debye-Ang^2)
+       XXX      76.3833    XXY     -79.1228    XYY      52.5876
+       YYY    -206.2527    XXZ      -2.8363    XYZ       0.5278
+       YYZ      18.0076    XZZ      14.3591    YZZ     -70.4563
+       ZZZ      -7.6555
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -236.4529   XXXY     149.6377   XXYY    -217.9458
+      XYYY     199.6482   YYYY    -860.1017   XXXZ       6.3621
+      XXYZ     -14.6748   XYYZ       1.5875   YYYZ      57.5540
+      XXZZ     -61.8757   XYZZ      27.5980   YYZZ    -175.6970
+      XZZZ       2.5559   YZZZ      -1.1719   ZZZZ    -152.7825
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.4154228  -5.8179200  12.0858659  11.4602740  -1.6414197  -3.2737233
+    2  -0.0550131  -5.0043505  -8.2762062   9.1224243  -2.5472483  -2.2817068
+    3   0.0022185  12.6983481  -4.5735913   4.5722540  -2.9122049  -1.2535938
+            7           8           9
+    1  -1.8184706  -6.1524721  -3.4267114
+    2   2.4196427   4.5766880   2.0457698
+    3   2.9159338 -12.7005961   1.2512317
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0119318   0.0017701   0.0366731   0.0360901  -0.0142564  -0.0172128
+    2  -0.0004336   0.0072966  -0.0071548   0.0097913  -0.0142598  -0.0140426
+    3   0.0000073   0.0308348   0.0079763  -0.0079759  -0.0214793  -0.0106536
+            7           8           9
+    1  -0.0152447   0.0022821  -0.0181697
+    2   0.0131844  -0.0071992   0.0128177
+    3   0.0215000  -0.0308623   0.0106528
+ Max gradient component =       3.667E-02
+ RMS gradient           =       1.725E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1      -0.000078      -0.000018      -0.000023
+   2      -0.000017       0.000507      -0.000183
+   3      -0.000254      -0.000245      -0.000003
+   4      -0.000247       0.000186       0.000035
+   5       0.000116       0.000093      -0.000148
+   6       0.000161      -0.000279       0.000067
+   7       0.000131      -0.000071       0.000134
+   8       0.000047      -0.000453       0.000191
+   9       0.000142       0.000280      -0.000070
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.71 s  wall 1.71 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   7
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5649890894    1.9608701128    0.0703304792
+      2  O         0.2751725994    2.5950118638   -0.9704431449
+      3  O        -1.4775785927    2.8875667537    0.7377793603
+      4  O        -1.4088123826    0.9713261745   -0.5973439522
+      5  H        -0.9816812017    3.3976791172    1.3627967367
+      6  H         0.9748430499    3.0763500826   -0.5505396882
+      7  H        -0.8778979382    0.4988478196   -1.2231826034
+      8  O         0.3175221794    1.3879192177    1.1115506184
+      9  H         1.0495213760    0.9569188581    0.6920721942
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725289684
+
+ Hessian Updated using BFGS Update
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.001395    0.008291    0.014284    0.014829    0.106105    0.111408
+     0.136688    0.159997    0.160012    0.160732    0.182941    0.197634
+     0.213180    0.345345    0.350095    0.352736    0.381522    0.491986
+     0.492055    0.492376    0.540139
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00007024
+ Step Taken.  Stepsize is  0.180595
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.000465      0.000300      NO
+         Displacement       0.151892      0.001200      NO
+         Energy change     -0.000029      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.127533
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5609451808     1.9610433187     0.0701571266
+    2      O       0.2781986053     2.5764875082    -0.9813735955
+    3      O      -1.4714893869     2.9016481374     0.7246776910
+    4      O      -1.4026663830     0.9589978117    -0.5853402297
+    5      H      -0.9837069348     3.3720988610     1.3859433809
+    6      H       0.9677010765     3.0774080370    -0.5679350483
+    7      H      -0.8818823192     0.5223634754    -1.2446384675
+    8      O       0.3178153402     1.4051357093     1.1223589475
+    9      H       1.0430751828     0.9573071411     0.7091701951
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.8710942527 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1267 surface tesserae and discard 1451 interior tesserae
+ Molecular Surface Area = 107.451 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000165 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.92E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.5992543369      1.99E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7220364450      1.65E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7244684762      7.18E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7250777511      3.76E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7253172697      1.04E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7253397908      1.72E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7253403876      5.36E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7253404293      1.96E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7253404356      7.32E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7253404367      1.86E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7253404367      3.03E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7253404367      5.63E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12375823 hartree =     -77.65946319 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12375823 hartree =     -77.65946319 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72534044 
+ Solute Internal Energy (H0)                 =    -326.60158220 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72534044 hartree
+                                             = -205023.24553975 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.47 s  wall 3.47 s
+ SCF   energy in the final basis set = -326.7253404367
+ Total energy in the final basis set = -326.7253404367
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.483 -20.482 -20.482  -7.587  -1.318  -1.254  -1.251
+ -1.244  -0.705  -0.642  -0.634  -0.573  -0.549  -0.528  -0.476
+ -0.464  -0.454  -0.420  -0.407  -0.401
+ -- Virtual --
+  0.250   0.309   0.320   0.332   0.511   0.516   0.545   0.609
+  0.764   0.811   0.816   0.845   1.054   1.123   1.127   1.160
+  1.165   1.196   1.259   1.323   1.343   1.387   1.388   1.411
+  1.457   1.499   1.532   1.576   1.580   1.642   1.734   1.823
+  1.829   1.966   1.970   2.040   2.053   2.099   2.110   2.165
+  2.178   2.231   2.244   2.253   2.611   2.612   2.717   2.730
+  2.743   2.901   2.907   2.967   3.070   3.120   3.133   3.202
+  3.255   4.058   4.163   4.305   4.346   4.528
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.890039
+      2 O                    -0.902758
+      3 O                    -0.880067
+      4 O                    -0.880026
+      5 H                     0.420110
+      6 H                     0.417685
+      7 H                     0.420055
+      8 O                    -0.902678
+      9 H                     0.417641
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.3387      Y      -9.2501      Z      -0.3317
+       Tot      11.8123
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.3568     XY      14.1633     YY     -47.5349
+        XZ       0.3295     YZ       4.5744     ZZ     -35.8984
+    Octopole Moments (Debye-Ang^2)
+       XXX      75.7233    XXY     -79.0673    XYY      52.8708
+       YYY    -208.2068    XXZ      -2.7854    XYZ       0.3363
+       YYZ      17.3020    XZZ      13.7470    YZZ     -69.8713
+       ZZZ      -7.5375
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -234.7370   XXXY     148.4240   XXYY    -218.2775
+      XYYY     202.2365   YYYY    -869.3395   XXXZ       6.2793
+      XXYZ     -14.5708   XYYZ       0.9237   YYYZ      53.9434
+      XXZZ     -61.0443   XYZZ      26.3728   YYZZ    -174.4492
+      XZZZ       2.3833   YZZZ      -0.7222   ZZZZ    -152.8907
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.3326521  -5.8791061  12.0241288  11.3906935  -1.6128445  -3.2348950
+    2  -0.0536695  -4.7497818  -8.5795687   9.3932753  -2.3797484  -2.3592147
+    3  -0.0024662  12.7895810  -4.2383040   4.2562018  -3.0538688  -1.2298105
+            7           8           9
+    1  -1.7809064  -6.1728422  -3.4015760
+    2   2.2674584   4.3491545   2.1120948
+    3   3.0462893 -12.7960894   1.2284669
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0098693   0.0015650   0.0357190   0.0351350  -0.0140948  -0.0172895
+    2  -0.0003595   0.0085104  -0.0084545   0.0108618  -0.0130585  -0.0149249
+    3   0.0000139   0.0311498   0.0102810  -0.0101782  -0.0228667  -0.0106923
+            7           8           9
+    1  -0.0150352   0.0022351  -0.0183651
+    2   0.0121118  -0.0082772   0.0135907
+    3   0.0228052  -0.0312018   0.0106892
+ Max gradient component =       3.572E-02
+ RMS gradient           =       1.738E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1       0.001174       0.000009       0.000022
+   2      -0.000013       0.000565      -0.000205
+   3      -0.000846       0.000521       0.000202
+   4      -0.000771      -0.000616      -0.000170
+   5       0.000266      -0.000188      -0.000238
+   6      -0.000057      -0.000400       0.000119
+   7       0.000262       0.000222       0.000230
+   8       0.000052      -0.000513       0.000200
+   9      -0.000069       0.000401      -0.000158
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.72 s  wall 1.72 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   8
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5609451808    1.9610433187    0.0701571266
+      2  O         0.2781986053    2.5764875082   -0.9813735955
+      3  O        -1.4714893869    2.9016481374    0.7246776910
+      4  O        -1.4026663830    0.9589978117   -0.5853402297
+      5  H        -0.9837069348    3.3720988610    1.3859433809
+      6  H         0.9677010765    3.0774080370   -0.5679350483
+      7  H        -0.8818823192    0.5223634754   -1.2446384675
+      8  O         0.3178153402    1.4051357093    1.1223589475
+      9  H         1.0430751828    0.9573071411    0.7091701951
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725340437
+
+ Hessian Updated using BFGS Update
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.000989    0.005881    0.014284    0.014829    0.106120    0.111417
+     0.136914    0.159997    0.160016    0.160806    0.192014    0.196268
+     0.217431    0.345356    0.350084    0.350670    0.401543    0.491986
+     0.492056    0.492539    0.548814
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00005675
+ Step Taken.  Stepsize is  0.182678
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.000827      0.000300      NO
+         Displacement       0.132809      0.001200      NO
+         Energy change     -0.000051      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.131879
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5542321306     1.9613933070     0.0698306067
+    2      O       0.2837869174     2.5582111364    -0.9920816508
+    3      O      -1.4617839075     2.9145739101     0.7119866484
+    4      O      -1.3934877210     0.9484117676    -0.5738923563
+    5      H      -0.9882029012     3.3488895530     1.4072854785
+    6      H       0.9553136564     3.0901097306    -0.5878619516
+    7      H      -0.8881314944     0.5426267311    -1.2640486609
+    8      O       0.3203774356     1.4223116537     1.1329376904
+    9      H       1.0324601452     0.9459622104     0.7288641957
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.8829819275 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1258 surface tesserae and discard 1460 interior tesserae
+ Molecular Surface Area = 107.344 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000168 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.93E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.6004821544      1.96E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7221969873      1.62E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7245373296      7.04E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7251363201      3.61E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7253590509      9.90E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7253795769      1.71E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7253801685      5.54E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7253802129      2.00E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7253802196      7.31E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7253802206      1.83E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7253802207      2.93E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7253802207      5.47E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12306448 hartree =     -77.22412926 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12306448 hartree =     -77.22412926 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72538022 
+ Solute Internal Energy (H0)                 =    -326.60231574 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72538022 hartree
+                                             = -205023.27050455 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.43 s  wall 3.44 s
+ SCF   energy in the final basis set = -326.7253802207
+ Total energy in the final basis set = -326.7253802207
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.483 -20.482 -20.482  -7.587  -1.318  -1.254  -1.251
+ -1.244  -0.704  -0.643  -0.634  -0.576  -0.548  -0.525  -0.475
+ -0.464  -0.455  -0.420  -0.408  -0.400
+ -- Virtual --
+  0.251   0.310   0.321   0.329   0.512   0.514   0.543   0.611
+  0.764   0.809   0.816   0.845   1.056   1.122   1.127   1.160
+  1.165   1.196   1.260   1.324   1.345   1.386   1.391   1.411
+  1.456   1.500   1.523   1.570   1.582   1.643   1.735   1.815
+  1.834   1.963   1.976   2.040   2.045   2.105   2.111   2.163
+  2.181   2.231   2.245   2.255   2.593   2.627   2.715   2.729
+  2.744   2.899   2.916   2.966   3.066   3.117   3.133   3.200
+  3.255   4.058   4.164   4.294   4.350   4.528
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.891659
+      2 O                    -0.901908
+      3 O                    -0.882346
+      4 O                    -0.882219
+      5 H                     0.420484
+      6 H                     0.417946
+      7 H                     0.420355
+      8 O                    -0.901883
+      9 H                     0.417911
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.2032      Y      -9.2561      Z      -0.3238
+       Tot      11.7331
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.2846     XY      13.9113     YY     -47.7206
+        XZ       0.3220     YZ       4.3912     ZZ     -35.5989
+    Octopole Moments (Debye-Ang^2)
+       XXX      74.5907    XXY     -78.9917    XYY      52.7411
+       YYY    -209.2427    XXZ      -2.7194    XYZ       0.0632
+       YYZ      16.4921    XZZ      13.0338    YZZ     -69.3147
+       ZZZ      -7.4124
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -232.1359   XXXY     146.2531   XXYY    -218.2070
+      XYYY     203.5024   YYYY    -874.5142   XXXZ       6.1382
+      XXYZ     -14.3129   XYYZ      -0.0434   YYYZ      50.0498
+      XXZZ     -60.0771   XYZZ      24.9365   YYZZ    -173.2013
+      XZZZ       2.1821   YZZZ      -0.2588   ZZZZ    -153.1063
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.2377885  -5.9851095  11.9328227  11.2999550  -1.5548286  -3.1620007
+    2  -0.0507323  -4.4376104  -8.8578080   9.6300229  -2.2296942  -2.4853447
+    3  -0.0044897  12.8626035  -3.9290631   3.9666846  -3.1878217  -1.1927579
+            7           8           9
+    1  -1.7169656  -6.2280477  -3.3480370
+    2   2.1388269   4.0640861   2.2282536
+    3   3.1671493 -12.8741330   1.1918279
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0084131   0.0011358   0.0349839   0.0343871  -0.0138372  -0.0171450
+    2  -0.0002901   0.0099648  -0.0100503   0.0121733  -0.0118164  -0.0159794
+    3   0.0000035   0.0315842   0.0123609  -0.0121412  -0.0240604  -0.0107674
+            7           8           9
+    1  -0.0147434   0.0020112  -0.0183793
+    2   0.0110403  -0.0095842   0.0145420
+    3   0.0239087  -0.0316575   0.0107694
+ Max gradient component =       3.498E-02
+ RMS gradient           =       1.761E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1       0.001557       0.000020       0.000043
+   2      -0.000053       0.000285      -0.000098
+   3      -0.000876       0.000677       0.000300
+   4      -0.000812      -0.000787      -0.000267
+   5       0.000243      -0.000247      -0.000187
+   6      -0.000131      -0.000301       0.000090
+   7       0.000229       0.000276       0.000196
+   8      -0.000026      -0.000247       0.000074
+   9      -0.000132       0.000324      -0.000150
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.71 s  wall 1.71 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:   9
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5542321306    1.9613933070    0.0698306067
+      2  O         0.2837869174    2.5582111364   -0.9920816508
+      3  O        -1.4617839075    2.9145739101    0.7119866484
+      4  O        -1.3934877210    0.9484117676   -0.5738923563
+      5  H        -0.9882029012    3.3488895530    1.4072854785
+      6  H         0.9553136564    3.0901097306   -0.5878619516
+      7  H        -0.8881314944    0.5426267311   -1.2640486609
+      8  O         0.3203774356    1.4223116537    1.1329376904
+      9  H         1.0324601452    0.9459622104    0.7288641957
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725380221
+
+ Hessian Updated using BFGS Update
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.000916    0.004516    0.014284    0.014829    0.106117    0.111417
+     0.136754    0.159997    0.160025    0.160820    0.184209    0.194676
+     0.206896    0.345378    0.349641    0.350106    0.394800    0.491986
+     0.492057    0.492419    0.542030
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00002880
+ Step Taken.  Stepsize is  0.110853
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.000844      0.000300      NO
+         Displacement       0.070663      0.001200      NO
+         Energy change     -0.000040      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.085603
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5488754060     1.9617351168     0.0695480296
+    2      O       0.2884113120     2.5491281379    -0.9978276837
+    3      O      -1.4537681221     2.9212875029     0.7048923714
+    4      O      -1.3860521443     0.9435186555    -0.5676719505
+    5      H      -0.9911248861     3.3385763385     1.4177062785
+    6      H       0.9434259627     3.1065906504    -0.6008004467
+    7      H      -0.8918080146     0.5508014640    -1.2732202474
+    8      O       0.3233452604     1.4309775748     1.1385943866
+    9      H       1.0225460380     0.9298745592     0.7417992622
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.9021017082 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1262 surface tesserae and discard 1456 interior tesserae
+ Molecular Surface Area = 107.282 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000170 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.93E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.6023232372      1.72E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7223708479      1.59E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7245371459      7.28E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7250622856      4.39E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7253505921      1.55E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7253967536      1.98E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7253975741      5.40E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7253976093      2.01E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7253976151      7.48E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7253976161      2.21E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7253976162      3.60E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7253976162      6.38E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12265670 hartree =     -76.96824011 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12265670 hartree =     -76.96824011 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72539762 
+ Solute Internal Energy (H0)                 =    -326.60274092 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72539762 hartree
+                                             = -205023.28142039 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.48 s  wall 3.49 s
+ SCF   energy in the final basis set = -326.7253976162
+ Total energy in the final basis set = -326.7253976162
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.483 -20.482 -20.482  -7.587  -1.318  -1.254  -1.250
+ -1.244  -0.704  -0.643  -0.634  -0.578  -0.547  -0.523  -0.475
+ -0.464  -0.454  -0.420  -0.409  -0.399
+ -- Virtual --
+  0.252   0.310   0.322   0.328   0.513   0.514   0.542   0.612
+  0.764   0.809   0.817   0.845   1.057   1.121   1.128   1.160
+  1.165   1.195   1.261   1.325   1.346   1.385   1.392   1.411
+  1.456   1.500   1.517   1.571   1.584   1.647   1.735   1.807
+  1.841   1.962   1.980   2.039   2.040   2.110   2.112   2.163
+  2.183   2.230   2.246   2.256   2.581   2.638   2.715   2.725
+  2.744   2.898   2.922   2.967   3.066   3.115   3.134   3.201
+  3.255   4.058   4.166   4.289   4.353   4.529
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.891755
+      2 O                    -0.901447
+      3 O                    -0.883110
+      4 O                    -0.882911
+      5 H                     0.420855
+      6 H                     0.417904
+      7 H                     0.420674
+      8 O                    -0.901593
+      9 H                     0.417873
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.0779      Y      -9.2634      Z      -0.3189
+       Tot      11.6623
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.2459     XY      13.6675     YY     -47.7078
+        XZ       0.3136     YZ       4.2845     ZZ     -35.4383
+    Octopole Moments (Debye-Ang^2)
+       XXX      73.6098    XXY     -78.9637    XYY      52.3737
+       YYY    -209.1087    XXZ      -2.6730    XYZ      -0.1448
+       YYZ      16.0232    XZZ      12.5735    YZZ     -69.0232
+       ZZZ      -7.3362
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -230.0151   XXXY     144.3487   XXYY    -217.9834
+      XYYY     203.3133   YYYY    -874.3348   XXXZ       6.0138
+      XXYZ     -14.0547   XYYZ      -0.7855   YYYZ      47.9100
+      XXZZ     -59.4501   XYZZ      24.0050   YYZZ    -172.4853
+      XZZZ       2.0445   YZZZ       0.0701   ZZZZ    -153.2652
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.1788107  -6.0758929  11.8653175  11.2367404  -1.5071738  -3.0930054
+    2  -0.0477273  -4.2302732  -8.9987941   9.7413599  -2.1621808  -2.5908369
+    3  -0.0064010  12.8861712  -3.7735147   3.8240660  -3.2580462  -1.1621456
+            7           8           9
+    1  -1.6679182  -6.2855325  -3.2937245
+    2   2.0876302   3.8703508   2.3304713
+    3   3.2285313 -12.8989634   1.1603024
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0082381   0.0007297   0.0348317   0.0342322  -0.0136711  -0.0168873
+    2  -0.0002449   0.0110429  -0.0111441   0.0131051  -0.0111202  -0.0167010
+    3  -0.0000268   0.0318642   0.0133194  -0.0130151  -0.0246130  -0.0108274
+            7           8           9
+    1  -0.0145621   0.0017747  -0.0182096
+    2   0.0104549  -0.0105939   0.0152014
+    3   0.0243868  -0.0319238   0.0108358
+ Max gradient component =       3.483E-02
+ RMS gradient           =       1.781E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1       0.000953       0.000023       0.000040
+   2      -0.000110       0.000011       0.000043
+   3      -0.000419       0.000370       0.000225
+   4      -0.000381      -0.000435      -0.000196
+   5       0.000093      -0.000117      -0.000070
+   6      -0.000085      -0.000089       0.000015
+   7       0.000080       0.000119       0.000078
+   8      -0.000083       0.000003      -0.000069
+   9      -0.000048       0.000115      -0.000065
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.71 s  wall 1.71 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:  10
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5488754060    1.9617351168    0.0695480296
+      2  O         0.2884113120    2.5491281379   -0.9978276837
+      3  O        -1.4537681221    2.9212875029    0.7048923714
+      4  O        -1.3860521443    0.9435186555   -0.5676719505
+      5  H        -0.9911248861    3.3385763385    1.4177062785
+      6  H         0.9434259627    3.1065906504   -0.6008004467
+      7  H        -0.8918080146    0.5508014640   -1.2732202474
+      8  O         0.3233452604    1.4309775748    1.1385943866
+      9  H         1.0225460380    0.9298745592    0.7417992622
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725397616
+
+ Hessian Updated using BFGS Update
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.000992    0.004037    0.014284    0.014826    0.106103    0.111412
+     0.136709    0.158153    0.159998    0.160041    0.162995    0.195142
+     0.207103    0.345295    0.350096    0.350163    0.369297    0.491987
+     0.492058    0.492245    0.535128
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =  -0.00000391
+ Step Taken.  Stepsize is  0.019321
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.000495      0.000300      NO
+         Displacement       0.013844      0.001200      NO
+         Energy change     -0.000017      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.018261
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5479805774     1.9618451074     0.0693987842
+    2      O       0.2895174911     2.5488911493    -0.9983973598
+    3      O      -1.4520639872     2.9215939738     0.7039680525
+    4      O      -1.3845676183     0.9436255920    -0.5669686389
+    5      H      -0.9914419603     3.3387196000     1.4182012092
+    6      H       0.9404573463     3.1120718176    -0.6026097816
+    7      H      -0.8921218839     0.5500380766    -1.2733005371
+    8      O       0.3242391893     1.4313410327     1.1390550834
+    9      H       1.0200620004     0.9243636505     0.7436731881
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.9119416359 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1266 surface tesserae and discard 1452 interior tesserae
+ Molecular Surface Area = 107.282 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000170 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.92E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.6030286463      1.61E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7224424277      1.58E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7245380133      7.39E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7249607332      5.16E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7251736580      3.66E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7253318109      2.00E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7253981480      3.19E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7253998908      1.25E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7253998914      9.62E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7253998924      5.89E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7253998929      9.84E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7253998929      2.02E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   13    -326.7253998929      4.00E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12261264 hartree =     -76.94058975 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12261264 hartree =     -76.94058975 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72539989 
+ Solute Internal Energy (H0)                 =    -326.60278726 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72539989 hartree
+                                             = -205023.28284908 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.69 s  wall 3.70 s
+ SCF   energy in the final basis set = -326.7253998929
+ Total energy in the final basis set = -326.7253998929
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.483 -20.482 -20.482  -7.587  -1.317  -1.254  -1.250
+ -1.244  -0.704  -0.643  -0.634  -0.578  -0.546  -0.523  -0.475
+ -0.464  -0.454  -0.420  -0.409  -0.399
+ -- Virtual --
+  0.252   0.310   0.322   0.328   0.513   0.514   0.542   0.613
+  0.764   0.810   0.817   0.845   1.056   1.121   1.129   1.161
+  1.166   1.195   1.261   1.325   1.346   1.385   1.392   1.411
+  1.455   1.500   1.517   1.572   1.585   1.648   1.734   1.806
+  1.842   1.962   1.980   2.038   2.040   2.110   2.112   2.163
+  2.184   2.230   2.246   2.256   2.580   2.640   2.716   2.724
+  2.743   2.898   2.923   2.967   3.067   3.115   3.135   3.201
+  3.255   4.058   4.166   4.288   4.354   4.529
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.891315
+      2 O                    -0.901593
+      3 O                    -0.882723
+      4 O                    -0.882485
+      5 H                     0.420977
+      6 H                     0.417788
+      7 H                     0.420788
+      8 O                    -0.901816
+      9 H                     0.417749
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.0442      Y      -9.2666      Z      -0.3174
+       Tot      11.6444
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.2429     XY      13.5999     YY     -47.6570
+        XZ       0.3105     YZ       4.2834     ZZ     -35.4265
+    Octopole Moments (Debye-Ang^2)
+       XXX      73.3822    XXY     -78.9674    XYY      52.2121
+       YYY    -208.7908    XXZ      -2.6626    XYZ      -0.1920
+       YYZ      16.0129    XZZ      12.5005    YZZ     -69.0041
+       ZZZ      -7.3185
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -229.5755   XXXY     143.8992   XXYY    -217.8857
+      XYYY     202.9110   YYYY    -872.9843   XXXZ       5.9809
+      XXYZ     -13.9676   XYYZ      -0.9549   YYYZ      47.8772
+      XXZZ     -59.3551   XYZZ      23.8527   YYZZ    -172.3986
+      XZZZ       2.0164   YZZZ       0.1802   ZZZZ    -153.2843
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.1755872  -6.0971293  11.8547985  11.2289450  -1.4970578  -3.0753569
+    2  -0.0469986  -4.1983215  -9.0076174   9.7440454  -2.1634799  -2.6146009
+    3  -0.0057825  12.8800318  -3.7638395   3.8169838  -3.2647585  -1.1560978
+            7           8           9
+    1  -1.6587017  -6.3010862  -3.2788244
+    2   2.0932676   3.8388095   2.3548959
+    3   3.2325277 -12.8924037   1.1533387
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0087493   0.0006743   0.0350179   0.0344117  -0.0136526  -0.0167881
+    2  -0.0002531   0.0112939  -0.0114092   0.0133378  -0.0110474  -0.0168057
+    3  -0.0000553   0.0318821   0.0132646  -0.0129325  -0.0246173  -0.0108555
+            7           8           9
+    1  -0.0145463   0.0017605  -0.0181281
+    2   0.0104150  -0.0108377   0.0153064
+    3   0.0243745  -0.0319259   0.0108655
+ Max gradient component =       3.502E-02
+ RMS gradient           =       1.786E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1       0.000332       0.000008       0.000011
+   2      -0.000085      -0.000006       0.000072
+   3      -0.000102       0.000090       0.000076
+   4      -0.000092      -0.000145      -0.000043
+   5       0.000018      -0.000024      -0.000006
+   6      -0.000033       0.000008      -0.000027
+   7       0.000006       0.000022       0.000020
+   8      -0.000052       0.000023      -0.000092
+   9       0.000009       0.000025      -0.000012
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.71 s  wall 1.71 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:  11
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5479805774    1.9618451074    0.0693987842
+      2  O         0.2895174911    2.5488911493   -0.9983973598
+      3  O        -1.4520639872    2.9215939738    0.7039680525
+      4  O        -1.3845676183    0.9436255920   -0.5669686389
+      5  H        -0.9914419603    3.3387196000    1.4182012092
+      6  H         0.9404573463    3.1120718176   -0.6026097816
+      7  H        -0.8921218839    0.5500380766   -1.2733005371
+      8  O         0.3242391893    1.4313410327    1.1390550834
+      9  H         1.0200620004    0.9243636505    0.7436731881
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725399893
+
+ Hessian Updated using BFGS Update
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.001010    0.004231    0.014284    0.014782    0.106141    0.111435
+     0.134441    0.141732    0.159999    0.160029    0.164224    0.195135
+     0.207489    0.324007    0.345546    0.350124    0.352398    0.491994
+     0.492066    0.492216    0.533215
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =   0.00000000
+ Step Taken.  Stepsize is  0.003086
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.000166      0.000300     YES
+         Displacement       0.002395      0.001200      NO
+         Energy change     -0.000002      0.000001      NO
+
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+
+ Displacement from previous Coordinates is:  0.002196
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      B      -0.5481853798     1.9618941258     0.0693554800
+    2      O       0.2896310546     2.5491492155    -0.9983635586
+    3      O      -1.4521008581     2.9212958457     0.7040386036
+    4      O      -1.3846595636     0.9440918563    -0.5671248234
+    5      H      -0.9916137193     3.3390142127     1.4180197373
+    6      H       0.9406190887     3.1121513483    -0.6023754520
+    7      H      -0.8921615302     0.5495032304    -1.2728778376
+    8      O       0.3243721178     1.4311343943     1.1389420062
+    9      H       1.0201987899     0.9242557710     0.7434058444
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =   184.9140190936 hartrees
+ There are       21 alpha and       21 beta electrons
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+Discretize the solute cavity surface with Lebedev spheres
+	Using 302 Lebedev grid points for each H atom
+	Using 302 Lebedev grid points for other atoms
+	Atomic van der Waals radii will be scaled by 1.20
+ Serial switch compute.
+ Remove points where switching function is < 1.0e-08
+ Keep 1266 surface tesserae and discard 1452 interior tesserae
+ Molecular Surface Area = 107.284 Angst**2
+ Applying Cartesian multipole field
+    Component          Value
+    ---------          -----
+     (2,0,0)        1.00000E-11
+     (0,2,0)        2.00000E-11
+     (0,0,2)       -3.00000E-10
+ Nucleus-field energy     =    -0.0000000170 hartrees
+ Requested basis set is 6-31G(d)
+ There are 28 shells and 83 basis functions
+ A cutoff of  1.0D-11 yielded    400 shell pairs
+ There are      3615 function pairs
+ Smallest overlap matrix eigenvalue = 3.92E-03
+ Guess MOs from SCF MO coefficient file
+ Reading MOs from coefficient file
+ Reading MOs from coefficient file
+ A restricted Hartree-Fock SCF calculation will be
+ performed using Pulay DIIS extrapolation
+ Polarizable Continuum solvation model will be applied
+ SCF converges when DIIS error is below 1.0E-08
+Geometry optimization detected.  Setting ReadMinima to 0
+Setting SaveMinima to 0
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ ---------------------------------------
+  Cycle       Energy         DIIS Error
+ ---------------------------------------
+    1    -326.6028461752      1.61E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    2    -326.7224518674      1.58E-03
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    3    -326.7245438195      7.36E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    4    -326.7249583395      5.17E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    5    -326.7251493106      3.86E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    6    -326.7252563971      2.92E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    7    -326.7253329709      1.99E-04
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    8    -326.7253915394      7.13E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+    9    -326.7253996032      1.70E-05
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   10    -326.7254000716      3.06E-06
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   11    -326.7254000870      2.47E-07
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   12    -326.7254000871      5.57E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   13    -326.7254000872      1.01E-08
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+   14    -326.7254000872      3.02E-09 Convergence criterion met
+ ---------------------------------------
+
+************** Final PCM Free Energy Summary **************
+ G_electrostatic  =      -0.12261478 hartree =     -76.94193568 kcal/mol
+ G_cavitation     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_dispersion     =       0.00000000 hartree =       0.00000000 kcal/mol
+ G_repulsion      =       0.00000000 hartree =       0.00000000 kcal/mol
+ --------------------------------------------------
+ Non-electrostatic Free Energy =       0.00000000 hartree =       0.00000000 kcal/mol
+ Total                         =      -0.12261478 hartree =     -76.94193568 kcal/mol
+ --------------------------------------------------
+ SCF Energy (H0 + V/2)                       =    -326.72540009 
+ Solute Internal Energy (H0)                 =    -326.60278531 
+ Total Free Energy (H0 + V/2 + non-elec)     =    -326.72540009 hartree
+                                             = -205023.28297095 kcal/mol
+***********************************************************
+
+ SCF time:  CPU 3.93 s  wall 3.93 s
+ SCF   energy in the final basis set = -326.7254000872
+ Total energy in the final basis set = -326.7254000872
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.483 -20.482 -20.482  -7.587  -1.317  -1.254  -1.250
+ -1.244  -0.704  -0.643  -0.634  -0.578  -0.546  -0.523  -0.475
+ -0.464  -0.454  -0.420  -0.409  -0.399
+ -- Virtual --
+  0.252   0.310   0.322   0.328   0.513   0.514   0.542   0.612
+  0.764   0.810   0.817   0.845   1.056   1.121   1.129   1.161
+  1.166   1.195   1.261   1.325   1.346   1.385   1.392   1.411
+  1.455   1.500   1.517   1.572   1.585   1.648   1.734   1.806
+  1.842   1.962   1.980   2.038   2.040   2.110   2.112   2.163
+  2.184   2.230   2.246   2.256   2.580   2.640   2.716   2.724
+  2.743   2.898   2.923   2.967   3.067   3.115   3.136   3.201
+  3.255   4.058   4.166   4.289   4.354   4.529
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.891204
+      2 O                    -0.901754
+      3 O                    -0.882483
+      4 O                    -0.882216
+      5 H                     0.421013
+      6 H                     0.417736
+      7 H                     0.420817
+      8 O                    -0.902019
+      9 H                     0.417701
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.0406      Y      -9.2679      Z      -0.3166
+       Tot      11.6432
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.2408     XY      13.5932     YY     -47.6511
+        XZ       0.3089     YZ       4.2923     ZZ     -35.4316
+    Octopole Moments (Debye-Ang^2)
+       XXX      73.3782    XXY     -78.9642    XYY      52.1816
+       YYY    -208.7524    XXZ      -2.6597    XYZ      -0.1977
+       YYZ      16.0455    XZZ      12.4996    YZZ     -69.0139
+       ZZZ      -7.3118
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -229.5952   XXXY     143.8928   XXYY    -217.8581
+      XYYY     202.7899   YYYY    -872.7865   XXXZ       5.9748
+      XXYZ     -13.9490   XYYZ      -0.9721   YYYZ      48.0104
+      XXZZ     -59.3629   XYZZ      23.8492   YYZZ    -172.4096
+      XZZZ       2.0096   YZZZ       0.2092   ZZZZ    -153.2900
+ -----------------------------------------------------------------
+ Calculating analytic gradient of the SCF energy
+ Gradient of Coulomb and Exchange Energy
+            1           2           3           4           5           6
+    1  -1.1792668  -6.0974195  11.8555249  11.2309587  -1.4960882  -3.0752091
+    2  -0.0472855  -4.1996993  -9.0040885   9.7383534  -2.1663911  -2.6136293
+    3  -0.0066704  12.8778493  -3.7683138   3.8231654  -3.2642348  -1.1568369
+            7           8           9
+    1  -1.6584805  -6.3015571  -3.2784624
+    2   2.0979416   3.8404986   2.3543000
+    3   3.2306595 -12.8894189   1.1538006
+ Gradient of SCF Energy
+            1           2           3           4           5           6
+    1  -0.0090261   0.0007150   0.0351023   0.0345050  -0.0136557  -0.0167828
+    2  -0.0002609   0.0112997  -0.0114636   0.0133956  -0.0110558  -0.0167886
+    3  -0.0000689   0.0318393   0.0131956  -0.0128428  -0.0245958  -0.0108603
+            7           8           9
+    1  -0.0145497   0.0018065  -0.0181145
+    2   0.0104314  -0.0108433   0.0152854
+    3   0.0243372  -0.0318735   0.0108692
+ Max gradient component =       3.510E-02
+ RMS gradient           =       1.787E-02
+
+ Q-Chem warning in module /home/ben/opt/apps/qchem/trunk_intel_release/libpcm/pcm_class.C, line 103:
+
+ Solvent dielectric was either not specified or less than 1.
+
+QChem will use a solvent dielectric of 78.39 (water) by default for PCM.
+ Computing fast CPCM-SWIG gradient.
+Updating gradient with PCM contributions...
+ -- total gradient after adding PCM contribution --
+---------------------------------------------------
+  Atom         X              Y              Z     
+---------------------------------------------------
+   1       0.000081       0.000004       0.000007
+   2      -0.000050      -0.000002       0.000029
+   3      -0.000019      -0.000008       0.000023
+   4      -0.000005      -0.000027       0.000015
+   5       0.000003      -0.000004       0.000012
+   6      -0.000023       0.000018      -0.000026
+   7      -0.000005      -0.000004      -0.000002
+   8      -0.000007       0.000013      -0.000048
+   9       0.000025       0.000011      -0.000010
+---------------------------------------------------
+Number of fixed atoms: 0
+ Gradient time:  CPU 1.71 s  wall 1.71 s
+ Geometry Optimization Parameters
+   NAtoms,    NIC,     NZ,  NCons,   NDum,   NFix, NCnnct, MaxDiis
+        9      48       0       0       0       0       0       0
+
+ Cartesian Hessian Update
+ Hessian Updated using BFGS Update
+
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED INTERNAL COORDINATES **
+   Searching for a Minimum
+
+   Optimization Cycle:  12
+
+                       Coordinates (Angstroms)
+     ATOM                X               Y               Z
+      1  B        -0.5481853798    1.9618941258    0.0693554800
+      2  O         0.2896310546    2.5491492155   -0.9983635586
+      3  O        -1.4521008581    2.9212958457    0.7040386036
+      4  O        -1.3846595636    0.9440918563   -0.5671248234
+      5  H        -0.9916137193    3.3390142127    1.4180197373
+      6  H         0.9406190887    3.1121513483   -0.6023754520
+      7  H        -0.8921615302    0.5495032304   -1.2728778376
+      8  O         0.3243721178    1.4311343943    1.1389420062
+      9  H         1.0201987899    0.9242557710    0.7434058444
+   Point Group: c1    Number of degrees of freedom:    21
+
+
+   Energy is   -326.725400087
+
+ Hessian Updated using BFGS Update
+
+ 21 Hessian modes will be used to form the next step
+  Hessian Eigenvalues:
+     0.000972    0.004272    0.014067    0.014299    0.105783    0.111105
+     0.118979    0.149461    0.160000    0.160109    0.170423    0.192849
+     0.206563    0.287799    0.345523    0.350266    0.355876    0.491999
+     0.492089    0.492336    0.535915
+
+ Minimum Search - Taking Simple RFO Step
+ Searching for Lamda that Minimizes Along All modes
+ Value Taken    Lamda =   0.00000000
+ Step Taken.  Stepsize is  0.003003
+
+                             Maximum     Tolerance    Cnvgd?
+         Gradient           0.000045      0.000300     YES
+         Displacement       0.002117      0.001200      NO
+         Energy change     -0.000000      0.000001     YES
+
+
+                       Distance Matrix (Angstroms)
+             B (  1)   O (  2)   O (  3)   O (  4)   H (  5)   H (  6)
+   O (  2)  1.478793
+   O (  3)  1.462989  2.463797
+   O (  4)  1.463119  2.359115  2.351540
+   H (  5)  1.977874  2.846820  0.946734  3.135433
+   H (  6)  1.997712  0.947398  2.732810  3.179410  2.804815
+   H (  7)  1.978575  2.338926  3.138014  0.946753  3.877137  3.221153
+   O (  8)  1.478877  2.412310  2.359148  2.463466  2.334461  2.497552
+   H (  9)  1.997715  2.491539  3.178362  2.738837  3.214584  2.569892
+             H (  7)   O (  8)
+   O (  8)  2.841497
+   H (  9)  2.804097  0.947391
+ 
+ Final energy is   -326.725400087151     
+
+
+ ******************************
+ **  OPTIMIZATION CONVERGED  **
+ ******************************
+
+Z-matrix Print:
+$molecule
+-1 1
+O 
+H  1 0.947391
+B  1 1.478877 2 108.869177
+O  3 1.462989 1 106.626847 2 170.116067 0
+H  4 0.946734 3 108.420773 1 -32.761883 0
+O  3 1.463119 1 113.720538 2 -72.257277 0
+H  6 0.946753 3 108.470112 1 87.042019 0
+O  3 1.478793 1 109.295744 2 46.748281 0
+H  8 0.947398 3 108.874934 1 47.675023 0
+$end
+
+ Analysis of SCF Wavefunction
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.483 -20.483 -20.482 -20.482  -7.587  -1.317  -1.254  -1.250
+ -1.244  -0.704  -0.643  -0.634  -0.578  -0.546  -0.523  -0.475
+ -0.464  -0.454  -0.420  -0.409  -0.399
+ -- Virtual --
+  0.252   0.310   0.322   0.328   0.513   0.514   0.542   0.612
+  0.764   0.810   0.817   0.845   1.056   1.121   1.129   1.161
+  1.166   1.195   1.261   1.325   1.346   1.385   1.392   1.411
+  1.455   1.500   1.517   1.572   1.585   1.648   1.734   1.806
+  1.842   1.962   1.980   2.038   2.040   2.110   2.112   2.163
+  2.184   2.230   2.246   2.256   2.580   2.640   2.716   2.724
+  2.743   2.898   2.923   2.967   3.067   3.115   3.136   3.201
+  3.255   4.058   4.166   4.289   4.354   4.529
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 B                     0.891204
+      2 O                    -0.901754
+      3 O                    -0.882483
+      4 O                    -0.882216
+      5 H                     0.421013
+      6 H                     0.417736
+      7 H                     0.420817
+      8 O                    -0.902019
+      9 H                     0.417701
+  ----------------------------------------
+  Sum of atomic charges =    -1.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -4.8032
+    Dipole Moment (Debye)
+         X       7.0406      Y      -9.2679      Z      -0.3166
+       Tot      11.6432
+    Quadrupole Moments (Debye-Ang)
+        XX     -40.2408     XY      13.5932     YY     -47.6511
+        XZ       0.3089     YZ       4.2923     ZZ     -35.4316
+    Octopole Moments (Debye-Ang^2)
+       XXX      73.3782    XXY     -78.9642    XYY      52.1816
+       YYY    -208.7524    XXZ      -2.6597    XYZ      -0.1977
+       YYZ      16.0455    XZZ      12.4996    YZZ     -69.0139
+       ZZZ      -7.3118
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX    -229.5952   XXXY     143.8928   XXYY    -217.8581
+      XYYY     202.7899   YYYY    -872.7865   XXXZ       5.9748
+      XXYZ     -13.9490   XYYZ      -0.9721   YYYZ      48.0104
+      XXZZ     -59.3629   XYZZ      23.8492   YYZZ    -172.4096
+      XZZZ       2.0096   YZZZ       0.2092   ZZZZ    -153.2900
+ -----------------------------------------------------------------
+Archival summary:
+1\1\vonNeumann\OPT\HF\6-31G*\414(1-,1)\ben\ThuAug611:57:402015ThuAug611:57:402015\0\\#,OPT,HF,6-31G*,\\-1,1\O\H,1,0.947391\B,1,1.47888,2,108.869\O,3,1.46299,1,106.627,2,170.116,0\H,4,0.946734,3,108.421,1,-32.7619,0\O,3,1.46312,1,113.721,2,-72.2573,0\H,6,0.946753,3,108.47,1,87.042,0\O,3,1.47879,1,109.296,2,46.7483,0\H,8,0.947398,3,108.875,1,47.675,0\\HF=-326.7254\\@
+
+ Total job time:  66.20s(wall), 63.68s(cpu) 
+ Thu Aug  6 11:57:40 2015
+
+        *************************************************************
+        *                                                           *
+        *  Thank you very much for using Q-Chem.  Have a nice day.  *
+        *                                                           *
+        *************************************************************
+
+

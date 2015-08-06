@@ -1,0 +1,20 @@
+$comment
+    Paraphrased from Q-Chem Manual:
+    Sample Random Phase Approximation (RPA), AKA TD-HF.
+    Should be roughly comparable to CIS for excitation energies to singlet states,
+    but is inferior for triplet states.
+    RPA is non-variational
+$end
+
+$molecule
+0 1
+N1
+N2 N1 1.1
+$end
+
+$rem
+jobtype    opt
+exchange   omegaB97X-D
+basis      6-311++G**
+$end
+

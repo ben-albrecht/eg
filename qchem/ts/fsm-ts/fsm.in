@@ -1,0 +1,68 @@
+$comment
+Example of freezing string method in Q-Chem
+The results are concatenated into a TS state search
+$end
+
+$molecule
+0 2
+  C 0.00000000 0.00000000 0.00000000
+  O 6.34635302 0.00000000 0.00000000
+  O -0.66813225 0.00000000 -1.02094701
+  C -0.57293423 0.00623903 1.33844009
+  Si -2.42969083 0.05962283 1.53049376
+  H -3.04941288 -1.13655227 0.90877331
+  H -2.97827670 1.28614584 0.90108489
+  H -2.74248690 0.07439969 2.98243147
+  H 0.11548221 -0.02622069 2.17827273
+  C 6.95158335 0.00314396 -1.29132916
+  H 8.02086694 0.11072727 -1.11528077
+  H 6.57109852 0.83210800 -1.89160114
+  H 6.74759114 -0.93466001 -1.81452683
+******
+  C 0.00000000 0.00000000 0.00000000
+  O 1.34635302 0.00000000 0.00000000
+  O -0.66813225 0.00000000 -1.02094701
+  C -0.57293423 0.00623903 1.33844009
+  Si -2.42969083 0.05962283 1.53049376
+  H -3.04941288 -1.13655227 0.90877331
+  H -2.97827670 1.28614584 0.90108489
+  H -2.74248690 0.07439969 2.98243147
+  H 0.11548221 -0.02622069 2.17827273
+  C 1.95158335 0.00314396 -1.29132916
+  H 3.02086694 0.11072727 -1.11528077
+  H 1.57109852 0.83210800 -1.89160114
+  H 1.74759114 -0.93466001 -1.81452683
+$end
+
+$rem
+    jobtype               fsm
+    exchange              omegab97x-d
+    basis                 6-31G**
+    unrestricted          true
+    fsm_ngrad             6 !Gradient steps used per optimization(4)
+    fsm_nnode             20 ! Number of nodes (12)
+    fsm_mode              2 ! LST Interpolation(2)
+    fsm_opt_mode          2 ! Quasi-Newton Optimization(2)
+    geom_opt_max_cycles   500
+    scf_algorithm         diis_gdm
+    scf_max_cycles        500
+$end
+
+@@@
+$molecule
+read
+$end
+
+$rem
+    jobtype               ts
+    exchange              omegab97x-d
+    basis                 6-31G**
+    unrestricted          true
+    scf_guess             read
+    geom_opt_hessian      read ! Hessian-free TS search
+    max_scf_cycles        500
+    geom_opt_dmax         50
+    geom_opt_max_cycles   500
+    symmetry              false
+    sym_ignore            true
+$end
