@@ -1,3 +1,7 @@
+$comment
+Example of the (undocumented) growing string method in Q-Chem
+$end
+
 $molecule
 0 2
   C 0.00000000 0.00000000 0.00000000
