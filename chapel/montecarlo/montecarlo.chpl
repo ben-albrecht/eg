@@ -1,8 +1,8 @@
-// Calcuate pi using a monte carlo simulation
+// Calculate pi using a Monte Carlo simulation
 
 use Random, Time;
 
-config const n = 10000;
+config const n = 100000;
 config const verbose: bool = false;
 
 var count:int;
