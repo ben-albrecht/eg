@@ -7,3 +7,7 @@ gcc:
 icc:
 	icc -c -Wall -Werror -fpic copy.c
 	icc -shared -o libcopy.so copy.o
+
+clean:
+	rm -f copy.o
+	rm -f libcopy.so
