@@ -1,8 +1,9 @@
+*out
 *pyc
 restats
 
 # Q-Chem
 pathtable
-qchem/.*
+*cube
 
 .DS_Store
